@@ -33,7 +33,7 @@ describe 'SendApi' do
   end
 
   # unit tests for invoice_v1_send_files_post
-  # Add a send invoice by file
+  # Add an invoice by file
   # Send invoices are the invoices that are sent to the SDI.
   # @param files 
   # @param [Hash] opts the optional parameters
@@ -46,7 +46,7 @@ describe 'SendApi' do
   end
 
   # unit tests for invoice_v1_send_get
-  # List send invoices
+  # List invoices
   # test **markdown**.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :company_id Company id.
@@ -71,7 +71,7 @@ describe 'SendApi' do
   end
 
   # unit tests for invoice_v1_send_id_get
-  # Get a send invoice by id
+  # Get a invoice by id
   # Send invoices are the invoices that are sent to the SDI.
   # @param id Item id.
   # @param [Hash] opts the optional parameters
@@ -83,7 +83,7 @@ describe 'SendApi' do
   end
 
   # unit tests for invoice_v1_send_json_post
-  # Add a send invoice by json
+  # Add an invoice by json
   # Send invoices are the invoices that are sent to the SDI.
   # @param fattura_ordinaria 
   # @param [Hash] opts the optional parameters
@@ -96,7 +96,7 @@ describe 'SendApi' do
   end
 
   # unit tests for invoice_v1_send_post
-  # Add a send invoice
+  # Add an invoice
   # Send invoices are the invoices that are sent to the SDI.
   # @param model_send 
   # @param [Hash] opts the optional parameters
@@ -108,8 +108,55 @@ describe 'SendApi' do
     end
   end
 
+  # unit tests for invoice_v1_send_validate_files_post
+  # Validate an invoice by file
+  # Send invoices are the invoices that are sent to the SDI.
+  # @param files 
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'invoice_v1_send_validate_files_post test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for invoice_v1_send_validate_json_post
+  # Validate an invoice by json
+  # Send invoices are the invoices that are sent to the SDI.
+  # @param fattura_ordinaria 
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'invoice_v1_send_validate_json_post test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for invoice_v1_send_validate_post
+  # Validate an invoice
+  # Send invoices are the invoices that are sent to the SDI.
+  # @param model_send 
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'invoice_v1_send_validate_post test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for invoice_v1_send_validate_xml_post
+  # Validate an invoice by xml
+  # Send invoices are the invoices that are sent to the SDI.
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'invoice_v1_send_validate_xml_post test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for invoice_v1_send_xml_post
-  # Add a send invoice by xml
+  # Add an invoice by xml
   # Send invoices are the invoices that are sent to the SDI.
   # @param fattura_ordinaria 
   # @param [Hash] opts the optional parameters

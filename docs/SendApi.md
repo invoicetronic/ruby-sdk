@@ -4,19 +4,23 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**invoice_v1_send_files_post**](SendApi.md#invoice_v1_send_files_post) | **POST** /invoice/v1/send/files | Add a send invoice by file |
-| [**invoice_v1_send_get**](SendApi.md#invoice_v1_send_get) | **GET** /invoice/v1/send | List send invoices |
-| [**invoice_v1_send_id_get**](SendApi.md#invoice_v1_send_id_get) | **GET** /invoice/v1/send/{id} | Get a send invoice by id |
-| [**invoice_v1_send_json_post**](SendApi.md#invoice_v1_send_json_post) | **POST** /invoice/v1/send/json | Add a send invoice by json |
-| [**invoice_v1_send_post**](SendApi.md#invoice_v1_send_post) | **POST** /invoice/v1/send | Add a send invoice |
-| [**invoice_v1_send_xml_post**](SendApi.md#invoice_v1_send_xml_post) | **POST** /invoice/v1/send/xml | Add a send invoice by xml |
+| [**invoice_v1_send_files_post**](SendApi.md#invoice_v1_send_files_post) | **POST** /invoice/v1/send/files | Add an invoice by file |
+| [**invoice_v1_send_get**](SendApi.md#invoice_v1_send_get) | **GET** /invoice/v1/send | List invoices |
+| [**invoice_v1_send_id_get**](SendApi.md#invoice_v1_send_id_get) | **GET** /invoice/v1/send/{id} | Get a invoice by id |
+| [**invoice_v1_send_json_post**](SendApi.md#invoice_v1_send_json_post) | **POST** /invoice/v1/send/json | Add an invoice by json |
+| [**invoice_v1_send_post**](SendApi.md#invoice_v1_send_post) | **POST** /invoice/v1/send | Add an invoice |
+| [**invoice_v1_send_validate_files_post**](SendApi.md#invoice_v1_send_validate_files_post) | **POST** /invoice/v1/send/validate/files | Validate an invoice by file |
+| [**invoice_v1_send_validate_json_post**](SendApi.md#invoice_v1_send_validate_json_post) | **POST** /invoice/v1/send/validate/json | Validate an invoice by json |
+| [**invoice_v1_send_validate_post**](SendApi.md#invoice_v1_send_validate_post) | **POST** /invoice/v1/send/validate | Validate an invoice |
+| [**invoice_v1_send_validate_xml_post**](SendApi.md#invoice_v1_send_validate_xml_post) | **POST** /invoice/v1/send/validate/xml | Validate an invoice by xml |
+| [**invoice_v1_send_xml_post**](SendApi.md#invoice_v1_send_xml_post) | **POST** /invoice/v1/send/xml | Add an invoice by xml |
 
 
 ## invoice_v1_send_files_post
 
 > <ModelSend> invoice_v1_send_files_post(files, opts)
 
-Add a send invoice by file
+Add an invoice by file
 
 Send invoices are the invoices that are sent to the SDI.
 
@@ -39,7 +43,7 @@ opts = {
 }
 
 begin
-  # Add a send invoice by file
+  # Add an invoice by file
   result = api_instance.invoice_v1_send_files_post(files, opts)
   p result
 rescue Invoice_Sdk::ApiError => e
@@ -55,7 +59,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Add a send invoice by file
+  # Add an invoice by file
   data, status_code, headers = api_instance.invoice_v1_send_files_post_with_http_info(files, opts)
   p status_code # => 2xx
   p headers # => { ... }
@@ -90,7 +94,7 @@ end
 
 > <Array<ModelSend>> invoice_v1_send_get(opts)
 
-List send invoices
+List invoices
 
 test **markdown**.
 
@@ -125,7 +129,7 @@ opts = {
 }
 
 begin
-  # List send invoices
+  # List invoices
   result = api_instance.invoice_v1_send_get(opts)
   p result
 rescue Invoice_Sdk::ApiError => e
@@ -141,7 +145,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # List send invoices
+  # List invoices
   data, status_code, headers = api_instance.invoice_v1_send_get_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
@@ -181,14 +185,14 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/problem+json
+- **Accept**: application/json
 
 
 ## invoice_v1_send_id_get
 
 > <ModelSend> invoice_v1_send_id_get(id)
 
-Get a send invoice by id
+Get a invoice by id
 
 Send invoices are the invoices that are sent to the SDI.
 
@@ -208,7 +212,7 @@ api_instance = Invoice_Sdk::SendApi.new
 id = 56 # Integer | Item id.
 
 begin
-  # Get a send invoice by id
+  # Get a invoice by id
   result = api_instance.invoice_v1_send_id_get(id)
   p result
 rescue Invoice_Sdk::ApiError => e
@@ -224,7 +228,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Get a send invoice by id
+  # Get a invoice by id
   data, status_code, headers = api_instance.invoice_v1_send_id_get_with_http_info(id)
   p status_code # => 2xx
   p headers # => { ... }
@@ -258,7 +262,7 @@ end
 
 > <ModelSend> invoice_v1_send_json_post(fattura_ordinaria, opts)
 
-Add a send invoice by json
+Add an invoice by json
 
 Send invoices are the invoices that are sent to the SDI.
 
@@ -281,7 +285,7 @@ opts = {
 }
 
 begin
-  # Add a send invoice by json
+  # Add an invoice by json
   result = api_instance.invoice_v1_send_json_post(fattura_ordinaria, opts)
   p result
 rescue Invoice_Sdk::ApiError => e
@@ -297,7 +301,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Add a send invoice by json
+  # Add an invoice by json
   data, status_code, headers = api_instance.invoice_v1_send_json_post_with_http_info(fattura_ordinaria, opts)
   p status_code # => 2xx
   p headers # => { ... }
@@ -332,7 +336,7 @@ end
 
 > <ModelSend> invoice_v1_send_post(model_send, opts)
 
-Add a send invoice
+Add an invoice
 
 Send invoices are the invoices that are sent to the SDI.
 
@@ -355,7 +359,7 @@ opts = {
 }
 
 begin
-  # Add a send invoice
+  # Add an invoice
   result = api_instance.invoice_v1_send_post(model_send, opts)
   p result
 rescue Invoice_Sdk::ApiError => e
@@ -371,7 +375,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Add a send invoice
+  # Add an invoice
   data, status_code, headers = api_instance.invoice_v1_send_post_with_http_info(model_send, opts)
   p status_code # => 2xx
   p headers # => { ... }
@@ -402,11 +406,284 @@ end
 - **Accept**: application/json
 
 
+## invoice_v1_send_validate_files_post
+
+> invoice_v1_send_validate_files_post(files)
+
+Validate an invoice by file
+
+Send invoices are the invoices that are sent to the SDI.
+
+### Examples
+
+```ruby
+require 'time'
+require 'invoicetronic_invoice_sdk'
+# setup authorization
+Invoice_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = Invoice_Sdk::SendApi.new
+files = [File.new('/path/to/some/file')] # Array<File> | 
+
+begin
+  # Validate an invoice by file
+  api_instance.invoice_v1_send_validate_files_post(files)
+rescue Invoice_Sdk::ApiError => e
+  puts "Error when calling SendApi->invoice_v1_send_validate_files_post: #{e}"
+end
+```
+
+#### Using the invoice_v1_send_validate_files_post_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> invoice_v1_send_validate_files_post_with_http_info(files)
+
+```ruby
+begin
+  # Validate an invoice by file
+  data, status_code, headers = api_instance.invoice_v1_send_validate_files_post_with_http_info(files)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue Invoice_Sdk::ApiError => e
+  puts "Error when calling SendApi->invoice_v1_send_validate_files_post_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **files** | **Array&lt;File&gt;** |  |  |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data
+- **Accept**: application/json
+
+
+## invoice_v1_send_validate_json_post
+
+> invoice_v1_send_validate_json_post(fattura_ordinaria)
+
+Validate an invoice by json
+
+Send invoices are the invoices that are sent to the SDI.
+
+### Examples
+
+```ruby
+require 'time'
+require 'invoicetronic_invoice_sdk'
+# setup authorization
+Invoice_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = Invoice_Sdk::SendApi.new
+fattura_ordinaria = Invoice_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
+
+begin
+  # Validate an invoice by json
+  api_instance.invoice_v1_send_validate_json_post(fattura_ordinaria)
+rescue Invoice_Sdk::ApiError => e
+  puts "Error when calling SendApi->invoice_v1_send_validate_json_post: #{e}"
+end
+```
+
+#### Using the invoice_v1_send_validate_json_post_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> invoice_v1_send_validate_json_post_with_http_info(fattura_ordinaria)
+
+```ruby
+begin
+  # Validate an invoice by json
+  data, status_code, headers = api_instance.invoice_v1_send_validate_json_post_with_http_info(fattura_ordinaria)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue Invoice_Sdk::ApiError => e
+  puts "Error when calling SendApi->invoice_v1_send_validate_json_post_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **fattura_ordinaria** | [**FatturaOrdinaria**](FatturaOrdinaria.md) |  |  |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## invoice_v1_send_validate_post
+
+> invoice_v1_send_validate_post(model_send)
+
+Validate an invoice
+
+Send invoices are the invoices that are sent to the SDI.
+
+### Examples
+
+```ruby
+require 'time'
+require 'invoicetronic_invoice_sdk'
+# setup authorization
+Invoice_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = Invoice_Sdk::SendApi.new
+model_send = Invoice_Sdk::ModelSend.new # ModelSend | 
+
+begin
+  # Validate an invoice
+  api_instance.invoice_v1_send_validate_post(model_send)
+rescue Invoice_Sdk::ApiError => e
+  puts "Error when calling SendApi->invoice_v1_send_validate_post: #{e}"
+end
+```
+
+#### Using the invoice_v1_send_validate_post_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> invoice_v1_send_validate_post_with_http_info(model_send)
+
+```ruby
+begin
+  # Validate an invoice
+  data, status_code, headers = api_instance.invoice_v1_send_validate_post_with_http_info(model_send)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue Invoice_Sdk::ApiError => e
+  puts "Error when calling SendApi->invoice_v1_send_validate_post_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **model_send** | [**ModelSend**](ModelSend.md) |  |  |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## invoice_v1_send_validate_xml_post
+
+> invoice_v1_send_validate_xml_post
+
+Validate an invoice by xml
+
+Send invoices are the invoices that are sent to the SDI.
+
+### Examples
+
+```ruby
+require 'time'
+require 'invoicetronic_invoice_sdk'
+# setup authorization
+Invoice_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = Invoice_Sdk::SendApi.new
+
+begin
+  # Validate an invoice by xml
+  api_instance.invoice_v1_send_validate_xml_post
+rescue Invoice_Sdk::ApiError => e
+  puts "Error when calling SendApi->invoice_v1_send_validate_xml_post: #{e}"
+end
+```
+
+#### Using the invoice_v1_send_validate_xml_post_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> invoice_v1_send_validate_xml_post_with_http_info
+
+```ruby
+begin
+  # Validate an invoice by xml
+  data, status_code, headers = api_instance.invoice_v1_send_validate_xml_post_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue Invoice_Sdk::ApiError => e
+  puts "Error when calling SendApi->invoice_v1_send_validate_xml_post_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## invoice_v1_send_xml_post
 
 > <ModelSend> invoice_v1_send_xml_post(fattura_ordinaria, opts)
 
-Add a send invoice by xml
+Add an invoice by xml
 
 Send invoices are the invoices that are sent to the SDI.
 
@@ -429,7 +706,7 @@ opts = {
 }
 
 begin
-  # Add a send invoice by xml
+  # Add an invoice by xml
   result = api_instance.invoice_v1_send_xml_post(fattura_ordinaria, opts)
   p result
 rescue Invoice_Sdk::ApiError => e
@@ -445,7 +722,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Add a send invoice by xml
+  # Add an invoice by xml
   data, status_code, headers = api_instance.invoice_v1_send_xml_post_with_http_info(fattura_ordinaria, opts)
   p status_code # => 2xx
   p headers # => { ... }

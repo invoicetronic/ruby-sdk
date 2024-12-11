@@ -106,7 +106,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/problem+json
+- **Accept**: application/json
 
 
 ## invoice_v1_receive_id_delete
