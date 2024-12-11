@@ -615,7 +615,7 @@ nil (empty response body)
 
 ## invoice_v1_send_validate_xml_post
 
-> invoice_v1_send_validate_xml_post
+> invoice_v1_send_validate_xml_post(fattura_ordinaria)
 
 Validate an invoice by xml
 
@@ -634,10 +634,11 @@ Invoice_Sdk.configure do |config|
 end
 
 api_instance = Invoice_Sdk::SendApi.new
+fattura_ordinaria = Invoice_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
 
 begin
   # Validate an invoice by xml
-  api_instance.invoice_v1_send_validate_xml_post
+  api_instance.invoice_v1_send_validate_xml_post(fattura_ordinaria)
 rescue Invoice_Sdk::ApiError => e
   puts "Error when calling SendApi->invoice_v1_send_validate_xml_post: #{e}"
 end
@@ -647,12 +648,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> invoice_v1_send_validate_xml_post_with_http_info
+> <Array(nil, Integer, Hash)> invoice_v1_send_validate_xml_post_with_http_info(fattura_ordinaria)
 
 ```ruby
 begin
   # Validate an invoice by xml
-  data, status_code, headers = api_instance.invoice_v1_send_validate_xml_post_with_http_info
+  data, status_code, headers = api_instance.invoice_v1_send_validate_xml_post_with_http_info(fattura_ordinaria)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -663,7 +664,9 @@ end
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **fattura_ordinaria** | [**FatturaOrdinaria**](FatturaOrdinaria.md) |  |  |
 
 ### Return type
 
@@ -675,7 +678,7 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/xml
 - **Accept**: application/json
 
 

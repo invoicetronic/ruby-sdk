@@ -147,6 +147,7 @@ describe 'SendApi' do
   # unit tests for invoice_v1_send_validate_xml_post
   # Validate an invoice by xml
   # Send invoices are the invoices that are sent to the SDI.
+  # @param fattura_ordinaria 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'invoice_v1_send_validate_xml_post test' do

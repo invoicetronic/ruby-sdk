@@ -602,20 +602,26 @@ module Invoice_Sdk
 
     # Validate an invoice by xml
     # Send invoices are the invoices that are sent to the SDI.
+    # @param fattura_ordinaria [FatturaOrdinaria] 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def invoice_v1_send_validate_xml_post(opts = {})
-      invoice_v1_send_validate_xml_post_with_http_info(opts)
+    def invoice_v1_send_validate_xml_post(fattura_ordinaria, opts = {})
+      invoice_v1_send_validate_xml_post_with_http_info(fattura_ordinaria, opts)
       nil
     end
 
     # Validate an invoice by xml
     # Send invoices are the invoices that are sent to the SDI.
+    # @param fattura_ordinaria [FatturaOrdinaria] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def invoice_v1_send_validate_xml_post_with_http_info(opts = {})
+    def invoice_v1_send_validate_xml_post_with_http_info(fattura_ordinaria, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SendApi.invoice_v1_send_validate_xml_post ...'
+      end
+      # verify the required parameter 'fattura_ordinaria' is set
+      if @api_client.config.client_side_validation && fattura_ordinaria.nil?
+        fail ArgumentError, "Missing the required parameter 'fattura_ordinaria' when calling SendApi.invoice_v1_send_validate_xml_post"
       end
       # resource path
       local_var_path = '/invoice/v1/send/validate/xml'
@@ -627,12 +633,17 @@ module Invoice_Sdk
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(fattura_ordinaria)
 
       # return_type
       return_type = opts[:debug_return_type]
