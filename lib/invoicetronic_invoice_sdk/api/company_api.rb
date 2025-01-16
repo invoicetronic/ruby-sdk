@@ -1,7 +1,7 @@
 =begin
 #Italian eInvoice API
 
-#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
 
 The version of the OpenAPI document: 1.0.0
 Contact: support@invoicetronic.com
@@ -20,10 +20,10 @@ module Invoice_Sdk
       @api_client = api_client
     end
     # List companies
-    # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+    # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Page number. (default to 1)
-    # @option opts [Integer] :page_size Items per page. (default to 100)
+    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
     # @return [Array<Company>]
     def invoice_v1_company_get(opts = {})
       data, _status_code, _headers = invoice_v1_company_get_with_http_info(opts)
@@ -31,10 +31,10 @@ module Invoice_Sdk
     end
 
     # List companies
-    # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+    # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Page number. (default to 1)
-    # @option opts [Integer] :page_size Items per page. (default to 100)
+    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
     # @return [Array<(Array<Company>, Integer, Hash)>] Array<Company> data, response status code and response headers
     def invoice_v1_company_get_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -46,7 +46,7 @@ module Invoice_Sdk
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
-      query_params[:'pageSize'] = opts[:'page_size'] if !opts[:'page_size'].nil?
+      query_params[:'page_size'] = opts[:'page_size'] if !opts[:'page_size'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -83,8 +83,8 @@ module Invoice_Sdk
     end
 
     # Delete a company
-    # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-    # @param id [Integer] Item id.
+    # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [Company]
     def invoice_v1_company_id_delete(id, opts = {})
@@ -93,8 +93,8 @@ module Invoice_Sdk
     end
 
     # Delete a company
-    # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-    # @param id [Integer] Item id.
+    # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [Array<(Company, Integer, Hash)>] Company data, response status code and response headers
     def invoice_v1_company_id_delete_with_http_info(id, opts = {})
@@ -146,8 +146,8 @@ module Invoice_Sdk
     end
 
     # Get a company by id
-    # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-    # @param id [Integer] Item id.
+    # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [Company]
     def invoice_v1_company_id_get(id, opts = {})
@@ -156,8 +156,8 @@ module Invoice_Sdk
     end
 
     # Get a company by id
-    # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-    # @param id [Integer] Item id.
+    # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [Array<(Company, Integer, Hash)>] Company data, response status code and response headers
     def invoice_v1_company_id_get_with_http_info(id, opts = {})
@@ -209,7 +209,7 @@ module Invoice_Sdk
     end
 
     # Add a company
-    # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+    # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
     # @param company [Company] 
     # @param [Hash] opts the optional parameters
     # @return [Company]
@@ -219,7 +219,7 @@ module Invoice_Sdk
     end
 
     # Add a company
-    # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+    # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
     # @param company [Company] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Company, Integer, Hash)>] Company data, response status code and response headers
@@ -277,7 +277,7 @@ module Invoice_Sdk
     end
 
     # Update a company
-    # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+    # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
     # @param company [Company] 
     # @param [Hash] opts the optional parameters
     # @return [Company]
@@ -287,7 +287,7 @@ module Invoice_Sdk
     end
 
     # Update a company
-    # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+    # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
     # @param company [Company] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Company, Integer, Hash)>] Company data, response status code and response headers

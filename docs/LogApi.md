@@ -30,8 +30,15 @@ end
 
 api_instance = Invoice_Sdk::LogApi.new
 opts = {
-  page: 56, # Integer | Page number.
-  page_size: 56 # Integer | Items per page.
+  company_id: 56, # Integer | Company id
+  endpoint: 'endpoint_example', # String | 
+  method: 'method_example', # String | 
+  api_verion: 56, # Integer | Api version
+  status_code: 56, # Integer | Response status code
+  date_created_from: Time.parse('2013-10-20T19:20:30+01:00'), # Time | UTC ISO 8601 (2024-11-29T12:34:56Z)
+  date_created_to: Time.parse('2013-10-20T19:20:30+01:00'), # Time | UTC ISO 8601 (2024-11-29T12:34:56Z)
+  page: 56, # Integer | Page number. Defaults to 1.
+  page_size: 56 # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
 }
 
 begin
@@ -65,8 +72,15 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Page number. | [optional][default to 1] |
-| **page_size** | **Integer** | Items per page. | [optional][default to 100] |
+| **company_id** | **Integer** | Company id | [optional] |
+| **endpoint** | **String** |  | [optional] |
+| **method** | **String** |  | [optional] |
+| **api_verion** | **Integer** | Api version | [optional] |
+| **status_code** | **Integer** | Response status code | [optional] |
+| **date_created_from** | **Time** | UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
+| **date_created_to** | **Time** | UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
+| **page** | **Integer** | Page number. Defaults to 1. | [optional][default to 1] |
+| **page_size** | **Integer** | Items per page. Defaults to 50. Cannot be greater than 200. | [optional][default to 100] |
 
 ### Return type
 
@@ -103,7 +117,7 @@ Invoice_Sdk.configure do |config|
 end
 
 api_instance = Invoice_Sdk::LogApi.new
-id = 56 # Integer | Item id.
+id = 56 # Integer | Item id
 
 begin
   # Get an event by id
@@ -136,7 +150,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **Integer** | Item id. |  |
+| **id** | **Integer** | Item id |  |
 
 ### Return type
 

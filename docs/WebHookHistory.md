@@ -11,8 +11,6 @@
 | **user_id** | **Integer** | User id. | [optional] |
 | **event** | **String** | Event name. | [optional] |
 | **status_code** | **Integer** | Status code. | [optional] |
-| **request_body** | **String** | Webhook request body. | [optional] |
-| **response_body** | **String** | Webhook response body. | [optional] |
 | **date_time** | **Time** | Date and time of the request. | [optional] |
 | **success** | **Boolean** | Wether the request was successful. | [optional][readonly] |
 
@@ -29,8 +27,6 @@ instance = Invoice_Sdk::WebHookHistory.new(
   user_id: null,
   event: null,
   status_code: null,
-  request_body: null,
-  response_body: null,
   date_time: null,
   success: null
 )

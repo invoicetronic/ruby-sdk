@@ -1,7 +1,7 @@
 =begin
 #Italian eInvoice API
 
-#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
 
 The version of the OpenAPI document: 1.0.0
 Contact: support@invoicetronic.com
@@ -24,6 +24,7 @@ module Invoice_Sdk
     # @param files [Array<File>] 
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :validate Validate the document first, and reject it on failure. (default to false)
+    # @option opts [String] :signature Whether to digitally sign the document. (default to 'Auto')
     # @return [ModelSend]
     def invoice_v1_send_files_post(files, opts = {})
       data, _status_code, _headers = invoice_v1_send_files_post_with_http_info(files, opts)
@@ -35,6 +36,7 @@ module Invoice_Sdk
     # @param files [Array<File>] 
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :validate Validate the document first, and reject it on failure. (default to false)
+    # @option opts [String] :signature Whether to digitally sign the document. (default to 'Auto')
     # @return [Array<(ModelSend, Integer, Hash)>] ModelSend data, response status code and response headers
     def invoice_v1_send_files_post_with_http_info(files, opts = {})
       if @api_client.config.debugging
@@ -44,12 +46,17 @@ module Invoice_Sdk
       if @api_client.config.client_side_validation && files.nil?
         fail ArgumentError, "Missing the required parameter 'files' when calling SendApi.invoice_v1_send_files_post"
       end
+      allowable_values = ["None", "Apply", "Force", "Auto"]
+      if @api_client.config.client_side_validation && opts[:'signature'] && !allowable_values.include?(opts[:'signature'])
+        fail ArgumentError, "invalid value for \"signature\", must be one of #{allowable_values}"
+      end
       # resource path
       local_var_path = '/invoice/v1/send/files'
 
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'validate'] = opts[:'validate'] if !opts[:'validate'].nil?
+      query_params[:'signature'] = opts[:'signature'] if !opts[:'signature'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -94,10 +101,10 @@ module Invoice_Sdk
     # List invoices
     # test **markdown**.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :company_id Company id.
+    # @option opts [Integer] :company_id Company id
     # @option opts [String] :identifier SDI identifier.
-    # @option opts [String] :committente VAT number or fiscal code.
-    # @option opts [String] :prestatore VAT number or fiscal code.
+    # @option opts [String] :committente Vat number or fiscal code.
+    # @option opts [String] :prestatore Vat number or fiscal code.
     # @option opts [String] :file_name File name.
     # @option opts [Time] :last_update_from UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [Time] :last_update_to UTC ISO 8601 (2024-11-29T12:34:56Z)
@@ -106,8 +113,8 @@ module Invoice_Sdk
     # @option opts [Time] :document_date_from UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [Time] :document_date_to UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [String] :document_number Document number.
-    # @option opts [Integer] :page Page number. (default to 1)
-    # @option opts [Integer] :page_size Items per page. (default to 100)
+    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
     # @return [Array<ModelSend>]
     def invoice_v1_send_get(opts = {})
       data, _status_code, _headers = invoice_v1_send_get_with_http_info(opts)
@@ -117,10 +124,10 @@ module Invoice_Sdk
     # List invoices
     # test **markdown**.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :company_id Company id.
+    # @option opts [Integer] :company_id Company id
     # @option opts [String] :identifier SDI identifier.
-    # @option opts [String] :committente VAT number or fiscal code.
-    # @option opts [String] :prestatore VAT number or fiscal code.
+    # @option opts [String] :committente Vat number or fiscal code.
+    # @option opts [String] :prestatore Vat number or fiscal code.
     # @option opts [String] :file_name File name.
     # @option opts [Time] :last_update_from UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [Time] :last_update_to UTC ISO 8601 (2024-11-29T12:34:56Z)
@@ -129,8 +136,8 @@ module Invoice_Sdk
     # @option opts [Time] :document_date_from UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [Time] :document_date_to UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [String] :document_number Document number.
-    # @option opts [Integer] :page Page number. (default to 1)
-    # @option opts [Integer] :page_size Items per page. (default to 100)
+    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
     # @return [Array<(Array<ModelSend>, Integer, Hash)>] Array<ModelSend> data, response status code and response headers
     def invoice_v1_send_get_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -192,7 +199,7 @@ module Invoice_Sdk
 
     # Get a invoice by id
     # Send invoices are the invoices that are sent to the SDI.
-    # @param id [Integer] Item id.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [ModelSend]
     def invoice_v1_send_id_get(id, opts = {})
@@ -202,7 +209,7 @@ module Invoice_Sdk
 
     # Get a invoice by id
     # Send invoices are the invoices that are sent to the SDI.
-    # @param id [Integer] Item id.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [Array<(ModelSend, Integer, Hash)>] ModelSend data, response status code and response headers
     def invoice_v1_send_id_get_with_http_info(id, opts = {})
@@ -258,6 +265,7 @@ module Invoice_Sdk
     # @param fattura_ordinaria [FatturaOrdinaria] 
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :validate Validate the document first, and reject it on failure. (default to false)
+    # @option opts [String] :signature Whether to digitally sign the document. (default to 'Auto')
     # @return [ModelSend]
     def invoice_v1_send_json_post(fattura_ordinaria, opts = {})
       data, _status_code, _headers = invoice_v1_send_json_post_with_http_info(fattura_ordinaria, opts)
@@ -269,6 +277,7 @@ module Invoice_Sdk
     # @param fattura_ordinaria [FatturaOrdinaria] 
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :validate Validate the document first, and reject it on failure. (default to false)
+    # @option opts [String] :signature Whether to digitally sign the document. (default to 'Auto')
     # @return [Array<(ModelSend, Integer, Hash)>] ModelSend data, response status code and response headers
     def invoice_v1_send_json_post_with_http_info(fattura_ordinaria, opts = {})
       if @api_client.config.debugging
@@ -278,12 +287,17 @@ module Invoice_Sdk
       if @api_client.config.client_side_validation && fattura_ordinaria.nil?
         fail ArgumentError, "Missing the required parameter 'fattura_ordinaria' when calling SendApi.invoice_v1_send_json_post"
       end
+      allowable_values = ["None", "Apply", "Force", "Auto"]
+      if @api_client.config.client_side_validation && opts[:'signature'] && !allowable_values.include?(opts[:'signature'])
+        fail ArgumentError, "invalid value for \"signature\", must be one of #{allowable_values}"
+      end
       # resource path
       local_var_path = '/invoice/v1/send/json'
 
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'validate'] = opts[:'validate'] if !opts[:'validate'].nil?
+      query_params[:'signature'] = opts[:'signature'] if !opts[:'signature'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -329,6 +343,7 @@ module Invoice_Sdk
     # @param model_send [ModelSend] 
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :validate Validate the document first, and reject it on failure. (default to false)
+    # @option opts [String] :signature Whether to digitally sign the document. (default to 'Auto')
     # @return [ModelSend]
     def invoice_v1_send_post(model_send, opts = {})
       data, _status_code, _headers = invoice_v1_send_post_with_http_info(model_send, opts)
@@ -340,6 +355,7 @@ module Invoice_Sdk
     # @param model_send [ModelSend] 
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :validate Validate the document first, and reject it on failure. (default to false)
+    # @option opts [String] :signature Whether to digitally sign the document. (default to 'Auto')
     # @return [Array<(ModelSend, Integer, Hash)>] ModelSend data, response status code and response headers
     def invoice_v1_send_post_with_http_info(model_send, opts = {})
       if @api_client.config.debugging
@@ -349,12 +365,17 @@ module Invoice_Sdk
       if @api_client.config.client_side_validation && model_send.nil?
         fail ArgumentError, "Missing the required parameter 'model_send' when calling SendApi.invoice_v1_send_post"
       end
+      allowable_values = ["None", "Apply", "Force", "Auto"]
+      if @api_client.config.client_side_validation && opts[:'signature'] && !allowable_values.include?(opts[:'signature'])
+        fail ArgumentError, "invalid value for \"signature\", must be one of #{allowable_values}"
+      end
       # resource path
       local_var_path = '/invoice/v1/send'
 
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'validate'] = opts[:'validate'] if !opts[:'validate'].nil?
+      query_params[:'signature'] = opts[:'signature'] if !opts[:'signature'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -673,6 +694,7 @@ module Invoice_Sdk
     # @param fattura_ordinaria [FatturaOrdinaria] 
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :validate Validate the document first, and reject it on failure. (default to false)
+    # @option opts [String] :signature Whether to digitally sign the document. (default to 'Auto')
     # @return [ModelSend]
     def invoice_v1_send_xml_post(fattura_ordinaria, opts = {})
       data, _status_code, _headers = invoice_v1_send_xml_post_with_http_info(fattura_ordinaria, opts)
@@ -684,6 +706,7 @@ module Invoice_Sdk
     # @param fattura_ordinaria [FatturaOrdinaria] 
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :validate Validate the document first, and reject it on failure. (default to false)
+    # @option opts [String] :signature Whether to digitally sign the document. (default to 'Auto')
     # @return [Array<(ModelSend, Integer, Hash)>] ModelSend data, response status code and response headers
     def invoice_v1_send_xml_post_with_http_info(fattura_ordinaria, opts = {})
       if @api_client.config.debugging
@@ -693,12 +716,17 @@ module Invoice_Sdk
       if @api_client.config.client_side_validation && fattura_ordinaria.nil?
         fail ArgumentError, "Missing the required parameter 'fattura_ordinaria' when calling SendApi.invoice_v1_send_xml_post"
       end
+      allowable_values = ["None", "Apply", "Force", "Auto"]
+      if @api_client.config.client_side_validation && opts[:'signature'] && !allowable_values.include?(opts[:'signature'])
+        fail ArgumentError, "invalid value for \"signature\", must be one of #{allowable_values}"
+      end
       # resource path
       local_var_path = '/invoice/v1/send/xml'
 
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'validate'] = opts[:'validate'] if !opts[:'validate'].nil?
+      query_params[:'signature'] = opts[:'signature'] if !opts[:'signature'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

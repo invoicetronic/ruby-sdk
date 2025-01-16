@@ -1,7 +1,7 @@
 =begin
 #Italian eInvoice API
 
-#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
 
 The version of the OpenAPI document: 1.0.0
 Contact: support@invoicetronic.com
@@ -34,10 +34,10 @@ describe 'CompanyApi' do
 
   # unit tests for invoice_v1_company_get
   # List companies
-  # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+  # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Page number.
-  # @option opts [Integer] :page_size Items per page.
+  # @option opts [Integer] :page Page number. Defaults to 1.
+  # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200.
   # @return [Array<Company>]
   describe 'invoice_v1_company_get test' do
     it 'should work' do
@@ -47,8 +47,8 @@ describe 'CompanyApi' do
 
   # unit tests for invoice_v1_company_id_delete
   # Delete a company
-  # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-  # @param id Item id.
+  # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+  # @param id Item id
   # @param [Hash] opts the optional parameters
   # @return [Company]
   describe 'invoice_v1_company_id_delete test' do
@@ -59,8 +59,8 @@ describe 'CompanyApi' do
 
   # unit tests for invoice_v1_company_id_get
   # Get a company by id
-  # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
-  # @param id Item id.
+  # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+  # @param id Item id
   # @param [Hash] opts the optional parameters
   # @return [Company]
   describe 'invoice_v1_company_id_get test' do
@@ -71,7 +71,7 @@ describe 'CompanyApi' do
 
   # unit tests for invoice_v1_company_post
   # Add a company
-  # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+  # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
   # @param company 
   # @param [Hash] opts the optional parameters
   # @return [Company]
@@ -83,7 +83,7 @@ describe 'CompanyApi' do
 
   # unit tests for invoice_v1_company_put
   # Update a company
-  # Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+  # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
   # @param company 
   # @param [Hash] opts the optional parameters
   # @return [Company]

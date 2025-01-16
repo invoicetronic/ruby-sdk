@@ -1,7 +1,7 @@
 =begin
 #Italian eInvoice API
 
-#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
 
 The version of the OpenAPI document: 1.0.0
 Contact: support@invoicetronic.com
@@ -57,8 +57,35 @@ module Invoice_Sdk
     # The invoices included in the payload. This is set by the system, based on the xml content.
     attr_accessor :documents
 
+    # Whether the payload is Base64 encoded or a plain XML (text).
+    attr_accessor :encoding
+
     # Optional metadata, as json.
     attr_accessor :meta_data
+
+    attr_accessor :company
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -77,7 +104,9 @@ module Invoice_Sdk
         :'last_update' => :'last_update',
         :'date_sent' => :'date_sent',
         :'documents' => :'documents',
-        :'meta_data' => :'meta_data'
+        :'encoding' => :'encoding',
+        :'meta_data' => :'meta_data',
+        :'company' => :'company'
       }
     end
 
@@ -103,7 +132,9 @@ module Invoice_Sdk
         :'last_update' => :'Time',
         :'date_sent' => :'Time',
         :'documents' => :'Array<DocumentData>',
-        :'meta_data' => :'Hash<String, String>'
+        :'encoding' => :'String',
+        :'meta_data' => :'Hash<String, String>',
+        :'company' => :'Company'
       }
     end
 
@@ -119,7 +150,7 @@ module Invoice_Sdk
         :'last_update',
         :'date_sent',
         :'documents',
-        :'meta_data'
+        :'meta_data',
       ])
     end
 
@@ -196,10 +227,18 @@ module Invoice_Sdk
         end
       end
 
+      if attributes.key?(:'encoding')
+        self.encoding = attributes[:'encoding']
+      end
+
       if attributes.key?(:'meta_data')
         if (value = attributes[:'meta_data']).is_a?(Hash)
           self.meta_data = value
         end
+      end
+
+      if attributes.key?(:'company')
+        self.company = attributes[:'company']
       end
     end
 
@@ -215,7 +254,19 @@ module Invoice_Sdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      encoding_validator = EnumAttributeValidator.new('String', ["Xml", "Base64"])
+      return false unless encoding_validator.valid?(@encoding)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] encoding Object to be assigned
+    def encoding=(encoding)
+      validator = EnumAttributeValidator.new('String', ["Xml", "Base64"])
+      unless validator.valid?(encoding)
+        fail ArgumentError, "invalid value for \"encoding\", must be one of #{validator.allowable_values}."
+      end
+      @encoding = encoding
     end
 
     # Checks equality by comparing each attribute.
@@ -237,7 +288,9 @@ module Invoice_Sdk
           last_update == o.last_update &&
           date_sent == o.date_sent &&
           documents == o.documents &&
-          meta_data == o.meta_data
+          encoding == o.encoding &&
+          meta_data == o.meta_data &&
+          company == o.company
     end
 
     # @see the `==` method
@@ -249,7 +302,7 @@ module Invoice_Sdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, created, version, user_id, company_id, committente, prestatore, identifier, file_name, format, payload, last_update, date_sent, documents, meta_data].hash
+      [id, created, version, user_id, company_id, committente, prestatore, identifier, file_name, format, payload, last_update, date_sent, documents, encoding, meta_data, company].hash
     end
 
     # Builds the object from hash

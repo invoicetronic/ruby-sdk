@@ -35,8 +35,8 @@ end
 
 api_instance = Invoice_Sdk::WebhookApi.new
 opts = {
-  page: 56, # Integer | Page number.
-  page_size: 56 # Integer | Items per page.
+  page: 56, # Integer | Page number. Defaults to 1.
+  page_size: 56 # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
 }
 
 begin
@@ -70,8 +70,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Page number. | [optional][default to 1] |
-| **page_size** | **Integer** | Items per page. | [optional][default to 100] |
+| **page** | **Integer** | Page number. Defaults to 1. | [optional][default to 1] |
+| **page_size** | **Integer** | Items per page. Defaults to 50. Cannot be greater than 200. | [optional][default to 100] |
 
 ### Return type
 
@@ -108,7 +108,7 @@ Invoice_Sdk.configure do |config|
 end
 
 api_instance = Invoice_Sdk::WebhookApi.new
-id = 56 # Integer | Item id.
+id = 56 # Integer | Item id
 
 begin
   # Delete a webhook by id
@@ -141,7 +141,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **Integer** | Item id. |  |
+| **id** | **Integer** | Item id |  |
 
 ### Return type
 
@@ -178,7 +178,7 @@ Invoice_Sdk.configure do |config|
 end
 
 api_instance = Invoice_Sdk::WebhookApi.new
-id = 56 # Integer | Item id.
+id = 56 # Integer | Item id
 
 begin
   # Get a webhook by id
@@ -211,7 +211,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **Integer** | Item id. |  |
+| **id** | **Integer** | Item id |  |
 
 ### Return type
 
@@ -387,8 +387,8 @@ end
 
 api_instance = Invoice_Sdk::WebhookApi.new
 opts = {
-  page: 56, # Integer | Page number.
-  page_size: 56 # Integer | Items per page.
+  page: 56, # Integer | Page number. Defaults to 1.
+  page_size: 56 # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
 }
 
 begin
@@ -422,8 +422,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Page number. | [optional][default to 1] |
-| **page_size** | **Integer** | Items per page. | [optional][default to 100] |
+| **page** | **Integer** | Page number. Defaults to 1. | [optional][default to 1] |
+| **page_size** | **Integer** | Items per page. Defaults to 50. Cannot be greater than 200. | [optional][default to 100] |
 
 ### Return type
 
@@ -458,7 +458,7 @@ Invoice_Sdk.configure do |config|
 end
 
 api_instance = Invoice_Sdk::WebhookApi.new
-id = 56 # Integer | Item id.
+id = 56 # Integer | Item id
 
 begin
   # Get a webhook history item by id
@@ -491,7 +491,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **Integer** | Item id. |  |
+| **id** | **Integer** | Item id |  |
 
 ### Return type
 

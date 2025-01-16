@@ -31,11 +31,11 @@ end
 
 api_instance = Invoice_Sdk::ReceiveApi.new
 opts = {
-  company_id: 56, # Integer | Company id.
+  company_id: 56, # Integer | Company id
   identifier: 'identifier_example', # String | SDI identifier.
   unread: true, # Boolean | Unread items only.
-  committente: 'committente_example', # String | VAT number or fiscal code.
-  prestatore: 'prestatore_example', # String | VAT number or fiscal code.
+  committente: 'committente_example', # String | Vat number or fiscal code.
+  prestatore: 'prestatore_example', # String | Vat number or fiscal code.
   file_name: 'file_name_example', # String | File name.
   last_update_from: Time.parse('2013-10-20T19:20:30+01:00'), # Time | UTC ISO 8601 (2024-11-29T12:34:56Z)
   last_update_to: Time.parse('2013-10-20T19:20:30+01:00'), # Time | UTC ISO 8601 (2024-11-29T12:34:56Z)
@@ -44,8 +44,8 @@ opts = {
   document_date_from: Time.parse('2013-10-20T19:20:30+01:00'), # Time | UTC ISO 8601 (2024-11-29T12:34:56Z)
   document_date_to: Time.parse('2013-10-20T19:20:30+01:00'), # Time | UTC ISO 8601 (2024-11-29T12:34:56Z)
   document_number: 'document_number_example', # String | Document number.
-  page: 56, # Integer | Page number.
-  page_size: 56 # Integer | Items per page.
+  page: 56, # Integer | Page number. Defaults to 1.
+  page_size: 56 # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
 }
 
 begin
@@ -79,11 +79,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **company_id** | **Integer** | Company id. | [optional] |
+| **company_id** | **Integer** | Company id | [optional] |
 | **identifier** | **String** | SDI identifier. | [optional] |
 | **unread** | **Boolean** | Unread items only. | [optional] |
-| **committente** | **String** | VAT number or fiscal code. | [optional] |
-| **prestatore** | **String** | VAT number or fiscal code. | [optional] |
+| **committente** | **String** | Vat number or fiscal code. | [optional] |
+| **prestatore** | **String** | Vat number or fiscal code. | [optional] |
 | **file_name** | **String** | File name. | [optional] |
 | **last_update_from** | **Time** | UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **last_update_to** | **Time** | UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
@@ -92,8 +92,8 @@ end
 | **document_date_from** | **Time** | UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **document_date_to** | **Time** | UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **document_number** | **String** | Document number. | [optional] |
-| **page** | **Integer** | Page number. | [optional][default to 1] |
-| **page_size** | **Integer** | Items per page. | [optional][default to 100] |
+| **page** | **Integer** | Page number. Defaults to 1. | [optional][default to 1] |
+| **page_size** | **Integer** | Items per page. Defaults to 50. Cannot be greater than 200. | [optional][default to 100] |
 
 ### Return type
 
@@ -130,7 +130,7 @@ Invoice_Sdk.configure do |config|
 end
 
 api_instance = Invoice_Sdk::ReceiveApi.new
-id = 56 # Integer | Item id.
+id = 56 # Integer | Item id
 
 begin
   # Delete an incoming invoice by id
@@ -163,7 +163,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **Integer** | Item id. |  |
+| **id** | **Integer** | Item id |  |
 
 ### Return type
 
@@ -200,7 +200,7 @@ Invoice_Sdk.configure do |config|
 end
 
 api_instance = Invoice_Sdk::ReceiveApi.new
-id = 56 # Integer | Item id.
+id = 56 # Integer | Item id
 
 begin
   # Get an incoming invoice by id
@@ -233,7 +233,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **Integer** | Item id. |  |
+| **id** | **Integer** | Item id |  |
 
 ### Return type
 

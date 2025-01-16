@@ -1,7 +1,7 @@
 =begin
 #Italian eInvoice API
 
-#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
 
 The version of the OpenAPI document: 1.0.0
 Contact: support@invoicetronic.com
@@ -23,6 +23,12 @@ module Invoice_Sdk
 
     # Row version, for optimistic concurrency. It is set automatically.
     attr_accessor :version
+
+    # User id.
+    attr_accessor :user_id
+
+    # Api key id.
+    attr_accessor :api_key_id
 
     # Company id.
     attr_accessor :company_id
@@ -48,20 +54,11 @@ module Invoice_Sdk
     # Response error.
     attr_accessor :error
 
-    # Request payload. It is guaranteed to be cyphered at rest.
-    attr_accessor :request_body
-
-    # Response payload. It is guaranteed to be cyphered at rest.
-    attr_accessor :response_body
-
     # Wether the request was successful.
     attr_accessor :success
 
-    # User id.
-    attr_accessor :user_id
-
-    # Api key id.
-    attr_accessor :api_key_id
+    # Response payload. It is guaranteed to be cyphered at rest.
+    attr_accessor :response_body
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -69,6 +66,8 @@ module Invoice_Sdk
         :'id' => :'id',
         :'created' => :'created',
         :'version' => :'version',
+        :'user_id' => :'user_id',
+        :'api_key_id' => :'api_key_id',
         :'company_id' => :'company_id',
         :'method' => :'method',
         :'query' => :'query',
@@ -77,11 +76,8 @@ module Invoice_Sdk
         :'status_code' => :'status_code',
         :'date_time' => :'date_time',
         :'error' => :'error',
-        :'request_body' => :'request_body',
-        :'response_body' => :'response_body',
         :'success' => :'success',
-        :'user_id' => :'user_id',
-        :'api_key_id' => :'api_key_id'
+        :'response_body' => :'response_body'
       }
     end
 
@@ -96,6 +92,8 @@ module Invoice_Sdk
         :'id' => :'Integer',
         :'created' => :'Time',
         :'version' => :'Integer',
+        :'user_id' => :'Integer',
+        :'api_key_id' => :'Integer',
         :'company_id' => :'Integer',
         :'method' => :'String',
         :'query' => :'String',
@@ -104,11 +102,8 @@ module Invoice_Sdk
         :'status_code' => :'Integer',
         :'date_time' => :'Time',
         :'error' => :'String',
-        :'request_body' => :'String',
-        :'response_body' => :'String',
         :'success' => :'Boolean',
-        :'user_id' => :'Integer',
-        :'api_key_id' => :'Integer'
+        :'response_body' => :'String'
       }
     end
 
@@ -120,8 +115,7 @@ module Invoice_Sdk
         :'query',
         :'endpoint',
         :'error',
-        :'request_body',
-        :'response_body',
+        :'response_body'
       ])
     end
 
@@ -150,6 +144,14 @@ module Invoice_Sdk
 
       if attributes.key?(:'version')
         self.version = attributes[:'version']
+      end
+
+      if attributes.key?(:'user_id')
+        self.user_id = attributes[:'user_id']
+      end
+
+      if attributes.key?(:'api_key_id')
+        self.api_key_id = attributes[:'api_key_id']
       end
 
       if attributes.key?(:'company_id')
@@ -184,24 +186,12 @@ module Invoice_Sdk
         self.error = attributes[:'error']
       end
 
-      if attributes.key?(:'request_body')
-        self.request_body = attributes[:'request_body']
-      end
-
-      if attributes.key?(:'response_body')
-        self.response_body = attributes[:'response_body']
-      end
-
       if attributes.key?(:'success')
         self.success = attributes[:'success']
       end
 
-      if attributes.key?(:'user_id')
-        self.user_id = attributes[:'user_id']
-      end
-
-      if attributes.key?(:'api_key_id')
-        self.api_key_id = attributes[:'api_key_id']
+      if attributes.key?(:'response_body')
+        self.response_body = attributes[:'response_body']
       end
     end
 
@@ -228,6 +218,8 @@ module Invoice_Sdk
           id == o.id &&
           created == o.created &&
           version == o.version &&
+          user_id == o.user_id &&
+          api_key_id == o.api_key_id &&
           company_id == o.company_id &&
           method == o.method &&
           query == o.query &&
@@ -236,11 +228,8 @@ module Invoice_Sdk
           status_code == o.status_code &&
           date_time == o.date_time &&
           error == o.error &&
-          request_body == o.request_body &&
-          response_body == o.response_body &&
           success == o.success &&
-          user_id == o.user_id &&
-          api_key_id == o.api_key_id
+          response_body == o.response_body
     end
 
     # @see the `==` method
@@ -252,7 +241,7 @@ module Invoice_Sdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, created, version, company_id, method, query, endpoint, api_version, status_code, date_time, error, request_body, response_body, success, user_id, api_key_id].hash
+      [id, created, version, user_id, api_key_id, company_id, method, query, endpoint, api_version, status_code, date_time, error, success, response_body].hash
     end
 
     # Builds the object from hash

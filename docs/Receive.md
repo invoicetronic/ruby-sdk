@@ -18,7 +18,9 @@
 | **last_update** | **Time** | Last update from SDI. | [optional] |
 | **date_sent** | **Time** | When the invoice was sent to SDI. | [optional] |
 | **documents** | [**Array&lt;DocumentData&gt;**](DocumentData.md) | The invoices included in the payload. This is set by the system, based on the xml content. | [optional] |
+| **encoding** | **String** | Whether the payload is Base64 encoded or a plain XML (text). | [optional] |
 | **is_read** | **Boolean** | Wether the invoice has been read at least once. | [optional] |
+| **message_id** | **String** | SDI message id. | [optional] |
 
 ## Example
 
@@ -40,7 +42,9 @@ instance = Invoice_Sdk::Receive.new(
   last_update: null,
   date_sent: null,
   documents: null,
-  is_read: null
+  encoding: null,
+  is_read: null,
+  message_id: null
 )
 ```
 

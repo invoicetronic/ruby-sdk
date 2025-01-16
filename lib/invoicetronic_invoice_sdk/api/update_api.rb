@@ -1,7 +1,7 @@
 =begin
 #Italian eInvoice API
 
-#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
 
 The version of the OpenAPI document: 1.0.0
 Contact: support@invoicetronic.com
@@ -22,17 +22,17 @@ module Invoice_Sdk
     # List updates
     # Updates are notifications that are sent by the SDI about the status of sent invoices.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :company_id Company id.
+    # @option opts [Integer] :company_id Company id
     # @option opts [String] :identifier SDI identifier.
-    # @option opts [Boolean] :unread Only unread items.
+    # @option opts [Boolean] :unread Unread items only.
     # @option opts [Integer] :send_id Send item&#39;s id.
     # @option opts [String] :state SDI state
     # @option opts [Time] :last_update_from UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [Time] :last_update_to UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [Time] :date_sent_from UTC ISO 8601 (2024-11-29T12:34:56Z)
-    # @option opts [Time] :date_sent_to UTC ISO 8601 format (2024-11-29T12:34:56Z)
-    # @option opts [Integer] :page Page number. (default to 1)
-    # @option opts [Integer] :page_size Items per page. (default to 100)
+    # @option opts [Time] :date_sent_to UTC ISO 8601 (2024-11-29T12:34:56Z)
+    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
     # @return [Array<Update>]
     def invoice_v1_update_get(opts = {})
       data, _status_code, _headers = invoice_v1_update_get_with_http_info(opts)
@@ -42,17 +42,17 @@ module Invoice_Sdk
     # List updates
     # Updates are notifications that are sent by the SDI about the status of sent invoices.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :company_id Company id.
+    # @option opts [Integer] :company_id Company id
     # @option opts [String] :identifier SDI identifier.
-    # @option opts [Boolean] :unread Only unread items.
+    # @option opts [Boolean] :unread Unread items only.
     # @option opts [Integer] :send_id Send item&#39;s id.
     # @option opts [String] :state SDI state
     # @option opts [Time] :last_update_from UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [Time] :last_update_to UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [Time] :date_sent_from UTC ISO 8601 (2024-11-29T12:34:56Z)
-    # @option opts [Time] :date_sent_to UTC ISO 8601 format (2024-11-29T12:34:56Z)
-    # @option opts [Integer] :page Page number. (default to 1)
-    # @option opts [Integer] :page_size Items per page. (default to 100)
+    # @option opts [Time] :date_sent_to UTC ISO 8601 (2024-11-29T12:34:56Z)
+    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
     # @return [Array<(Array<Update>, Integer, Hash)>] Array<Update> data, response status code and response headers
     def invoice_v1_update_get_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -115,7 +115,7 @@ module Invoice_Sdk
 
     # Get an update by id
     # Updates are notifications that are sent by the SDI about the status of sent invoices.
-    # @param id [Integer] Item id.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [Update]
     def invoice_v1_update_id_get(id, opts = {})
@@ -125,7 +125,7 @@ module Invoice_Sdk
 
     # Get an update by id
     # Updates are notifications that are sent by the SDI about the status of sent invoices.
-    # @param id [Integer] Item id.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [Array<(Update, Integer, Hash)>] Update data, response status code and response headers
     def invoice_v1_update_id_get_with_http_info(id, opts = {})

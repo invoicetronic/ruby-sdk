@@ -1,7 +1,7 @@
 =begin
 #Italian eInvoice API
 
-#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
 
 The version of the OpenAPI document: 1.0.0
 Contact: support@invoicetronic.com
@@ -22,8 +22,8 @@ module Invoice_Sdk
     # List webhooks
     # Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Page number. (default to 1)
-    # @option opts [Integer] :page_size Items per page. (default to 100)
+    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
     # @return [Array<WebHook>]
     def invoice_v1_webhook_get(opts = {})
       data, _status_code, _headers = invoice_v1_webhook_get_with_http_info(opts)
@@ -33,8 +33,8 @@ module Invoice_Sdk
     # List webhooks
     # Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Page number. (default to 1)
-    # @option opts [Integer] :page_size Items per page. (default to 100)
+    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
     # @return [Array<(Array<WebHook>, Integer, Hash)>] Array<WebHook> data, response status code and response headers
     def invoice_v1_webhook_get_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -84,7 +84,7 @@ module Invoice_Sdk
 
     # Delete a webhook by id
     # Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
-    # @param id [Integer] Item id.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [WebHook]
     def invoice_v1_webhook_id_delete(id, opts = {})
@@ -94,7 +94,7 @@ module Invoice_Sdk
 
     # Delete a webhook by id
     # Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
-    # @param id [Integer] Item id.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [Array<(WebHook, Integer, Hash)>] WebHook data, response status code and response headers
     def invoice_v1_webhook_id_delete_with_http_info(id, opts = {})
@@ -147,7 +147,7 @@ module Invoice_Sdk
 
     # Get a webhook by id
     # Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
-    # @param id [Integer] Item id.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [WebHook]
     def invoice_v1_webhook_id_get(id, opts = {})
@@ -157,7 +157,7 @@ module Invoice_Sdk
 
     # Get a webhook by id
     # Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
-    # @param id [Integer] Item id.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [Array<(WebHook, Integer, Hash)>] WebHook data, response status code and response headers
     def invoice_v1_webhook_id_get_with_http_info(id, opts = {})
@@ -346,8 +346,8 @@ module Invoice_Sdk
 
     # List webhook history items
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Page number. (default to 1)
-    # @option opts [Integer] :page_size Items per page. (default to 100)
+    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
     # @return [Array<WebHookHistory>]
     def invoice_v1_webhookhistory_get(opts = {})
       data, _status_code, _headers = invoice_v1_webhookhistory_get_with_http_info(opts)
@@ -356,8 +356,8 @@ module Invoice_Sdk
 
     # List webhook history items
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Page number. (default to 1)
-    # @option opts [Integer] :page_size Items per page. (default to 100)
+    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
     # @return [Array<(Array<WebHookHistory>, Integer, Hash)>] Array<WebHookHistory> data, response status code and response headers
     def invoice_v1_webhookhistory_get_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -406,7 +406,7 @@ module Invoice_Sdk
     end
 
     # Get a webhook history item by id
-    # @param id [Integer] Item id.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [WebHookHistory]
     def invoice_v1_webhookhistory_id_get(id, opts = {})
@@ -415,7 +415,7 @@ module Invoice_Sdk
     end
 
     # Get a webhook history item by id
-    # @param id [Integer] Item id.
+    # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
     # @return [Array<(WebHookHistory, Integer, Hash)>] WebHookHistory data, response status code and response headers
     def invoice_v1_webhookhistory_id_get_with_http_info(id, opts = {})

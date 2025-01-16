@@ -1,7 +1,7 @@
 =begin
 #Italian eInvoice API
 
-#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while still providing complete control over the invoice send/receive process. The API also provides advanced features and a rich toolchain, such as invoice validation, multiple upload methods, webhooks, event logs, CORS support, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
+#The Italian eInvoice API is a RESTful API that allows you to send and receive invoices through the Italian [Servizio di Interscambio (SDI)][1], or Interchange Service. The API is designed by Invoicetronic to be simple and easy to use, abstracting away SDI complexity while providing complete control over the invoice send/receive process. The API also provides advanced features as encryption at rest, invoice validation, multiple upload formats, webhooks, event logging, client SDKs for commonly used languages, and CLI tools.  For more information, see  [Invoicetronic website][2]  [1]: https://www.fatturapa.gov.it/it/sistemainterscambio/cose-il-sdi/ [2]: https://invoicetronic.com/
 
 The version of the OpenAPI document: 1.0.0
 Contact: support@invoicetronic.com
@@ -37,12 +37,6 @@ module Invoice_Sdk
     # Status code.
     attr_accessor :status_code
 
-    # Webhook request body.
-    attr_accessor :request_body
-
-    # Webhook response body.
-    attr_accessor :response_body
-
     # Date and time of the request.
     attr_accessor :date_time
 
@@ -59,8 +53,6 @@ module Invoice_Sdk
         :'user_id' => :'user_id',
         :'event' => :'event',
         :'status_code' => :'status_code',
-        :'request_body' => :'request_body',
-        :'response_body' => :'response_body',
         :'date_time' => :'date_time',
         :'success' => :'success'
       }
@@ -81,8 +73,6 @@ module Invoice_Sdk
         :'user_id' => :'Integer',
         :'event' => :'String',
         :'status_code' => :'Integer',
-        :'request_body' => :'String',
-        :'response_body' => :'String',
         :'date_time' => :'Time',
         :'success' => :'Boolean'
       }
@@ -92,8 +82,6 @@ module Invoice_Sdk
     def self.openapi_nullable
       Set.new([
         :'event',
-        :'request_body',
-        :'response_body',
       ])
     end
 
@@ -140,14 +128,6 @@ module Invoice_Sdk
         self.status_code = attributes[:'status_code']
       end
 
-      if attributes.key?(:'request_body')
-        self.request_body = attributes[:'request_body']
-      end
-
-      if attributes.key?(:'response_body')
-        self.response_body = attributes[:'response_body']
-      end
-
       if attributes.key?(:'date_time')
         self.date_time = attributes[:'date_time']
       end
@@ -184,8 +164,6 @@ module Invoice_Sdk
           user_id == o.user_id &&
           event == o.event &&
           status_code == o.status_code &&
-          request_body == o.request_body &&
-          response_body == o.response_body &&
           date_time == o.date_time &&
           success == o.success
     end
@@ -199,7 +177,7 @@ module Invoice_Sdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, created, version, web_hook_id, user_id, event, status_code, request_body, response_body, date_time, success].hash
+      [id, created, version, web_hook_id, user_id, event, status_code, date_time, success].hash
     end
 
     # Builds the object from hash

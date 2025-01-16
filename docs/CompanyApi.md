@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost*
 
 List companies
 
-Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
 
 ### Examples
 
@@ -33,8 +33,8 @@ end
 
 api_instance = Invoice_Sdk::CompanyApi.new
 opts = {
-  page: 56, # Integer | Page number.
-  page_size: 56 # Integer | Items per page.
+  page: 56, # Integer | Page number. Defaults to 1.
+  page_size: 56 # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
 }
 
 begin
@@ -68,8 +68,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Page number. | [optional][default to 1] |
-| **page_size** | **Integer** | Items per page. | [optional][default to 100] |
+| **page** | **Integer** | Page number. Defaults to 1. | [optional][default to 1] |
+| **page_size** | **Integer** | Items per page. Defaults to 50. Cannot be greater than 200. | [optional][default to 100] |
 
 ### Return type
 
@@ -91,7 +91,7 @@ end
 
 Delete a company
 
-Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
 
 ### Examples
 
@@ -106,7 +106,7 @@ Invoice_Sdk.configure do |config|
 end
 
 api_instance = Invoice_Sdk::CompanyApi.new
-id = 56 # Integer | Item id.
+id = 56 # Integer | Item id
 
 begin
   # Delete a company
@@ -139,7 +139,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **Integer** | Item id. |  |
+| **id** | **Integer** | Item id |  |
 
 ### Return type
 
@@ -161,7 +161,7 @@ end
 
 Get a company by id
 
-Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
 
 ### Examples
 
@@ -176,7 +176,7 @@ Invoice_Sdk.configure do |config|
 end
 
 api_instance = Invoice_Sdk::CompanyApi.new
-id = 56 # Integer | Item id.
+id = 56 # Integer | Item id
 
 begin
   # Get a company by id
@@ -209,7 +209,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **Integer** | Item id. |  |
+| **id** | **Integer** | Item id |  |
 
 ### Return type
 
@@ -231,7 +231,7 @@ end
 
 Add a company
 
-Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
 
 ### Examples
 
@@ -301,7 +301,7 @@ end
 
 Update a company
 
-Companies are the entities that send and receive invoices. At least one company is required in order to send and receive invoices.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
 
 ### Examples
 
