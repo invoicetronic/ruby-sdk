@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**invoice_v1_receive_get**](ReceiveApi.md#invoice_v1_receive_get) | **GET** /invoice/v1/receive | List incoming invoices |
-| [**invoice_v1_receive_id_delete**](ReceiveApi.md#invoice_v1_receive_id_delete) | **DELETE** /invoice/v1/receive/{id} | Delete an incoming invoice by id |
-| [**invoice_v1_receive_id_get**](ReceiveApi.md#invoice_v1_receive_id_get) | **GET** /invoice/v1/receive/{id} | Get an incoming invoice by id |
+| [**receive_get**](ReceiveApi.md#receive_get) | **GET** /receive | List incoming invoices |
+| [**receive_id_delete**](ReceiveApi.md#receive_id_delete) | **DELETE** /receive/{id} | Delete an incoming invoice by id |
+| [**receive_id_get**](ReceiveApi.md#receive_id_get) | **GET** /receive/{id} | Get an incoming invoice by id |
 
 
-## invoice_v1_receive_get
+## receive_get
 
-> <Array<Receive>> invoice_v1_receive_get(opts)
+> <Array<Receive>> receive_get(opts)
 
 List incoming invoices
 
@@ -45,33 +45,34 @@ opts = {
   document_date_to: Time.parse('2013-10-20T19:20:30+01:00'), # Time | UTC ISO 8601 (2024-11-29T12:34:56Z)
   document_number: 'document_number_example', # String | Document number.
   page: 56, # Integer | Page number. Defaults to 1.
-  page_size: 56 # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+  page_size: 56, # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+  sort: 'sort_example' # String | Sort by field. Prefix with '-' for descending order.
 }
 
 begin
   # List incoming invoices
-  result = api_instance.invoice_v1_receive_get(opts)
+  result = api_instance.receive_get(opts)
   p result
 rescue Invoice_Sdk::ApiError => e
-  puts "Error when calling ReceiveApi->invoice_v1_receive_get: #{e}"
+  puts "Error when calling ReceiveApi->receive_get: #{e}"
 end
 ```
 
-#### Using the invoice_v1_receive_get_with_http_info variant
+#### Using the receive_get_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<Receive>>, Integer, Hash)> invoice_v1_receive_get_with_http_info(opts)
+> <Array(<Array<Receive>>, Integer, Hash)> receive_get_with_http_info(opts)
 
 ```ruby
 begin
   # List incoming invoices
-  data, status_code, headers = api_instance.invoice_v1_receive_get_with_http_info(opts)
+  data, status_code, headers = api_instance.receive_get_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<Receive>>
 rescue Invoice_Sdk::ApiError => e
-  puts "Error when calling ReceiveApi->invoice_v1_receive_get_with_http_info: #{e}"
+  puts "Error when calling ReceiveApi->receive_get_with_http_info: #{e}"
 end
 ```
 
@@ -94,6 +95,7 @@ end
 | **document_number** | **String** | Document number. | [optional] |
 | **page** | **Integer** | Page number. Defaults to 1. | [optional][default to 1] |
 | **page_size** | **Integer** | Items per page. Defaults to 50. Cannot be greater than 200. | [optional][default to 100] |
+| **sort** | **String** | Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
 
 ### Return type
 
@@ -109,9 +111,9 @@ end
 - **Accept**: application/json
 
 
-## invoice_v1_receive_id_delete
+## receive_id_delete
 
-> <Receive> invoice_v1_receive_id_delete(id)
+> <Receive> receive_id_delete(id)
 
 Delete an incoming invoice by id
 
@@ -134,28 +136,28 @@ id = 56 # Integer | Item id
 
 begin
   # Delete an incoming invoice by id
-  result = api_instance.invoice_v1_receive_id_delete(id)
+  result = api_instance.receive_id_delete(id)
   p result
 rescue Invoice_Sdk::ApiError => e
-  puts "Error when calling ReceiveApi->invoice_v1_receive_id_delete: #{e}"
+  puts "Error when calling ReceiveApi->receive_id_delete: #{e}"
 end
 ```
 
-#### Using the invoice_v1_receive_id_delete_with_http_info variant
+#### Using the receive_id_delete_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Receive>, Integer, Hash)> invoice_v1_receive_id_delete_with_http_info(id)
+> <Array(<Receive>, Integer, Hash)> receive_id_delete_with_http_info(id)
 
 ```ruby
 begin
   # Delete an incoming invoice by id
-  data, status_code, headers = api_instance.invoice_v1_receive_id_delete_with_http_info(id)
+  data, status_code, headers = api_instance.receive_id_delete_with_http_info(id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Receive>
 rescue Invoice_Sdk::ApiError => e
-  puts "Error when calling ReceiveApi->invoice_v1_receive_id_delete_with_http_info: #{e}"
+  puts "Error when calling ReceiveApi->receive_id_delete_with_http_info: #{e}"
 end
 ```
 
@@ -179,9 +181,9 @@ end
 - **Accept**: application/json
 
 
-## invoice_v1_receive_id_get
+## receive_id_get
 
-> <Receive> invoice_v1_receive_id_get(id)
+> <Receive> receive_id_get(id)
 
 Get an incoming invoice by id
 
@@ -204,28 +206,28 @@ id = 56 # Integer | Item id
 
 begin
   # Get an incoming invoice by id
-  result = api_instance.invoice_v1_receive_id_get(id)
+  result = api_instance.receive_id_get(id)
   p result
 rescue Invoice_Sdk::ApiError => e
-  puts "Error when calling ReceiveApi->invoice_v1_receive_id_get: #{e}"
+  puts "Error when calling ReceiveApi->receive_id_get: #{e}"
 end
 ```
 
-#### Using the invoice_v1_receive_id_get_with_http_info variant
+#### Using the receive_id_get_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Receive>, Integer, Hash)> invoice_v1_receive_id_get_with_http_info(id)
+> <Array(<Receive>, Integer, Hash)> receive_id_get_with_http_info(id)
 
 ```ruby
 begin
   # Get an incoming invoice by id
-  data, status_code, headers = api_instance.invoice_v1_receive_id_get_with_http_info(id)
+  data, status_code, headers = api_instance.receive_id_get_with_http_info(id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Receive>
 rescue Invoice_Sdk::ApiError => e
-  puts "Error when calling ReceiveApi->invoice_v1_receive_id_get_with_http_info: #{e}"
+  puts "Error when calling ReceiveApi->receive_id_get_with_http_info: #{e}"
 end
 ```
 

@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**invoice_v1_update_get**](UpdateApi.md#invoice_v1_update_get) | **GET** /invoice/v1/update | List updates |
-| [**invoice_v1_update_id_get**](UpdateApi.md#invoice_v1_update_id_get) | **GET** /invoice/v1/update/{id} | Get an update by id |
+| [**update_get**](UpdateApi.md#update_get) | **GET** /update | List updates |
+| [**update_id_get**](UpdateApi.md#update_id_get) | **GET** /update/{id} | Get an update by id |
 
 
-## invoice_v1_update_get
+## update_get
 
-> <Array<Update>> invoice_v1_update_get(opts)
+> <Array<Update>> update_get(opts)
 
 List updates
 
@@ -40,33 +40,34 @@ opts = {
   date_sent_from: Time.parse('2013-10-20T19:20:30+01:00'), # Time | UTC ISO 8601 (2024-11-29T12:34:56Z)
   date_sent_to: Time.parse('2013-10-20T19:20:30+01:00'), # Time | UTC ISO 8601 (2024-11-29T12:34:56Z)
   page: 56, # Integer | Page number. Defaults to 1.
-  page_size: 56 # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+  page_size: 56, # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+  sort: 'sort_example' # String | Sort by field. Prefix with '-' for descending order.
 }
 
 begin
   # List updates
-  result = api_instance.invoice_v1_update_get(opts)
+  result = api_instance.update_get(opts)
   p result
 rescue Invoice_Sdk::ApiError => e
-  puts "Error when calling UpdateApi->invoice_v1_update_get: #{e}"
+  puts "Error when calling UpdateApi->update_get: #{e}"
 end
 ```
 
-#### Using the invoice_v1_update_get_with_http_info variant
+#### Using the update_get_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<Update>>, Integer, Hash)> invoice_v1_update_get_with_http_info(opts)
+> <Array(<Array<Update>>, Integer, Hash)> update_get_with_http_info(opts)
 
 ```ruby
 begin
   # List updates
-  data, status_code, headers = api_instance.invoice_v1_update_get_with_http_info(opts)
+  data, status_code, headers = api_instance.update_get_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<Update>>
 rescue Invoice_Sdk::ApiError => e
-  puts "Error when calling UpdateApi->invoice_v1_update_get_with_http_info: #{e}"
+  puts "Error when calling UpdateApi->update_get_with_http_info: #{e}"
 end
 ```
 
@@ -85,6 +86,7 @@ end
 | **date_sent_to** | **Time** | UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **page** | **Integer** | Page number. Defaults to 1. | [optional][default to 1] |
 | **page_size** | **Integer** | Items per page. Defaults to 50. Cannot be greater than 200. | [optional][default to 100] |
+| **sort** | **String** | Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
 
 ### Return type
 
@@ -100,9 +102,9 @@ end
 - **Accept**: application/json
 
 
-## invoice_v1_update_id_get
+## update_id_get
 
-> <Update> invoice_v1_update_id_get(id)
+> <Update> update_id_get(id)
 
 Get an update by id
 
@@ -125,28 +127,28 @@ id = 56 # Integer | Item id
 
 begin
   # Get an update by id
-  result = api_instance.invoice_v1_update_id_get(id)
+  result = api_instance.update_id_get(id)
   p result
 rescue Invoice_Sdk::ApiError => e
-  puts "Error when calling UpdateApi->invoice_v1_update_id_get: #{e}"
+  puts "Error when calling UpdateApi->update_id_get: #{e}"
 end
 ```
 
-#### Using the invoice_v1_update_id_get_with_http_info variant
+#### Using the update_id_get_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Update>, Integer, Hash)> invoice_v1_update_id_get_with_http_info(id)
+> <Array(<Update>, Integer, Hash)> update_id_get_with_http_info(id)
 
 ```ruby
 begin
   # Get an update by id
-  data, status_code, headers = api_instance.invoice_v1_update_id_get_with_http_info(id)
+  data, status_code, headers = api_instance.update_id_get_with_http_info(id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Update>
 rescue Invoice_Sdk::ApiError => e
-  puts "Error when calling UpdateApi->invoice_v1_update_id_get_with_http_info: #{e}"
+  puts "Error when calling UpdateApi->update_id_get_with_http_info: #{e}"
 end
 ```
 
