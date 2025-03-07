@@ -1,4 +1,4 @@
-# Invoice_Sdk::UpdateApi
+# Invoicetronic_Sdk::UpdateApi
 
 All URIs are relative to *http://localhost*
 
@@ -14,21 +14,21 @@ All URIs are relative to *http://localhost*
 
 List updates
 
-Updates are notifications that are sent by the SDI about the status of sent invoices.
+Updates are notifications sent by the SDI about the status of invoices you sent.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::UpdateApi.new
+api_instance = Invoicetronic_Sdk::UpdateApi.new
 opts = {
   company_id: 56, # Integer | Company id
   identifier: 'identifier_example', # String | SDI identifier.
@@ -48,7 +48,7 @@ begin
   # List updates
   result = api_instance.update_get(opts)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling UpdateApi->update_get: #{e}"
 end
 ```
@@ -66,7 +66,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<Update>>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling UpdateApi->update_get_with_http_info: #{e}"
 end
 ```
@@ -108,28 +108,28 @@ end
 
 Get an update by id
 
-Updates are notifications that are sent by the SDI about the status of sent invoices.
+Updates are notifications sent by the SDI about the status of invoices you sent.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::UpdateApi.new
+api_instance = Invoicetronic_Sdk::UpdateApi.new
 id = 56 # Integer | Item id
 
 begin
   # Get an update by id
   result = api_instance.update_id_get(id)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling UpdateApi->update_id_get: #{e}"
 end
 ```
@@ -147,7 +147,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Update>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling UpdateApi->update_id_get_with_http_info: #{e}"
 end
 ```

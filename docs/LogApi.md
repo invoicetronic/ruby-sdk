@@ -1,4 +1,4 @@
-# Invoice_Sdk::LogApi
+# Invoicetronic_Sdk::LogApi
 
 All URIs are relative to *http://localhost*
 
@@ -14,21 +14,21 @@ All URIs are relative to *http://localhost*
 
 List events
 
-Every API operation is logged and can be retrieved here.
+Every API operation is logged and can be retrieved here. Log records are preserved for 15 days.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::LogApi.new
+api_instance = Invoicetronic_Sdk::LogApi.new
 opts = {
   company_id: 56, # Integer | Company id
   endpoint: 'endpoint_example', # String | 
@@ -50,7 +50,7 @@ begin
   # List events
   result = api_instance.log_get(opts)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling LogApi->log_get: #{e}"
 end
 ```
@@ -68,7 +68,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<Event>>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling LogApi->log_get_with_http_info: #{e}"
 end
 ```
@@ -112,28 +112,28 @@ end
 
 Get an event by id
 
-Every API operation is logged and can be retrieved here.
+Every API operation is logged and can be retrieved here. Log records are preserved for 15 days.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::LogApi.new
+api_instance = Invoicetronic_Sdk::LogApi.new
 id = 56 # Integer | Item id
 
 begin
   # Get an event by id
   result = api_instance.log_id_get(id)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling LogApi->log_id_get: #{e}"
 end
 ```
@@ -151,7 +151,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Event>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling LogApi->log_id_get_with_http_info: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# Invoice_Sdk::ProblemHttpResult
+# Invoicetronic_Sdk::ProblemHttpResult
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::ProblemHttpResult.new(
+instance = Invoicetronic_Sdk::ProblemHttpResult.new(
   problem_details: null,
   content_type: null,
   status_code: null

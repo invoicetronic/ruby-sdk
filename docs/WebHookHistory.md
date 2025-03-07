@@ -1,4 +1,4 @@
-# Invoice_Sdk::WebHookHistory
+# Invoicetronic_Sdk::WebHookHistory
 
 ## Properties
 
@@ -17,9 +17,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::WebHookHistory.new(
+instance = Invoicetronic_Sdk::WebHookHistory.new(
   id: null,
   created: null,
   version: null,

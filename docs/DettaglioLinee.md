@@ -1,4 +1,4 @@
-# Invoice_Sdk::DettaglioLinee
+# Invoicetronic_Sdk::DettaglioLinee
 
 ## Properties
 
@@ -24,9 +24,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::DettaglioLinee.new(
+instance = Invoicetronic_Sdk::DettaglioLinee.new(
   numero_linea: null,
   tipo_cessione_prestazione: null,
   codice_articolo: null,

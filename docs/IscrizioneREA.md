@@ -1,4 +1,4 @@
-# Invoice_Sdk::IscrizioneREA
+# Invoicetronic_Sdk::IscrizioneREA
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::IscrizioneREA.new(
+instance = Invoicetronic_Sdk::IscrizioneREA.new(
   ufficio: null,
   numero_rea: null,
   capitale_sociale: null,

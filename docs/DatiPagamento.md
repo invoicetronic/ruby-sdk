@@ -1,4 +1,4 @@
-# Invoice_Sdk::DatiPagamento
+# Invoicetronic_Sdk::DatiPagamento
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::DatiPagamento.new(
+instance = Invoicetronic_Sdk::DatiPagamento.new(
   condizioni_pagamento: null,
   dettaglio_pagamento: null
 )

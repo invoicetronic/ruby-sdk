@@ -1,4 +1,4 @@
-# Invoice_Sdk::Event
+# Invoicetronic_Sdk::Event
 
 ## Properties
 
@@ -23,9 +23,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::Event.new(
+instance = Invoicetronic_Sdk::Event.new(
   id: null,
   created: null,
   version: null,

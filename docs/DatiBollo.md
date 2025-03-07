@@ -1,4 +1,4 @@
-# Invoice_Sdk::DatiBollo
+# Invoicetronic_Sdk::DatiBollo
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::DatiBollo.new(
+instance = Invoicetronic_Sdk::DatiBollo.new(
   bollo_virtuale: null,
   importo_bollo: null
 )

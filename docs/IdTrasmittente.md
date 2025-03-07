@@ -1,4 +1,4 @@
-# Invoice_Sdk::IdTrasmittente
+# Invoicetronic_Sdk::IdTrasmittente
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::IdTrasmittente.new(
+instance = Invoicetronic_Sdk::IdTrasmittente.new(
   id_paese: null,
   id_codice: null
 )

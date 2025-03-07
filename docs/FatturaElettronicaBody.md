@@ -1,4 +1,4 @@
-# Invoice_Sdk::FatturaElettronicaBody
+# Invoicetronic_Sdk::FatturaElettronicaBody
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::FatturaElettronicaBody.new(
+instance = Invoicetronic_Sdk::FatturaElettronicaBody.new(
   dati_generali: null,
   dati_beni_servizi: null,
   dati_veicoli: null,

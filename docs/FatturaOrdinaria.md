@@ -1,4 +1,4 @@
-# Invoice_Sdk::FatturaOrdinaria
+# Invoicetronic_Sdk::FatturaOrdinaria
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::FatturaOrdinaria.new(
+instance = Invoicetronic_Sdk::FatturaOrdinaria.new(
   sistema_emittente: null,
   fattura_elettronica_header: null,
   fattura_elettronica_body: null

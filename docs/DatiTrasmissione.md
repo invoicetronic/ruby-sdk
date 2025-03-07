@@ -1,4 +1,4 @@
-# Invoice_Sdk::DatiTrasmissione
+# Invoicetronic_Sdk::DatiTrasmissione
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::DatiTrasmissione.new(
+instance = Invoicetronic_Sdk::DatiTrasmissione.new(
   id_trasmittente: null,
   progressivo_invio: null,
   formato_trasmissione: null,

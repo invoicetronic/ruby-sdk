@@ -1,4 +1,4 @@
-# Invoice_Sdk::CodiceArticolo
+# Invoicetronic_Sdk::CodiceArticolo
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::CodiceArticolo.new(
+instance = Invoicetronic_Sdk::CodiceArticolo.new(
   codice_tipo: null,
   codice_valore: null
 )

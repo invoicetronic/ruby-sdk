@@ -1,4 +1,4 @@
-# Invoice_Sdk::ContattiTrasmittente
+# Invoicetronic_Sdk::ContattiTrasmittente
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::ContattiTrasmittente.new(
+instance = Invoicetronic_Sdk::ContattiTrasmittente.new(
   telefono: null,
   email: null
 )

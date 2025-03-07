@@ -1,4 +1,4 @@
-# Invoice_Sdk::DatiOrdineAcquisto
+# Invoicetronic_Sdk::DatiOrdineAcquisto
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::DatiOrdineAcquisto.new(
+instance = Invoicetronic_Sdk::DatiOrdineAcquisto.new(
   riferimento_numero_linea: null,
   id_documento: null,
   data: null,

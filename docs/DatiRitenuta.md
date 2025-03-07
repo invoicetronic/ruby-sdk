@@ -1,4 +1,4 @@
-# Invoice_Sdk::DatiRitenuta
+# Invoicetronic_Sdk::DatiRitenuta
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::DatiRitenuta.new(
+instance = Invoicetronic_Sdk::DatiRitenuta.new(
   tipo_ritenuta: null,
   importo_ritenuta: null,
   aliquota_ritenuta: null,

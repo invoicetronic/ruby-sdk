@@ -1,4 +1,4 @@
-# Invoice_Sdk::TerzoIntermediarioOSoggettoEmittente
+# Invoicetronic_Sdk::TerzoIntermediarioOSoggettoEmittente
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::TerzoIntermediarioOSoggettoEmittente.new(
+instance = Invoicetronic_Sdk::TerzoIntermediarioOSoggettoEmittente.new(
   dati_anagrafici: null
 )
 ```

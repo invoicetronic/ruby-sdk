@@ -1,4 +1,4 @@
-# Invoice_Sdk::CompanyApi
+# Invoicetronic_Sdk::CompanyApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,21 +17,21 @@ All URIs are relative to *http://localhost*
 
 List companies
 
-Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::CompanyApi.new
+api_instance = Invoicetronic_Sdk::CompanyApi.new
 opts = {
   page: 56, # Integer | Page number. Defaults to 1.
   page_size: 56, # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
@@ -42,7 +42,7 @@ begin
   # List companies
   result = api_instance.company_get(opts)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling CompanyApi->company_get: #{e}"
 end
 ```
@@ -60,7 +60,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<Company>>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling CompanyApi->company_get_with_http_info: #{e}"
 end
 ```
@@ -93,28 +93,28 @@ end
 
 Delete a company
 
-Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::CompanyApi.new
+api_instance = Invoicetronic_Sdk::CompanyApi.new
 id = 56 # Integer | Item id
 
 begin
   # Delete a company
   result = api_instance.company_id_delete(id)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling CompanyApi->company_id_delete: #{e}"
 end
 ```
@@ -132,7 +132,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Company>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling CompanyApi->company_id_delete_with_http_info: #{e}"
 end
 ```
@@ -163,28 +163,28 @@ end
 
 Get a company by id
 
-Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::CompanyApi.new
+api_instance = Invoicetronic_Sdk::CompanyApi.new
 id = 56 # Integer | Item id
 
 begin
   # Get a company by id
   result = api_instance.company_id_get(id)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling CompanyApi->company_id_get: #{e}"
 end
 ```
@@ -202,7 +202,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Company>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling CompanyApi->company_id_get_with_http_info: #{e}"
 end
 ```
@@ -233,28 +233,28 @@ end
 
 Add a company
 
-Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::CompanyApi.new
-company = Invoice_Sdk::Company.new({vat: 'IT01234567891', fiscal_code: 'RSSMRA70A01F205V', name: 'Mario Rossi Srl'}) # Company | 
+api_instance = Invoicetronic_Sdk::CompanyApi.new
+company = Invoicetronic_Sdk::Company.new({vat: 'IT01234567891', fiscal_code: 'RSSMRA70A01F205V', name: 'Mario Rossi Srl'}) # Company | 
 
 begin
   # Add a company
   result = api_instance.company_post(company)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling CompanyApi->company_post: #{e}"
 end
 ```
@@ -272,7 +272,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Company>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling CompanyApi->company_post_with_http_info: #{e}"
 end
 ```
@@ -303,28 +303,28 @@ end
 
 Update a company
 
-Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed. **You can only receive invoices for existing companies**.
+Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::CompanyApi.new
-company = Invoice_Sdk::Company.new({vat: 'IT01234567891', fiscal_code: 'RSSMRA70A01F205V', name: 'Mario Rossi Srl'}) # Company | 
+api_instance = Invoicetronic_Sdk::CompanyApi.new
+company = Invoicetronic_Sdk::Company.new({vat: 'IT01234567891', fiscal_code: 'RSSMRA70A01F205V', name: 'Mario Rossi Srl'}) # Company | 
 
 begin
   # Update a company
   result = api_instance.company_put(company)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling CompanyApi->company_put: #{e}"
 end
 ```
@@ -342,7 +342,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Company>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling CompanyApi->company_put_with_http_info: #{e}"
 end
 ```

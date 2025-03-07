@@ -1,4 +1,4 @@
-# Invoice_Sdk::StabileOrganizzazione
+# Invoicetronic_Sdk::StabileOrganizzazione
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::StabileOrganizzazione.new(
+instance = Invoicetronic_Sdk::StabileOrganizzazione.new(
   indirizzo: null,
   numero_civico: null,
   cap: null,

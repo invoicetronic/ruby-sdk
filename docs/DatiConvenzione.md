@@ -1,4 +1,4 @@
-# Invoice_Sdk::DatiConvenzione
+# Invoicetronic_Sdk::DatiConvenzione
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::DatiConvenzione.new(
+instance = Invoicetronic_Sdk::DatiConvenzione.new(
   riferimento_numero_linea: null,
   id_documento: null,
   data: null,

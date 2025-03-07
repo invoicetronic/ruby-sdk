@@ -1,4 +1,4 @@
-# Invoice_Sdk::Company
+# Invoicetronic_Sdk::Company
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::Company.new(
+instance = Invoicetronic_Sdk::Company.new(
   id: null,
   created: null,
   version: null,

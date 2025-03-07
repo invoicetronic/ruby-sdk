@@ -1,4 +1,4 @@
-# Invoice_Sdk::FatturaElettronicaHeader
+# Invoicetronic_Sdk::FatturaElettronicaHeader
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::FatturaElettronicaHeader.new(
+instance = Invoicetronic_Sdk::FatturaElettronicaHeader.new(
   dati_trasmissione: null,
   cedente_prestatore: null,
   rappresentante_fiscale: null,

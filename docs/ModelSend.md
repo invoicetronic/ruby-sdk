@@ -1,4 +1,4 @@
-# Invoice_Sdk::ModelSend
+# Invoicetronic_Sdk::ModelSend
 
 ## Properties
 
@@ -25,9 +25,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::ModelSend.new(
+instance = Invoicetronic_Sdk::ModelSend.new(
   id: null,
   created: null,
   version: null,

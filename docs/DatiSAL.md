@@ -1,4 +1,4 @@
-# Invoice_Sdk::DatiSAL
+# Invoicetronic_Sdk::DatiSAL
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::DatiSAL.new(
+instance = Invoicetronic_Sdk::DatiSAL.new(
   riferimento_fase: null
 )
 ```

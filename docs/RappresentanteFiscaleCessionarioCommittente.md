@@ -1,4 +1,4 @@
-# Invoice_Sdk::RappresentanteFiscaleCessionarioCommittente
+# Invoicetronic_Sdk::RappresentanteFiscaleCessionarioCommittente
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::RappresentanteFiscaleCessionarioCommittente.new(
+instance = Invoicetronic_Sdk::RappresentanteFiscaleCessionarioCommittente.new(
   denominazione: null,
   nome: null,
   cognome: null,

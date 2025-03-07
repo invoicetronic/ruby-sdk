@@ -1,4 +1,4 @@
-# Invoice_Sdk::IdFiscaleIVA
+# Invoicetronic_Sdk::IdFiscaleIVA
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::IdFiscaleIVA.new(
+instance = Invoicetronic_Sdk::IdFiscaleIVA.new(
   id_paese: null,
   id_codice: null
 )

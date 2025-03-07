@@ -1,4 +1,4 @@
-# Invoice_Sdk::Error
+# Invoicetronic_Sdk::Error
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::Error.new(
+instance = Invoicetronic_Sdk::Error.new(
   code: null,
   description: null,
   hint: null

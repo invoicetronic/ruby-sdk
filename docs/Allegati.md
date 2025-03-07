@@ -1,4 +1,4 @@
-# Invoice_Sdk::Allegati
+# Invoicetronic_Sdk::Allegati
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::Allegati.new(
+instance = Invoicetronic_Sdk::Allegati.new(
   nome_attachment: null,
   algoritmo_compressione: null,
   formato_attachment: null,

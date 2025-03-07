@@ -1,4 +1,4 @@
-# Invoice_Sdk::AltriDatiGestionali
+# Invoicetronic_Sdk::AltriDatiGestionali
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::AltriDatiGestionali.new(
+instance = Invoicetronic_Sdk::AltriDatiGestionali.new(
   tipo_dato: null,
   riferimento_testo: null,
   riferimento_numero: null,

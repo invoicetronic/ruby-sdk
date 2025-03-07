@@ -1,4 +1,4 @@
-# Invoice_Sdk::DatiAnagrafici
+# Invoicetronic_Sdk::DatiAnagrafici
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::DatiAnagrafici.new(
+instance = Invoicetronic_Sdk::DatiAnagrafici.new(
   id_fiscale_iva: null,
   codice_fiscale: null,
   anagrafica: null

@@ -1,4 +1,4 @@
-# Invoice_Sdk::DatiGeneraliDocumento
+# Invoicetronic_Sdk::DatiGeneraliDocumento
 
 ## Properties
 
@@ -20,9 +20,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::DatiGeneraliDocumento.new(
+instance = Invoicetronic_Sdk::DatiGeneraliDocumento.new(
   tipo_documento: null,
   divisa: null,
   data: null,

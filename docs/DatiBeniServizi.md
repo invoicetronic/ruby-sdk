@@ -1,4 +1,4 @@
-# Invoice_Sdk::DatiBeniServizi
+# Invoicetronic_Sdk::DatiBeniServizi
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::DatiBeniServizi.new(
+instance = Invoicetronic_Sdk::DatiBeniServizi.new(
   dettaglio_linee: null,
   dati_riepilogo: null
 )

@@ -1,4 +1,4 @@
-# Invoice_Sdk::SendApi
+# Invoicetronic_Sdk::SendApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,21 +22,21 @@ All URIs are relative to *http://localhost*
 
 Add an invoice by file
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::SendApi.new
+api_instance = Invoicetronic_Sdk::SendApi.new
 file = File.new('/path/to/some/file') # File | 
 opts = {
   validate: true, # Boolean | Validate the document first, and reject it on failure.
@@ -47,7 +47,7 @@ begin
   # Add an invoice by file
   result = api_instance.send_file_post(file, opts)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_file_post: #{e}"
 end
 ```
@@ -65,7 +65,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ModelSend>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_file_post_with_http_info: #{e}"
 end
 ```
@@ -104,15 +104,15 @@ test **markdown**.
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::SendApi.new
+api_instance = Invoicetronic_Sdk::SendApi.new
 opts = {
   company_id: 56, # Integer | Company id
   identifier: 'identifier_example', # String | SDI identifier.
@@ -135,7 +135,7 @@ begin
   # List invoices
   result = api_instance.send_get(opts)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_get: #{e}"
 end
 ```
@@ -153,7 +153,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<ModelSend>>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_get_with_http_info: #{e}"
 end
 ```
@@ -198,28 +198,28 @@ end
 
 Get a invoice by id
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::SendApi.new
+api_instance = Invoicetronic_Sdk::SendApi.new
 id = 56 # Integer | Item id
 
 begin
   # Get a invoice by id
   result = api_instance.send_id_get(id)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_id_get: #{e}"
 end
 ```
@@ -237,7 +237,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ModelSend>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_id_get_with_http_info: #{e}"
 end
 ```
@@ -268,22 +268,22 @@ end
 
 Add an invoice by json
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::SendApi.new
-fattura_ordinaria = Invoice_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
+api_instance = Invoicetronic_Sdk::SendApi.new
+fattura_ordinaria = Invoicetronic_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
 opts = {
   validate: true, # Boolean | Validate the document first, and reject it on failure.
   signature: 'None' # String | Whether to digitally sign the document.
@@ -293,7 +293,7 @@ begin
   # Add an invoice by json
   result = api_instance.send_json_post(fattura_ordinaria, opts)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_json_post: #{e}"
 end
 ```
@@ -311,7 +311,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ModelSend>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_json_post_with_http_info: #{e}"
 end
 ```
@@ -344,22 +344,22 @@ end
 
 Add an invoice
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::SendApi.new
-model_send = Invoice_Sdk::ModelSend.new # ModelSend | 
+api_instance = Invoicetronic_Sdk::SendApi.new
+model_send = Invoicetronic_Sdk::ModelSend.new # ModelSend | 
 opts = {
   validate: true, # Boolean | Validate the document first, and reject it on failure.
   signature: 'None' # String | Whether to digitally sign the document.
@@ -369,7 +369,7 @@ begin
   # Add an invoice
   result = api_instance.send_post(model_send, opts)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_post: #{e}"
 end
 ```
@@ -387,7 +387,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ModelSend>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_post_with_http_info: #{e}"
 end
 ```
@@ -420,27 +420,27 @@ end
 
 Validate an invoice by file
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::SendApi.new
+api_instance = Invoicetronic_Sdk::SendApi.new
 files = [File.new('/path/to/some/file')] # Array<File> | 
 
 begin
   # Validate an invoice by file
   api_instance.send_validate_files_post(files)
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_validate_files_post: #{e}"
 end
 ```
@@ -458,7 +458,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_validate_files_post_with_http_info: #{e}"
 end
 ```
@@ -489,27 +489,27 @@ nil (empty response body)
 
 Validate an invoice by json
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::SendApi.new
-fattura_ordinaria = Invoice_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
+api_instance = Invoicetronic_Sdk::SendApi.new
+fattura_ordinaria = Invoicetronic_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
 
 begin
   # Validate an invoice by json
   api_instance.send_validate_json_post(fattura_ordinaria)
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_validate_json_post: #{e}"
 end
 ```
@@ -527,7 +527,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_validate_json_post_with_http_info: #{e}"
 end
 ```
@@ -558,27 +558,27 @@ nil (empty response body)
 
 Validate an invoice
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::SendApi.new
-model_send = Invoice_Sdk::ModelSend.new # ModelSend | 
+api_instance = Invoicetronic_Sdk::SendApi.new
+model_send = Invoicetronic_Sdk::ModelSend.new # ModelSend | 
 
 begin
   # Validate an invoice
   api_instance.send_validate_post(model_send)
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_validate_post: #{e}"
 end
 ```
@@ -596,7 +596,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_validate_post_with_http_info: #{e}"
 end
 ```
@@ -627,27 +627,27 @@ nil (empty response body)
 
 Validate an invoice by xml
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::SendApi.new
-fattura_ordinaria = Invoice_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
+api_instance = Invoicetronic_Sdk::SendApi.new
+fattura_ordinaria = Invoicetronic_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
 
 begin
   # Validate an invoice by xml
   api_instance.send_validate_xml_post(fattura_ordinaria)
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_validate_xml_post: #{e}"
 end
 ```
@@ -665,7 +665,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_validate_xml_post_with_http_info: #{e}"
 end
 ```
@@ -696,22 +696,22 @@ nil (empty response body)
 
 Add an invoice by xml
 
-Send invoices are the invoices that are sent to the SDI.
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::SendApi.new
-fattura_ordinaria = Invoice_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
+api_instance = Invoicetronic_Sdk::SendApi.new
+fattura_ordinaria = Invoicetronic_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
 opts = {
   validate: true, # Boolean | Validate the document first, and reject it on failure.
   signature: 'None' # String | Whether to digitally sign the document.
@@ -721,7 +721,7 @@ begin
   # Add an invoice by xml
   result = api_instance.send_xml_post(fattura_ordinaria, opts)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_xml_post: #{e}"
 end
 ```
@@ -739,7 +739,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ModelSend>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_xml_post_with_http_info: #{e}"
 end
 ```

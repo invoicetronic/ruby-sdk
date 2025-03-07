@@ -1,4 +1,4 @@
-# Invoice_Sdk::WebhookApi
+# Invoicetronic_Sdk::WebhookApi
 
 All URIs are relative to *http://localhost*
 
@@ -25,15 +25,15 @@ Webhooks are used to notify external services about write events that occur in t
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::WebhookApi.new
+api_instance = Invoicetronic_Sdk::WebhookApi.new
 opts = {
   page: 56, # Integer | Page number. Defaults to 1.
   page_size: 56, # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
@@ -44,7 +44,7 @@ begin
   # List webhooks
   result = api_instance.webhook_get(opts)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhook_get: #{e}"
 end
 ```
@@ -62,7 +62,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<WebHook>>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhook_get_with_http_info: #{e}"
 end
 ```
@@ -101,22 +101,22 @@ Webhooks are used to notify external services about write events that occur in t
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::WebhookApi.new
+api_instance = Invoicetronic_Sdk::WebhookApi.new
 id = 56 # Integer | Item id
 
 begin
   # Delete a webhook by id
   result = api_instance.webhook_id_delete(id)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhook_id_delete: #{e}"
 end
 ```
@@ -134,7 +134,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WebHook>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhook_id_delete_with_http_info: #{e}"
 end
 ```
@@ -171,22 +171,22 @@ Webhooks are used to notify external services about write events that occur in t
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::WebhookApi.new
+api_instance = Invoicetronic_Sdk::WebhookApi.new
 id = 56 # Integer | Item id
 
 begin
   # Get a webhook by id
   result = api_instance.webhook_id_get(id)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhook_id_get: #{e}"
 end
 ```
@@ -204,7 +204,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WebHook>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhook_id_get_with_http_info: #{e}"
 end
 ```
@@ -241,22 +241,22 @@ Webhooks are used to notify external services about write events that occur in t
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::WebhookApi.new
-web_hook = Invoice_Sdk::WebHook.new # WebHook | 
+api_instance = Invoicetronic_Sdk::WebhookApi.new
+web_hook = Invoicetronic_Sdk::WebHook.new # WebHook | 
 
 begin
   # Add a webhook
   result = api_instance.webhook_post(web_hook)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhook_post: #{e}"
 end
 ```
@@ -274,7 +274,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WebHook>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhook_post_with_http_info: #{e}"
 end
 ```
@@ -311,22 +311,22 @@ Webhooks are used to notify external services about write events that occur in t
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::WebhookApi.new
-web_hook = Invoice_Sdk::WebHook.new # WebHook | 
+api_instance = Invoicetronic_Sdk::WebhookApi.new
+web_hook = Invoicetronic_Sdk::WebHook.new # WebHook | 
 
 begin
   # Update a webhook
   result = api_instance.webhook_put(web_hook)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhook_put: #{e}"
 end
 ```
@@ -344,7 +344,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WebHook>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhook_put_with_http_info: #{e}"
 end
 ```
@@ -375,19 +375,21 @@ end
 
 List webhook history items
 
+Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
+
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::WebhookApi.new
+api_instance = Invoicetronic_Sdk::WebhookApi.new
 opts = {
   page: 56, # Integer | Page number. Defaults to 1.
   page_size: 56, # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
@@ -398,7 +400,7 @@ begin
   # List webhook history items
   result = api_instance.webhookhistory_get(opts)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhookhistory_get: #{e}"
 end
 ```
@@ -416,7 +418,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<WebHookHistory>>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhookhistory_get_with_http_info: #{e}"
 end
 ```
@@ -449,26 +451,28 @@ end
 
 Get a webhook history item by id
 
+Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
+
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::WebhookApi.new
+api_instance = Invoicetronic_Sdk::WebhookApi.new
 id = 56 # Integer | Item id
 
 begin
   # Get a webhook history item by id
   result = api_instance.webhookhistory_id_get(id)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhookhistory_id_get: #{e}"
 end
 ```
@@ -486,7 +490,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WebHookHistory>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling WebhookApi->webhookhistory_id_get_with_http_info: #{e}"
 end
 ```

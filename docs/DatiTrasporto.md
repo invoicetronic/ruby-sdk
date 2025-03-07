@@ -1,4 +1,4 @@
-# Invoice_Sdk::DatiTrasporto
+# Invoicetronic_Sdk::DatiTrasporto
 
 ## Properties
 
@@ -21,9 +21,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::DatiTrasporto.new(
+instance = Invoicetronic_Sdk::DatiTrasporto.new(
   dati_anagrafici_vettore: null,
   mezzo_trasporto: null,
   causale_trasporto: null,

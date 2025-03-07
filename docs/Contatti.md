@@ -1,4 +1,4 @@
-# Invoice_Sdk::Contatti
+# Invoicetronic_Sdk::Contatti
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::Contatti.new(
+instance = Invoicetronic_Sdk::Contatti.new(
   telefono: null,
   fax: null,
   email: null

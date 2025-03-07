@@ -1,4 +1,4 @@
-# Invoice_Sdk::ScontoMaggiorazione
+# Invoicetronic_Sdk::ScontoMaggiorazione
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::ScontoMaggiorazione.new(
+instance = Invoicetronic_Sdk::ScontoMaggiorazione.new(
   tipo: null,
   percentuale: null,
   importo: null

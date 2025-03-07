@@ -1,4 +1,4 @@
-# Invoice_Sdk::ReceiveApi
+# Invoicetronic_Sdk::ReceiveApi
 
 All URIs are relative to *http://localhost*
 
@@ -15,21 +15,21 @@ All URIs are relative to *http://localhost*
 
 List incoming invoices
 
-Receive invoices are the invoices that are received from other companies.
+Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::ReceiveApi.new
+api_instance = Invoicetronic_Sdk::ReceiveApi.new
 opts = {
   company_id: 56, # Integer | Company id
   identifier: 'identifier_example', # String | SDI identifier.
@@ -53,7 +53,7 @@ begin
   # List incoming invoices
   result = api_instance.receive_get(opts)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling ReceiveApi->receive_get: #{e}"
 end
 ```
@@ -71,7 +71,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<Receive>>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling ReceiveApi->receive_get_with_http_info: #{e}"
 end
 ```
@@ -117,28 +117,28 @@ end
 
 Delete an incoming invoice by id
 
-Receive invoices are the invoices that are received from other companies.
+Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::ReceiveApi.new
+api_instance = Invoicetronic_Sdk::ReceiveApi.new
 id = 56 # Integer | Item id
 
 begin
   # Delete an incoming invoice by id
   result = api_instance.receive_id_delete(id)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling ReceiveApi->receive_id_delete: #{e}"
 end
 ```
@@ -156,7 +156,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Receive>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling ReceiveApi->receive_id_delete_with_http_info: #{e}"
 end
 ```
@@ -187,28 +187,28 @@ end
 
 Get an incoming invoice by id
 
-Receive invoices are the invoices that are received from other companies.
+Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 # setup authorization
-Invoice_Sdk.configure do |config|
+Invoicetronic_Sdk.configure do |config|
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = Invoice_Sdk::ReceiveApi.new
+api_instance = Invoicetronic_Sdk::ReceiveApi.new
 id = 56 # Integer | Item id
 
 begin
   # Get an incoming invoice by id
   result = api_instance.receive_id_get(id)
   p result
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling ReceiveApi->receive_id_get: #{e}"
 end
 ```
@@ -226,7 +226,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Receive>
-rescue Invoice_Sdk::ApiError => e
+rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling ReceiveApi->receive_id_get_with_http_info: #{e}"
 end
 ```

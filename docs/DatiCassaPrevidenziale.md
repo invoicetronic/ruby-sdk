@@ -1,4 +1,4 @@
-# Invoice_Sdk::DatiCassaPrevidenziale
+# Invoicetronic_Sdk::DatiCassaPrevidenziale
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'invoicetronic_invoice_sdk'
+require 'invoicetronic_sdk'
 
-instance = Invoice_Sdk::DatiCassaPrevidenziale.new(
+instance = Invoicetronic_Sdk::DatiCassaPrevidenziale.new(
   tipo_cassa: null,
   al_cassa: null,
   importo_contributo_cassa: null,
