@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Invoicetronic DevTeam"]
   s.email       = ["info@invoicetronic.com"]
-  s.homepage    = "https://github.com/invoicetronic/invoice-ruby-sdk"
+  s.homepage    = "https://github.com/invoicetronic/ruby-sdk"
   s.summary     = "Ruby SDK for the Invoicetronic API"
   s.description = "Ruby SDK for the Invoicetronic API"
   s.license     = "MIT"

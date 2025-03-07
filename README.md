@@ -41,9 +41,9 @@ Finally add this to the Gemfile:
 
 ### Install from Git
 
-If the Ruby gem is hosted at a git repository: https://github.com/invoicetronic/invoice-ruby-sdk, then add the following in the Gemfile:
+If the Ruby gem is hosted at a git repository: https://github.com/invoicetronic/ruby-sdk, then add the following in the Gemfile:
 
-    gem 'invoicetronic_sdk', :git => 'https://github.com/invoicetronic/invoice-ruby-sdk.git'
+    gem 'invoicetronic_sdk', :git => 'https://github.com/invoicetronic/ruby-sdk.git'
 
 ### Include the Ruby code directly
 
