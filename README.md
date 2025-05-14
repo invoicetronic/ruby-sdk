@@ -106,7 +106,7 @@ Class | Method | HTTP request | Description
 *Invoicetronic_Sdk::SendApi* | [**send_id_get**](docs/SendApi.md#send_id_get) | **GET** /send/{id} | Get a invoice by id
 *Invoicetronic_Sdk::SendApi* | [**send_json_post**](docs/SendApi.md#send_json_post) | **POST** /send/json | Add an invoice by json
 *Invoicetronic_Sdk::SendApi* | [**send_post**](docs/SendApi.md#send_post) | **POST** /send | Add an invoice
-*Invoicetronic_Sdk::SendApi* | [**send_validate_files_post**](docs/SendApi.md#send_validate_files_post) | **POST** /send/validate/files | Validate an invoice by file
+*Invoicetronic_Sdk::SendApi* | [**send_validate_file_post**](docs/SendApi.md#send_validate_file_post) | **POST** /send/validate/file | Validate an invoice file
 *Invoicetronic_Sdk::SendApi* | [**send_validate_json_post**](docs/SendApi.md#send_validate_json_post) | **POST** /send/validate/json | Validate an invoice by json
 *Invoicetronic_Sdk::SendApi* | [**send_validate_post**](docs/SendApi.md#send_validate_post) | **POST** /send/validate | Validate an invoice
 *Invoicetronic_Sdk::SendApi* | [**send_validate_xml_post**](docs/SendApi.md#send_validate_xml_post) | **POST** /send/validate/xml | Validate an invoice by xml

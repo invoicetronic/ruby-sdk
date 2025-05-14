@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 | [**send_id_get**](SendApi.md#send_id_get) | **GET** /send/{id} | Get a invoice by id |
 | [**send_json_post**](SendApi.md#send_json_post) | **POST** /send/json | Add an invoice by json |
 | [**send_post**](SendApi.md#send_post) | **POST** /send | Add an invoice |
-| [**send_validate_files_post**](SendApi.md#send_validate_files_post) | **POST** /send/validate/files | Validate an invoice by file |
+| [**send_validate_file_post**](SendApi.md#send_validate_file_post) | **POST** /send/validate/file | Validate an invoice file |
 | [**send_validate_json_post**](SendApi.md#send_validate_json_post) | **POST** /send/validate/json | Validate an invoice by json |
 | [**send_validate_post**](SendApi.md#send_validate_post) | **POST** /send/validate | Validate an invoice |
 | [**send_validate_xml_post**](SendApi.md#send_validate_xml_post) | **POST** /send/validate/xml | Validate an invoice by xml |
@@ -414,11 +414,11 @@ end
 - **Accept**: application/json
 
 
-## send_validate_files_post
+## send_validate_file_post
 
-> send_validate_files_post(files)
+> send_validate_file_post(file)
 
-Validate an invoice by file
+Validate an invoice file
 
 Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
 
@@ -435,31 +435,31 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
-files = [File.new('/path/to/some/file')] # Array<File> | 
+file = File.new('/path/to/some/file') # File | 
 
 begin
-  # Validate an invoice by file
-  api_instance.send_validate_files_post(files)
+  # Validate an invoice file
+  api_instance.send_validate_file_post(file)
 rescue Invoicetronic_Sdk::ApiError => e
-  puts "Error when calling SendApi->send_validate_files_post: #{e}"
+  puts "Error when calling SendApi->send_validate_file_post: #{e}"
 end
 ```
 
-#### Using the send_validate_files_post_with_http_info variant
+#### Using the send_validate_file_post_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> send_validate_files_post_with_http_info(files)
+> <Array(nil, Integer, Hash)> send_validate_file_post_with_http_info(file)
 
 ```ruby
 begin
-  # Validate an invoice by file
-  data, status_code, headers = api_instance.send_validate_files_post_with_http_info(files)
+  # Validate an invoice file
+  data, status_code, headers = api_instance.send_validate_file_post_with_http_info(file)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue Invoicetronic_Sdk::ApiError => e
-  puts "Error when calling SendApi->send_validate_files_post_with_http_info: #{e}"
+  puts "Error when calling SendApi->send_validate_file_post_with_http_info: #{e}"
 end
 ```
 
@@ -467,7 +467,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **files** | **Array&lt;File&gt;** |  |  |
+| **file** | **File** |  |  |
 
 ### Return type
 
