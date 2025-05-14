@@ -35,9 +35,14 @@ end
 
 api_instance = Invoicetronic_Sdk::WebhookApi.new
 opts = {
+  company_id: 56, # Integer | Company id
   page: 56, # Integer | Page number. Defaults to 1.
   page_size: 56, # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
-  sort: 'sort_example' # String | Sort by field. Prefix with '-' for descending order.
+  sort: 'sort_example', # String | Sort by field. Prefix with '-' for descending order.
+  description: 'description_example', # String | 
+  enabled: true, # Boolean | 
+  events: 'events_example', # String | 
+  url: 'url_example' # String | 
 }
 
 begin
@@ -71,9 +76,14 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **company_id** | **Integer** | Company id | [optional] |
 | **page** | **Integer** | Page number. Defaults to 1. | [optional][default to 1] |
 | **page_size** | **Integer** | Items per page. Defaults to 50. Cannot be greater than 200. | [optional][default to 100] |
 | **sort** | **String** | Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
+| **description** | **String** |  | [optional] |
+| **enabled** | **Boolean** |  | [optional] |
+| **events** | **String** |  | [optional] |
+| **url** | **String** |  | [optional] |
 
 ### Return type
 
@@ -393,7 +403,8 @@ api_instance = Invoicetronic_Sdk::WebhookApi.new
 opts = {
   page: 56, # Integer | Page number. Defaults to 1.
   page_size: 56, # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
-  sort: 'sort_example' # String | Sort by field. Prefix with '-' for descending order.
+  sort: 'sort_example', # String | Sort by field. Prefix with '-' for descending order.
+  webhook_id: 56 # Integer | WebHook id
 }
 
 begin
@@ -430,6 +441,7 @@ end
 | **page** | **Integer** | Page number. Defaults to 1. | [optional][default to 1] |
 | **page_size** | **Integer** | Items per page. Defaults to 50. Cannot be greater than 200. | [optional][default to 100] |
 | **sort** | **String** | Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
+| **webhook_id** | **Integer** | WebHook id | [optional] |
 
 ### Return type
 
