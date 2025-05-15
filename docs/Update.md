@@ -18,6 +18,8 @@
 | **message_id** | **String** | SDI message id. | [optional] |
 | **errors** | [**Array&lt;Error&gt;**](Error.md) | SDI errors, if any. | [optional] |
 | **is_read** | **Boolean** | Wether the item has been read at least once. | [optional] |
+| **meta_data** | **Hash&lt;String, String&gt;** | Metadata from the Send item this update refers to. | [optional] |
+| **documents** | [**Array&lt;DocumentData&gt;**](DocumentData.md) | Invoice references from the Send item this update refers to. | [optional] |
 
 ## Example
 
@@ -38,7 +40,9 @@ instance = Invoicetronic_Sdk::Update.new(
   description: null,
   message_id: null,
   errors: null,
-  is_read: null
+  is_read: null,
+  meta_data: null,
+  documents: null
 )
 ```
 

@@ -57,6 +57,12 @@ module Invoicetronic_Sdk
     # Wether the item has been read at least once.
     attr_accessor :is_read
 
+    # Metadata from the Send item this update refers to.
+    attr_accessor :meta_data
+
+    # Invoice references from the Send item this update refers to.
+    attr_accessor :documents
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -95,7 +101,9 @@ module Invoicetronic_Sdk
         :'description' => :'description',
         :'message_id' => :'message_id',
         :'errors' => :'errors',
-        :'is_read' => :'is_read'
+        :'is_read' => :'is_read',
+        :'meta_data' => :'meta_data',
+        :'documents' => :'documents'
       }
     end
 
@@ -125,7 +133,9 @@ module Invoicetronic_Sdk
         :'description' => :'String',
         :'message_id' => :'String',
         :'errors' => :'Array<Error>',
-        :'is_read' => :'Boolean'
+        :'is_read' => :'Boolean',
+        :'meta_data' => :'Hash<String, String>',
+        :'documents' => :'Array<DocumentData>'
       }
     end
 
@@ -137,6 +147,8 @@ module Invoicetronic_Sdk
         :'description',
         :'message_id',
         :'errors',
+        :'meta_data',
+        :'documents'
       ])
     end
 
@@ -213,6 +225,18 @@ module Invoicetronic_Sdk
       if attributes.key?(:'is_read')
         self.is_read = attributes[:'is_read']
       end
+
+      if attributes.key?(:'meta_data')
+        if (value = attributes[:'meta_data']).is_a?(Hash)
+          self.meta_data = value
+        end
+      end
+
+      if attributes.key?(:'documents')
+        if (value = attributes[:'documents']).is_a?(Array)
+          self.documents = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -260,7 +284,9 @@ module Invoicetronic_Sdk
           description == o.description &&
           message_id == o.message_id &&
           errors == o.errors &&
-          is_read == o.is_read
+          is_read == o.is_read &&
+          meta_data == o.meta_data &&
+          documents == o.documents
     end
 
     # @see the `==` method
@@ -272,7 +298,7 @@ module Invoicetronic_Sdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, created, version, user_id, company_id, send_id, date_sent, last_update, identifier, state, description, message_id, errors, is_read].hash
+      [id, created, version, user_id, company_id, send_id, date_sent, last_update, identifier, state, description, message_id, errors, is_read, meta_data, documents].hash
     end
 
     # Builds the object from hash
