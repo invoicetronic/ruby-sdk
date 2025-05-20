@@ -24,6 +24,7 @@ module Invoicetronic_Sdk
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :company_id Company id
     # @option opts [String] :identifier SDI identifier.
+    # @option opts [String] :prestatore Vat number or fiscal code.
     # @option opts [Boolean] :unread Unread items only.
     # @option opts [Integer] :send_id Send item&#39;s id.
     # @option opts [String] :state SDI state
@@ -45,6 +46,7 @@ module Invoicetronic_Sdk
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :company_id Company id
     # @option opts [String] :identifier SDI identifier.
+    # @option opts [String] :prestatore Vat number or fiscal code.
     # @option opts [Boolean] :unread Unread items only.
     # @option opts [Integer] :send_id Send item&#39;s id.
     # @option opts [String] :state SDI state
@@ -71,6 +73,7 @@ module Invoicetronic_Sdk
       query_params = opts[:query_params] || {}
       query_params[:'company_id'] = opts[:'company_id'] if !opts[:'company_id'].nil?
       query_params[:'identifier'] = opts[:'identifier'] if !opts[:'identifier'].nil?
+      query_params[:'prestatore'] = opts[:'prestatore'] if !opts[:'prestatore'].nil?
       query_params[:'unread'] = opts[:'unread'] if !opts[:'unread'].nil?
       query_params[:'send_id'] = opts[:'send_id'] if !opts[:'send_id'].nil?
       query_params[:'state'] = opts[:'state'] if !opts[:'state'].nil?

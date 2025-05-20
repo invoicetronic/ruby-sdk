@@ -38,6 +38,7 @@ describe 'UpdateApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :company_id Company id
   # @option opts [String] :identifier SDI identifier.
+  # @option opts [String] :prestatore Vat number or fiscal code.
   # @option opts [Boolean] :unread Unread items only.
   # @option opts [Integer] :send_id Send item&#39;s id.
   # @option opts [String] :state SDI state

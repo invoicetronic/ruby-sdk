@@ -20,6 +20,7 @@
 | **is_read** | **Boolean** | Wether the item has been read at least once. | [optional] |
 | **meta_data** | **Hash&lt;String, String&gt;** | Metadata from the Send item this update refers to. | [optional] |
 | **documents** | [**Array&lt;DocumentData&gt;**](DocumentData.md) | Invoice references from the Send item this update refers to. | [optional] |
+| **prestatore** | **String** | Prestatore reference from the Send item this status refers to. | [optional] |
 
 ## Example
 
@@ -42,7 +43,8 @@ instance = Invoicetronic_Sdk::Update.new(
   errors: null,
   is_read: null,
   meta_data: null,
-  documents: null
+  documents: null,
+  prestatore: null
 )
 ```
 

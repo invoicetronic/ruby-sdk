@@ -32,6 +32,7 @@ api_instance = Invoicetronic_Sdk::UpdateApi.new
 opts = {
   company_id: 56, # Integer | Company id
   identifier: 'identifier_example', # String | SDI identifier.
+  prestatore: 'prestatore_example', # String | Vat number or fiscal code.
   unread: true, # Boolean | Unread items only.
   send_id: 56, # Integer | Send item's id.
   state: 'Inviato', # String | SDI state
@@ -77,6 +78,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **company_id** | **Integer** | Company id | [optional] |
 | **identifier** | **String** | SDI identifier. | [optional] |
+| **prestatore** | **String** | Vat number or fiscal code. | [optional] |
 | **unread** | **Boolean** | Unread items only. | [optional] |
 | **send_id** | **Integer** | Send item&#39;s id. | [optional] |
 | **state** | **String** | SDI state | [optional] |
