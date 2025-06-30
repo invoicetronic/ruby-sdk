@@ -14,100 +14,31 @@ require 'date'
 require 'time'
 
 module Invoicetronic_Sdk
-  class Receive
-    # Unique identifier. Leave it at 0 for new records as it will be set automatically.
-    attr_accessor :id
-
-    # Creation date. It is set automatically.
-    attr_accessor :created
-
-    # Row version, for optimistic concurrency. It is set automatically.
-    attr_accessor :version
-
-    # User id.
-    attr_accessor :user_id
-
-    # Company id. On send, this is the sender and must be set in advance. On receive, it will be  automatically set based on the recipient's VAT number. If a matching company is not found, the invoice will be rejected until the company is created.
-    attr_accessor :company_id
-
-    # VAT number of the Cessionario/Committente (customer). This is automatically set based on the recipient's VAT number.
-    attr_accessor :committente
-
-    # VAT number of the Cedente/Prestatore (vendor). This is automatically set based on the sender's VAT number.
-    attr_accessor :prestatore
-
-    # SDI identifier. This is set by the SDI and is guaranted to be unique within the SDI system.
+  # Reduced Send data for Update responses, containing only the essential fields.
+  class SendReduced
+    # SDI identifier.
     attr_accessor :identifier
 
-    # Xml file name.
-    attr_accessor :file_name
+    # VAT number of the Cedente/Prestatore (vendor).
+    attr_accessor :prestatore
 
-    # SDI format (FPA12, FPR12, FSM10, ...)
-    attr_accessor :format
+    # Optional metadata, as json.
+    attr_accessor :meta_data
 
-    # Xml payloaad. This is the actual xml content, as string. On send, it can be base64 encoded. If it's not, it will be encoded before sending. It is guaranteed to be cyphered at rest.
-    attr_accessor :payload
-
-    # Last update from SDI.
-    attr_accessor :last_update
+    # The invoices included in the payload.
+    attr_accessor :documents
 
     # When the invoice was sent to SDI.
     attr_accessor :date_sent
 
-    # The invoices included in the payload. This is set by the system, based on the xml content.
-    attr_accessor :documents
-
-    # Whether the payload is Base64 encoded or a plain XML (text).
-    attr_accessor :encoding
-
-    # Wether the invoice has been read at least once.
-    attr_accessor :is_read
-
-    # SDI message id.
-    attr_accessor :message_id
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'created' => :'created',
-        :'version' => :'version',
-        :'user_id' => :'user_id',
-        :'company_id' => :'company_id',
-        :'committente' => :'committente',
-        :'prestatore' => :'prestatore',
         :'identifier' => :'identifier',
-        :'file_name' => :'file_name',
-        :'format' => :'format',
-        :'payload' => :'payload',
-        :'last_update' => :'last_update',
-        :'date_sent' => :'date_sent',
+        :'prestatore' => :'prestatore',
+        :'meta_data' => :'meta_data',
         :'documents' => :'documents',
-        :'encoding' => :'encoding',
-        :'is_read' => :'is_read',
-        :'message_id' => :'message_id'
+        :'date_sent' => :'date_sent'
       }
     end
 
@@ -124,39 +55,22 @@ module Invoicetronic_Sdk
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'Integer',
-        :'created' => :'Time',
-        :'version' => :'Integer',
-        :'user_id' => :'Integer',
-        :'company_id' => :'Integer',
-        :'committente' => :'String',
-        :'prestatore' => :'String',
         :'identifier' => :'String',
-        :'file_name' => :'String',
-        :'format' => :'String',
-        :'payload' => :'String',
-        :'last_update' => :'Time',
-        :'date_sent' => :'Time',
+        :'prestatore' => :'String',
+        :'meta_data' => :'Hash<String, String>',
         :'documents' => :'Array<DocumentData>',
-        :'encoding' => :'String',
-        :'is_read' => :'Boolean',
-        :'message_id' => :'String'
+        :'date_sent' => :'Time'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'committente',
-        :'prestatore',
         :'identifier',
-        :'file_name',
-        :'format',
-        :'payload',
-        :'last_update',
-        :'date_sent',
+        :'prestatore',
+        :'meta_data',
         :'documents',
-        :'message_id'
+        :'date_sent'
       ])
     end
 
@@ -164,68 +78,30 @@ module Invoicetronic_Sdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Invoicetronic_Sdk::Receive` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Invoicetronic_Sdk::SendReduced` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Invoicetronic_Sdk::Receive`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Invoicetronic_Sdk::SendReduced`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      end
-
-      if attributes.key?(:'created')
-        self.created = attributes[:'created']
-      end
-
-      if attributes.key?(:'version')
-        self.version = attributes[:'version']
-      end
-
-      if attributes.key?(:'user_id')
-        self.user_id = attributes[:'user_id']
-      end
-
-      if attributes.key?(:'company_id')
-        self.company_id = attributes[:'company_id']
-      end
-
-      if attributes.key?(:'committente')
-        self.committente = attributes[:'committente']
+      if attributes.key?(:'identifier')
+        self.identifier = attributes[:'identifier']
       end
 
       if attributes.key?(:'prestatore')
         self.prestatore = attributes[:'prestatore']
       end
 
-      if attributes.key?(:'identifier')
-        self.identifier = attributes[:'identifier']
-      end
-
-      if attributes.key?(:'file_name')
-        self.file_name = attributes[:'file_name']
-      end
-
-      if attributes.key?(:'format')
-        self.format = attributes[:'format']
-      end
-
-      if attributes.key?(:'payload')
-        self.payload = attributes[:'payload']
-      end
-
-      if attributes.key?(:'last_update')
-        self.last_update = attributes[:'last_update']
-      end
-
-      if attributes.key?(:'date_sent')
-        self.date_sent = attributes[:'date_sent']
+      if attributes.key?(:'meta_data')
+        if (value = attributes[:'meta_data']).is_a?(Hash)
+          self.meta_data = value
+        end
       end
 
       if attributes.key?(:'documents')
@@ -234,16 +110,8 @@ module Invoicetronic_Sdk
         end
       end
 
-      if attributes.key?(:'encoding')
-        self.encoding = attributes[:'encoding']
-      end
-
-      if attributes.key?(:'is_read')
-        self.is_read = attributes[:'is_read']
-      end
-
-      if attributes.key?(:'message_id')
-        self.message_id = attributes[:'message_id']
+      if attributes.key?(:'date_sent')
+        self.date_sent = attributes[:'date_sent']
       end
     end
 
@@ -259,19 +127,7 @@ module Invoicetronic_Sdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      encoding_validator = EnumAttributeValidator.new('String', ["Xml", "Base64"])
-      return false unless encoding_validator.valid?(@encoding)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] encoding Object to be assigned
-    def encoding=(encoding)
-      validator = EnumAttributeValidator.new('String', ["Xml", "Base64"])
-      unless validator.valid?(encoding)
-        fail ArgumentError, "invalid value for \"encoding\", must be one of #{validator.allowable_values}."
-      end
-      @encoding = encoding
     end
 
     # Checks equality by comparing each attribute.
@@ -279,23 +135,11 @@ module Invoicetronic_Sdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          created == o.created &&
-          version == o.version &&
-          user_id == o.user_id &&
-          company_id == o.company_id &&
-          committente == o.committente &&
-          prestatore == o.prestatore &&
           identifier == o.identifier &&
-          file_name == o.file_name &&
-          format == o.format &&
-          payload == o.payload &&
-          last_update == o.last_update &&
-          date_sent == o.date_sent &&
+          prestatore == o.prestatore &&
+          meta_data == o.meta_data &&
           documents == o.documents &&
-          encoding == o.encoding &&
-          is_read == o.is_read &&
-          message_id == o.message_id
+          date_sent == o.date_sent
     end
 
     # @see the `==` method
@@ -307,7 +151,7 @@ module Invoicetronic_Sdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, created, version, user_id, company_id, committente, prestatore, identifier, file_name, format, payload, last_update, date_sent, documents, encoding, is_read, message_id].hash
+      [identifier, prestatore, meta_data, documents, date_sent].hash
     end
 
     # Builds the object from hash

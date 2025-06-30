@@ -10,17 +10,13 @@
 | **user_id** | **Integer** | User id. | [optional] |
 | **company_id** | **Integer** | Company id. | [optional] |
 | **send_id** | **Integer** | Send id. This is the id of the sent invoice to which this update refers to. | [optional] |
-| **date_sent** | **Time** | When the document was sent to the SDI. | [optional] |
 | **last_update** | **Time** | Last update from SDI. | [optional] |
-| **identifier** | **String** | SDI identifier. This is set by the SDI and it is unique within the SDI system. | [optional] |
 | **state** | **String** | State of the document. Theses are the possible values, as per the SDI documentation: | [optional] |
 | **description** | **String** | Description for the state. | [optional] |
 | **message_id** | **String** | SDI message id. | [optional] |
 | **errors** | [**Array&lt;Error&gt;**](Error.md) | SDI errors, if any. | [optional] |
 | **is_read** | **Boolean** | Wether the item has been read at least once. | [optional] |
-| **meta_data** | **Hash&lt;String, String&gt;** | Metadata from the Send item this update refers to. | [optional] |
-| **documents** | [**Array&lt;DocumentData&gt;**](DocumentData.md) | Invoice references from the Send item this update refers to. | [optional] |
-| **prestatore** | **String** | Prestatore reference from the Send item this status refers to. | [optional] |
+| **_send** | [**SendReduced**](SendReduced.md) |  | [optional] |
 
 ## Example
 
@@ -34,17 +30,13 @@ instance = Invoicetronic_Sdk::Update.new(
   user_id: null,
   company_id: null,
   send_id: null,
-  date_sent: null,
   last_update: null,
-  identifier: null,
   state: null,
   description: null,
   message_id: null,
   errors: null,
   is_read: null,
-  meta_data: null,
-  documents: null,
-  prestatore: null
+  _send: null
 )
 ```
 
