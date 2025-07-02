@@ -23,8 +23,8 @@ module Invoicetronic_Sdk
     # Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :company_id Company id
-    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
-    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
+    # @option opts [Integer] :page Page number. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
     # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
     # @option opts [String] :description 
     # @option opts [Boolean] :enabled 
@@ -40,8 +40,8 @@ module Invoicetronic_Sdk
     # Webhooks are used to notify external services about write events that occur in the API. You can subscribe to specific events and receive a notification when they occur.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :company_id Company id
-    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
-    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
+    # @option opts [Integer] :page Page number. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
     # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
     # @option opts [String] :description 
     # @option opts [Boolean] :enabled 
@@ -365,8 +365,8 @@ module Invoicetronic_Sdk
     # List webhook history items
     # Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
-    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
+    # @option opts [Integer] :page Page number. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
     # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
     # @option opts [Integer] :webhook_id WebHook id
     # @return [Array<WebHookHistory>]
@@ -378,8 +378,8 @@ module Invoicetronic_Sdk
     # List webhook history items
     # Webhook history items are stored in the database and can be accessed via the API. They are preserved for 15 in both the live and sandbox environments.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
-    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
+    # @option opts [Integer] :page Page number. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
     # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
     # @option opts [Integer] :webhook_id WebHook id
     # @return [Array<(Array<WebHookHistory>, Integer, Hash)>] Array<WebHookHistory> data, response status code and response headers

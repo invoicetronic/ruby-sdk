@@ -36,8 +36,8 @@ module Invoicetronic_Sdk
     # @option opts [Time] :document_date_to UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [String] :document_number Document number.
     # @option opts [Boolean] :include_payload Include payload in the response. Defaults to false.
-    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
-    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
+    # @option opts [Integer] :page Page number. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
     # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
     # @return [Array<Receive>]
     def receive_get(opts = {})
@@ -62,8 +62,8 @@ module Invoicetronic_Sdk
     # @option opts [Time] :document_date_to UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [String] :document_number Document number.
     # @option opts [Boolean] :include_payload Include payload in the response. Defaults to false.
-    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
-    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
+    # @option opts [Integer] :page Page number. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
     # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
     # @return [Array<(Array<Receive>, Integer, Hash)>] Array<Receive> data, response status code and response headers
     def receive_get_with_http_info(opts = {})

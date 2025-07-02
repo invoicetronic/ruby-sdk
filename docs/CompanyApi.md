@@ -33,8 +33,8 @@ end
 
 api_instance = Invoicetronic_Sdk::CompanyApi.new
 opts = {
-  page: 56, # Integer | Page number. Defaults to 1.
-  page_size: 56, # Integer | Items per page. Defaults to 50. Cannot be greater than 200.
+  page: 56, # Integer | Page number.
+  page_size: 56, # Integer | Items per page. Cannot be greater than 200.
   sort: 'sort_example' # String | Sort by field. Prefix with '-' for descending order.
 }
 
@@ -69,8 +69,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page** | **Integer** | Page number. Defaults to 1. | [optional][default to 1] |
-| **page_size** | **Integer** | Items per page. Defaults to 50. Cannot be greater than 200. | [optional][default to 100] |
+| **page** | **Integer** | Page number. | [optional][default to 1] |
+| **page_size** | **Integer** | Items per page. Cannot be greater than 200. | [optional][default to 100] |
 | **sort** | **String** | Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
 
 ### Return type

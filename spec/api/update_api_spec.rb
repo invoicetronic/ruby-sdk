@@ -46,8 +46,8 @@ describe 'UpdateApi' do
   # @option opts [Time] :last_update_to UTC ISO 8601 (2024-11-29T12:34:56Z)
   # @option opts [Time] :date_sent_from UTC ISO 8601 (2024-11-29T12:34:56Z)
   # @option opts [Time] :date_sent_to UTC ISO 8601 (2024-11-29T12:34:56Z)
-  # @option opts [Integer] :page Page number. Defaults to 1.
-  # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200.
+  # @option opts [Integer] :page Page number.
+  # @option opts [Integer] :page_size Items per page. Cannot be greater than 200.
   # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
   # @return [Array<Update>]
   describe 'update_get test' do

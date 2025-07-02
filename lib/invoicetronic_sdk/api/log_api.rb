@@ -29,8 +29,8 @@ module Invoicetronic_Sdk
     # @option opts [Integer] :status_code Response status code
     # @option opts [Time] :date_created_from UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [Time] :date_created_to UTC ISO 8601 (2024-11-29T12:34:56Z)
-    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
-    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
+    # @option opts [Integer] :page Page number. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
     # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
     # @option opts [String] :query 
     # @option opts [Boolean] :success 
@@ -52,8 +52,8 @@ module Invoicetronic_Sdk
     # @option opts [Integer] :status_code Response status code
     # @option opts [Time] :date_created_from UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [Time] :date_created_to UTC ISO 8601 (2024-11-29T12:34:56Z)
-    # @option opts [Integer] :page Page number. Defaults to 1. (default to 1)
-    # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200. (default to 100)
+    # @option opts [Integer] :page Page number. (default to 1)
+    # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
     # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
     # @option opts [String] :query 
     # @option opts [Boolean] :success 

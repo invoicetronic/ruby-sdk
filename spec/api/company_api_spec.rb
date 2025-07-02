@@ -36,8 +36,8 @@ describe 'CompanyApi' do
   # List companies
   # Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Page number. Defaults to 1.
-  # @option opts [Integer] :page_size Items per page. Defaults to 50. Cannot be greater than 200.
+  # @option opts [Integer] :page Page number.
+  # @option opts [Integer] :page_size Items per page. Cannot be greater than 200.
   # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
   # @return [Array<Company>]
   describe 'company_get test' do
