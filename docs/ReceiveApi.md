@@ -185,7 +185,7 @@ end
 
 ## receive_id_get
 
-> <Receive> receive_id_get(id)
+> <Receive> receive_id_get(id, opts)
 
 Get an incoming invoice by id
 
@@ -205,10 +205,13 @@ end
 
 api_instance = Invoicetronic_Sdk::ReceiveApi.new
 id = 56 # Integer | Item id
+opts = {
+  include_payload: true # Boolean | 
+}
 
 begin
   # Get an incoming invoice by id
-  result = api_instance.receive_id_get(id)
+  result = api_instance.receive_id_get(id, opts)
   p result
 rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling ReceiveApi->receive_id_get: #{e}"
@@ -219,12 +222,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Receive>, Integer, Hash)> receive_id_get_with_http_info(id)
+> <Array(<Receive>, Integer, Hash)> receive_id_get_with_http_info(id, opts)
 
 ```ruby
 begin
   # Get an incoming invoice by id
-  data, status_code, headers = api_instance.receive_id_get_with_http_info(id)
+  data, status_code, headers = api_instance.receive_id_get_with_http_info(id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Receive>
@@ -238,6 +241,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **Integer** | Item id |  |
+| **include_payload** | **Boolean** |  | [optional][default to false] |
 
 ### Return type
 

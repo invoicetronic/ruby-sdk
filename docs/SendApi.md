@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**send_file_post**](SendApi.md#send_file_post) | **POST** /send/file | Add an invoice by file |
 | [**send_get**](SendApi.md#send_get) | **GET** /send | List invoices |
 | [**send_id_get**](SendApi.md#send_id_get) | **GET** /send/{id} | Get a invoice by id |
+| [**send_identifier_get**](SendApi.md#send_identifier_get) | **GET** /send/{identifier} | Get a invoice by identifier |
 | [**send_json_post**](SendApi.md#send_json_post) | **POST** /send/json | Add an invoice by json |
 | [**send_post**](SendApi.md#send_post) | **POST** /send | Add an invoice |
 | [**send_validate_file_post**](SendApi.md#send_validate_file_post) | **POST** /send/validate/file | Validate an invoice file |
@@ -196,7 +197,7 @@ end
 
 ## send_id_get
 
-> <ModelSend> send_id_get(id)
+> <ModelSend> send_id_get(id, opts)
 
 Get a invoice by id
 
@@ -216,10 +217,13 @@ end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
 id = 56 # Integer | Item id
+opts = {
+  include_payload: true # Boolean | 
+}
 
 begin
   # Get a invoice by id
-  result = api_instance.send_id_get(id)
+  result = api_instance.send_id_get(id, opts)
   p result
 rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_id_get: #{e}"
@@ -230,12 +234,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ModelSend>, Integer, Hash)> send_id_get_with_http_info(id)
+> <Array(<ModelSend>, Integer, Hash)> send_id_get_with_http_info(id, opts)
 
 ```ruby
 begin
   # Get a invoice by id
-  data, status_code, headers = api_instance.send_id_get_with_http_info(id)
+  data, status_code, headers = api_instance.send_id_get_with_http_info(id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ModelSend>
@@ -249,6 +253,81 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **Integer** | Item id |  |
+| **include_payload** | **Boolean** |  | [optional][default to false] |
+
+### Return type
+
+[**ModelSend**](ModelSend.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## send_identifier_get
+
+> <ModelSend> send_identifier_get(identifier, opts)
+
+Get a invoice by identifier
+
+Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
+
+### Examples
+
+```ruby
+require 'time'
+require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = Invoicetronic_Sdk::SendApi.new
+identifier = 'identifier_example' # String | 
+opts = {
+  include_payload: true # Boolean | 
+}
+
+begin
+  # Get a invoice by identifier
+  result = api_instance.send_identifier_get(identifier, opts)
+  p result
+rescue Invoicetronic_Sdk::ApiError => e
+  puts "Error when calling SendApi->send_identifier_get: #{e}"
+end
+```
+
+#### Using the send_identifier_get_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ModelSend>, Integer, Hash)> send_identifier_get_with_http_info(identifier, opts)
+
+```ruby
+begin
+  # Get a invoice by identifier
+  data, status_code, headers = api_instance.send_identifier_get_with_http_info(identifier, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ModelSend>
+rescue Invoicetronic_Sdk::ApiError => e
+  puts "Error when calling SendApi->send_identifier_get_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **identifier** | **String** |  |  |
+| **include_payload** | **Boolean** |  | [optional][default to false] |
 
 ### Return type
 
