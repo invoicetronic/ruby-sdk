@@ -215,7 +215,7 @@ module Invoicetronic_Sdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      state_validator = EnumAttributeValidator.new('String', ["Inviato", "Consegnato", "NonConsegnato", "Scartato", "AccettatoDalDestinatario", "RifiutatoDalDestinatario", "ImpossibilitàDiRecapito", "DecorrenzaTermini", "AttestazioneTrasmissioneFattura"])
+      state_validator = EnumAttributeValidator.new('String', ["Inviato", "Consegnato", "NonConsegnato", "Scartato", "AccettatoDalDestinatario", "RifiutatoDalDestinatario", "ImpossibilitaDiRecapito", "DecorrenzaTermini", "AttestazioneTrasmissioneFattura"])
       return false unless state_validator.valid?(@state)
       true
     end
@@ -223,7 +223,7 @@ module Invoicetronic_Sdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] state Object to be assigned
     def state=(state)
-      validator = EnumAttributeValidator.new('String', ["Inviato", "Consegnato", "NonConsegnato", "Scartato", "AccettatoDalDestinatario", "RifiutatoDalDestinatario", "ImpossibilitàDiRecapito", "DecorrenzaTermini", "AttestazioneTrasmissioneFattura"])
+      validator = EnumAttributeValidator.new('String', ["Inviato", "Consegnato", "NonConsegnato", "Scartato", "AccettatoDalDestinatario", "RifiutatoDalDestinatario", "ImpossibilitaDiRecapito", "DecorrenzaTermini", "AttestazioneTrasmissioneFattura"])
       unless validator.valid?(state)
         fail ArgumentError, "invalid value for \"state\", must be one of #{validator.allowable_values}."
       end

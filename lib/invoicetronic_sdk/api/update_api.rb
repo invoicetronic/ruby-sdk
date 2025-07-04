@@ -62,7 +62,7 @@ module Invoicetronic_Sdk
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdateApi.update_get ...'
       end
-      allowable_values = ["Inviato", "Consegnato", "NonConsegnato", "Scartato", "AccettatoDalDestinatario", "RifiutatoDalDestinatario", "ImpossibilitàDiRecapito", "DecorrenzaTermini", "AttestazioneTrasmissioneFattura"]
+      allowable_values = ["Inviato", "Consegnato", "NonConsegnato", "Scartato", "AccettatoDalDestinatario", "RifiutatoDalDestinatario", "ImpossibilitaDiRecapito", "DecorrenzaTermini", "AttestazioneTrasmissioneFattura"]
       if @api_client.config.client_side_validation && opts[:'state'] && !allowable_values.include?(opts[:'state'])
         fail ArgumentError, "invalid value for \"state\", must be one of #{allowable_values}"
       end
