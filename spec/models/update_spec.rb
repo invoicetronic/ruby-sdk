@@ -72,7 +72,7 @@ describe Invoicetronic_Sdk::Update do
   describe 'test attribute "state"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["Inviato", "Consegnato", "NonConsegnato", "Scartato", "AccettatoDalDestinatario", "RifiutatoDalDestinatario", "ImpossibilitaDiRecapito", "DecorrenzaTermini", "AttestazioneTrasmissioneFattura"])
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["Inviato", "Consegnato", "NonConsegnato", "Scartato", "AccettatoDalDestinatario", "RifiutatoDalDestinatario", "ImpossibilitàDiRecapito", "DecorrenzaTermini", "AttestazioneTrasmissioneFattura"])
       # validator.allowable_values.each do |value|
       #   expect { instance.state = value }.not_to raise_error
       # end
