@@ -88,7 +88,7 @@ end
 | **date_sent_to** | **Time** | UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **page** | **Integer** | Page number. | [optional][default to 1] |
 | **page_size** | **Integer** | Items per page. Cannot be greater than 200. | [optional][default to 100] |
-| **sort** | **String** | Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
+| **sort** | **String** | Sort by field. Prefix with &#39;-&#39; for descending order. | [optional][default to &#39;last_update&#39;] |
 
 ### Return type
 

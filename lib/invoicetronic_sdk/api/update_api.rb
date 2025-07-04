@@ -34,7 +34,7 @@ module Invoicetronic_Sdk
     # @option opts [Time] :date_sent_to UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [Integer] :page Page number. (default to 1)
     # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
-    # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
+    # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order. (default to 'last_update')
     # @return [Array<Update>]
     def update_get(opts = {})
       data, _status_code, _headers = update_get_with_http_info(opts)
@@ -56,7 +56,7 @@ module Invoicetronic_Sdk
     # @option opts [Time] :date_sent_to UTC ISO 8601 (2024-11-29T12:34:56Z)
     # @option opts [Integer] :page Page number. (default to 1)
     # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
-    # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
+    # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order. (default to 'last_update')
     # @return [Array<(Array<Update>, Integer, Hash)>] Array<Update> data, response status code and response headers
     def update_get_with_http_info(opts = {})
       if @api_client.config.debugging
