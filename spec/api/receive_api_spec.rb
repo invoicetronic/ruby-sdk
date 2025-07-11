@@ -77,7 +77,7 @@ describe 'ReceiveApi' do
   # Receive invoices are the invoices that are received from other companies. They are preserved for two years in the live environment and 24 hours in the Sandbox.
   # @param id Item id
   # @param [Hash] opts the optional parameters
-  # @option opts [Boolean] :include_payload 
+  # @option opts [Boolean] :include_payload Include payload in the response. Defaults to false.
   # @return [Receive]
   describe 'receive_id_get test' do
     it 'should work' do

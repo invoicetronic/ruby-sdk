@@ -78,7 +78,7 @@ describe 'SendApi' do
   # Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
   # @param id Item id
   # @param [Hash] opts the optional parameters
-  # @option opts [Boolean] :include_payload 
+  # @option opts [Boolean] :include_payload Include payload in the response. Defaults to false.
   # @return [ModelSend]
   describe 'send_id_get test' do
     it 'should work' do
@@ -91,7 +91,7 @@ describe 'SendApi' do
   # Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
   # @param identifier 
   # @param [Hash] opts the optional parameters
-  # @option opts [Boolean] :include_payload 
+  # @option opts [Boolean] :include_payload Include payload in the response. Defaults to false.
   # @return [ModelSend]
   describe 'send_identifier_get test' do
     it 'should work' do

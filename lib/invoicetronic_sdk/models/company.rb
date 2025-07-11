@@ -37,9 +37,6 @@ module Invoicetronic_Sdk
     # Name
     attr_accessor :name
 
-    # Holds the last unique value used to generate a XML filename. This is automatically updated by the system   when a raw XML file is uploaded. Normally, you do not need or want to change this value.
-    attr_accessor :counter
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -49,8 +46,7 @@ module Invoicetronic_Sdk
         :'user_id' => :'user_id',
         :'vat' => :'vat',
         :'fiscal_code' => :'fiscal_code',
-        :'name' => :'name',
-        :'counter' => :'counter'
+        :'name' => :'name'
       }
     end
 
@@ -73,8 +69,7 @@ module Invoicetronic_Sdk
         :'user_id' => :'Integer',
         :'vat' => :'String',
         :'fiscal_code' => :'String',
-        :'name' => :'String',
-        :'counter' => :'Integer'
+        :'name' => :'String'
       }
     end
 
@@ -132,10 +127,6 @@ module Invoicetronic_Sdk
         self.name = attributes[:'name']
       else
         self.name = nil
-      end
-
-      if attributes.key?(:'counter')
-        self.counter = attributes[:'counter']
       end
     end
 
@@ -237,8 +228,7 @@ module Invoicetronic_Sdk
           user_id == o.user_id &&
           vat == o.vat &&
           fiscal_code == o.fiscal_code &&
-          name == o.name &&
-          counter == o.counter
+          name == o.name
     end
 
     # @see the `==` method
@@ -250,7 +240,7 @@ module Invoicetronic_Sdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, created, version, user_id, vat, fiscal_code, name, counter].hash
+      [id, created, version, user_id, vat, fiscal_code, name].hash
     end
 
     # Builds the object from hash

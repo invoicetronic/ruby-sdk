@@ -207,7 +207,7 @@ module Invoicetronic_Sdk
     # Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
     # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
-    # @option opts [Boolean] :include_payload  (default to false)
+    # @option opts [Boolean] :include_payload Include payload in the response. Defaults to false. (default to false)
     # @return [ModelSend]
     def send_id_get(id, opts = {})
       data, _status_code, _headers = send_id_get_with_http_info(id, opts)
@@ -218,7 +218,7 @@ module Invoicetronic_Sdk
     # Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
     # @param id [Integer] Item id
     # @param [Hash] opts the optional parameters
-    # @option opts [Boolean] :include_payload  (default to false)
+    # @option opts [Boolean] :include_payload Include payload in the response. Defaults to false. (default to false)
     # @return [Array<(ModelSend, Integer, Hash)>] ModelSend data, response status code and response headers
     def send_id_get_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -233,7 +233,7 @@ module Invoicetronic_Sdk
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'includePayload'] = opts[:'include_payload'] if !opts[:'include_payload'].nil?
+      query_params[:'include_payload'] = opts[:'include_payload'] if !opts[:'include_payload'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -273,7 +273,7 @@ module Invoicetronic_Sdk
     # Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
     # @param identifier [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Boolean] :include_payload  (default to false)
+    # @option opts [Boolean] :include_payload Include payload in the response. Defaults to false. (default to false)
     # @return [ModelSend]
     def send_identifier_get(identifier, opts = {})
       data, _status_code, _headers = send_identifier_get_with_http_info(identifier, opts)
@@ -284,7 +284,7 @@ module Invoicetronic_Sdk
     # Send invoices are the invoices that are sent to the SDI. They are preserved for two years in the live environment and 15 days in the Sandbox.
     # @param identifier [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Boolean] :include_payload  (default to false)
+    # @option opts [Boolean] :include_payload Include payload in the response. Defaults to false. (default to false)
     # @return [Array<(ModelSend, Integer, Hash)>] ModelSend data, response status code and response headers
     def send_identifier_get_with_http_info(identifier, opts = {})
       if @api_client.config.debugging
@@ -299,7 +299,7 @@ module Invoicetronic_Sdk
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'includePayload'] = opts[:'include_payload'] if !opts[:'include_payload'].nil?
+      query_params[:'include_payload'] = opts[:'include_payload'] if !opts[:'include_payload'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

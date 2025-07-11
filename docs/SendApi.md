@@ -218,7 +218,7 @@ end
 api_instance = Invoicetronic_Sdk::SendApi.new
 id = 56 # Integer | Item id
 opts = {
-  include_payload: true # Boolean | 
+  include_payload: true # Boolean | Include payload in the response. Defaults to false.
 }
 
 begin
@@ -253,7 +253,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **Integer** | Item id |  |
-| **include_payload** | **Boolean** |  | [optional][default to false] |
+| **include_payload** | **Boolean** | Include payload in the response. Defaults to false. | [optional][default to false] |
 
 ### Return type
 
@@ -292,7 +292,7 @@ end
 api_instance = Invoicetronic_Sdk::SendApi.new
 identifier = 'identifier_example' # String | 
 opts = {
-  include_payload: true # Boolean | 
+  include_payload: true # Boolean | Include payload in the response. Defaults to false.
 }
 
 begin
@@ -327,7 +327,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **identifier** | **String** |  |  |
-| **include_payload** | **Boolean** |  | [optional][default to false] |
+| **include_payload** | **Boolean** | Include payload in the response. Defaults to false. | [optional][default to false] |
 
 ### Return type
 
