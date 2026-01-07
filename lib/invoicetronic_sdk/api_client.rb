@@ -32,7 +32,7 @@ module Invoicetronic_Sdk
     # @option config [Configuration] Configuration for initializing the object, default to Configuration.default
     def initialize(config = Configuration.default)
       @config = config
-      @user_agent = "Invoicetronic/1.1.4/Ruby-SDK"
+      @user_agent = "Invoicetronic/1.1.5/Ruby-SDK"
       @default_headers = {
         'Content-Type' => 'application/json',
         'User-Agent' => @user_agent
