@@ -11,5 +11,5 @@ Generator version: 7.18.0
 =end
 
 module Invoicetronic_Sdk
-  VERSION = '1.1.5'
+  VERSION = '1.1.6'
 end
