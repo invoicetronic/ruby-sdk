@@ -10,8 +10,8 @@
 | **user_id** | **Integer** | User id. | [optional] |
 | **api_key_id** | **Integer** | Api key id. | [optional] |
 | **company_id** | **Integer** | Company id. | [optional] |
-| **method** | **String** | Request method. | [optional] |
-| **endpoint** | **String** | API endpoint. | [optional] |
+| **method** | **String** | Request method. |  |
+| **endpoint** | **String** | API endpoint. |  |
 | **api_version** | **Integer** | Api version. | [optional] |
 | **status_code** | **Integer** | Status code returned by the API. | [optional] |
 | **date_time** | **Time** | Date and time of the request. | [optional] |

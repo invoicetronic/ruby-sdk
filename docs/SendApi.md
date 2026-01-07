@@ -440,7 +440,7 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
-model_send = Invoicetronic_Sdk::ModelSend.new # ModelSend | 
+model_send = Invoicetronic_Sdk::ModelSend.new({payload: 'payload_example'}) # ModelSend | 
 opts = {
   validate: true, # Boolean | Validate the document first, and reject it on failure.
   signature: 'None' # String | Whether to digitally sign the document.
@@ -654,7 +654,7 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
-model_send = Invoicetronic_Sdk::ModelSend.new # ModelSend | 
+model_send = Invoicetronic_Sdk::ModelSend.new({payload: 'payload_example'}) # ModelSend | 
 
 begin
   # Validate an invoice
