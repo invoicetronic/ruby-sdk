@@ -12,7 +12,7 @@
 | **event** | **String** | Event name. | [optional] |
 | **status_code** | **Integer** | Status code. | [optional] |
 | **date_time** | **Time** | Date and time of the request. | [optional] |
-| **success** | **Boolean** | Wether the request was successful. | [optional][readonly] |
+| **success** | **Boolean** | Whether the request was successful. | [optional][readonly] |
 
 ## Example
 

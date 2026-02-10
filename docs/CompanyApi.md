@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost*
 
 List companies
 
-Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+Retrieve a paginated list of companies.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
 
 ### Examples
 
@@ -89,11 +89,11 @@ end
 
 ## company_id_delete
 
-> <Company> company_id_delete(id)
+> <Company> company_id_delete(id, opts)
 
 Delete a company
 
-Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+Delete a company by its internal id.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.  **Warning:** Deleting a company will permanently remove all associated data, including sent invoices, received invoices, invoice updates from SDI, logs, and webhooks.  If the company has any linked invoices, you must explicitly confirm deletion by adding `?force=true` to the request. Without this parameter, the API will return `409 Conflict` with details about the linked data.
 
 ### Examples
 
@@ -109,10 +109,13 @@ end
 
 api_instance = Invoicetronic_Sdk::CompanyApi.new
 id = 56 # Integer | Item id
+opts = {
+  force: true # Boolean | Force delete including all related data.
+}
 
 begin
   # Delete a company
-  result = api_instance.company_id_delete(id)
+  result = api_instance.company_id_delete(id, opts)
   p result
 rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling CompanyApi->company_id_delete: #{e}"
@@ -123,12 +126,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Company>, Integer, Hash)> company_id_delete_with_http_info(id)
+> <Array(<Company>, Integer, Hash)> company_id_delete_with_http_info(id, opts)
 
 ```ruby
 begin
   # Delete a company
-  data, status_code, headers = api_instance.company_id_delete_with_http_info(id)
+  data, status_code, headers = api_instance.company_id_delete_with_http_info(id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Company>
@@ -142,6 +145,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **Integer** | Item id |  |
+| **force** | **Boolean** | Force delete including all related data. | [optional][default to false] |
 
 ### Return type
 
@@ -163,7 +167,7 @@ end
 
 Get a company by id
 
-Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+Retrieve a company by its internal id.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
 
 ### Examples
 
@@ -233,7 +237,7 @@ end
 
 Add a company
 
-Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+Add a new company.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
 
 ### Examples
 
@@ -303,7 +307,7 @@ end
 
 Update a company
 
-Companies are the entities that send and receive invoices. As you send invoices, companies are added as needed (company details are extrapolated). **You can only receive invoices for existing companies, so ensure they exist**.
+Update an existing company.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
 
 ### Examples
 
