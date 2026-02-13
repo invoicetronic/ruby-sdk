@@ -1,10 +1,5 @@
 require "bundler/gem_tasks"
 
-if ENV['CI']
-  Rake::Task["release:source_control_push"].clear
-  task "release:source_control_push"
-end
-
 begin
   require 'rspec/core/rake_task'
 

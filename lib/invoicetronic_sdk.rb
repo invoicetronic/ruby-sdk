@@ -81,6 +81,7 @@ require 'invoicetronic_sdk/models/web_hook_history'
 
 # APIs
 require 'invoicetronic_sdk/api/company_api'
+require 'invoicetronic_sdk/api/export_api'
 require 'invoicetronic_sdk/api/log_api'
 require 'invoicetronic_sdk/api/receive_api'
 require 'invoicetronic_sdk/api/send_api'
