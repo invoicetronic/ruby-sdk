@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**receive_get**](ReceiveApi.md#receive_get) | **GET** /receive | List incoming invoices |
 | [**receive_id_delete**](ReceiveApi.md#receive_id_delete) | **DELETE** /receive/{id} | Delete an incoming invoice by id |
 | [**receive_id_get**](ReceiveApi.md#receive_id_get) | **GET** /receive/{id} | Get an incoming invoice by id |
+| [**receive_id_payload_get**](ReceiveApi.md#receive_id_payload_get) | **GET** /receive/{id}/payload | Get a receive invoice payload by id |
 
 
 ## receive_get
@@ -255,4 +256,73 @@ end
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## receive_id_payload_get
+
+> receive_id_payload_get(id)
+
+Get a receive invoice payload by id
+
+Retrieve only the payload of a receive invoice, without the full invoice metadata. This is useful when you already have the invoice metadata and only need the XML content.  The response is a `text/plain` string, identical to the `payload` field returned by the standard GET endpoint with `include_payload=true`.  The invoice is marked as read (`is_read` = true) and counted as an operation, same as when retrieving the full invoice with `include_payload=true`. 
+
+### Examples
+
+```ruby
+require 'time'
+require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = Invoicetronic_Sdk::ReceiveApi.new
+id = 56 # Integer | Item id
+
+begin
+  # Get a receive invoice payload by id
+  api_instance.receive_id_payload_get(id)
+rescue Invoicetronic_Sdk::ApiError => e
+  puts "Error when calling ReceiveApi->receive_id_payload_get: #{e}"
+end
+```
+
+#### Using the receive_id_payload_get_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> receive_id_payload_get_with_http_info(id)
+
+```ruby
+begin
+  # Get a receive invoice payload by id
+  data, status_code, headers = api_instance.receive_id_payload_get_with_http_info(id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue Invoicetronic_Sdk::ApiError => e
+  puts "Error when calling ReceiveApi->receive_id_payload_get_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **Integer** | Item id |  |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/problem+json
 

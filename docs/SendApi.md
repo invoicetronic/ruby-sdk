@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**send_file_post**](SendApi.md#send_file_post) | **POST** /send/file | Add an invoice by file |
 | [**send_get**](SendApi.md#send_get) | **GET** /send | List invoices |
 | [**send_id_get**](SendApi.md#send_id_get) | **GET** /send/{id} | Get a invoice by id |
+| [**send_id_payload_get**](SendApi.md#send_id_payload_get) | **GET** /send/{id}/payload | Get a send invoice payload by id |
 | [**send_identifier_get**](SendApi.md#send_identifier_get) | **GET** /send/{identifier} | Get a invoice by identifier |
 | [**send_json_post**](SendApi.md#send_json_post) | **POST** /send/json | Add an invoice by json |
 | [**send_post**](SendApi.md#send_post) | **POST** /send | Add an invoice |
@@ -269,6 +270,75 @@ end
 - **Accept**: application/json
 
 
+## send_id_payload_get
+
+> send_id_payload_get(id)
+
+Get a send invoice payload by id
+
+Retrieve only the payload of a send invoice, without the full invoice metadata. This is useful when you already have the invoice metadata and only need the XML content.  The response is a `text/plain` string, identical to the `payload` field returned by the standard GET endpoint with `include_payload=true`. Depending on how the invoice was originally submitted, the payload may be Base64-encoded or plain XML. 
+
+### Examples
+
+```ruby
+require 'time'
+require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = Invoicetronic_Sdk::SendApi.new
+id = 56 # Integer | Item id
+
+begin
+  # Get a send invoice payload by id
+  api_instance.send_id_payload_get(id)
+rescue Invoicetronic_Sdk::ApiError => e
+  puts "Error when calling SendApi->send_id_payload_get: #{e}"
+end
+```
+
+#### Using the send_id_payload_get_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> send_id_payload_get_with_http_info(id)
+
+```ruby
+begin
+  # Get a send invoice payload by id
+  data, status_code, headers = api_instance.send_id_payload_get_with_http_info(id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue Invoicetronic_Sdk::ApiError => e
+  puts "Error when calling SendApi->send_id_payload_get_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **Integer** | Item id |  |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/problem+json
+
+
 ## send_identifier_get
 
 > <ModelSend> send_identifier_get(identifier, opts)
@@ -364,7 +434,7 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
-fattura_ordinaria = Invoicetronic_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
+fattura_ordinaria = TODO # FatturaOrdinaria | 
 opts = {
   validate: true, # Boolean | Validate the document first, and reject it on failure.
   signature: 'None' # String | Whether to digitally sign the document.
@@ -585,7 +655,7 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
-fattura_ordinaria = Invoicetronic_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
+fattura_ordinaria = TODO # FatturaOrdinaria | 
 
 begin
   # Validate an invoice by json
@@ -723,7 +793,7 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
-fattura_ordinaria = Invoicetronic_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
+fattura_ordinaria = TODO # FatturaOrdinaria | 
 
 begin
   # Validate an invoice by xml
@@ -792,7 +862,7 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
-fattura_ordinaria = Invoicetronic_Sdk::FatturaOrdinaria.new # FatturaOrdinaria | 
+fattura_ordinaria = TODO # FatturaOrdinaria | 
 opts = {
   validate: true, # Boolean | Validate the document first, and reject it on failure.
   signature: 'None' # String | Whether to digitally sign the document.

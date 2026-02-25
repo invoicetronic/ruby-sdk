@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**company_id_get**](CompanyApi.md#company_id_get) | **GET** /company/{id} | Get a company by id |
 | [**company_post**](CompanyApi.md#company_post) | **POST** /company | Add a company |
 | [**company_put**](CompanyApi.md#company_put) | **PUT** /company | Update a company |
+| [**company_vat_get**](CompanyApi.md#company_vat_get) | **GET** /company/{vat} | Get a company by vat number |
 
 
 ## company_get
@@ -368,5 +369,75 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## company_vat_get
+
+> <Company> company_vat_get(vat)
+
+Get a company by vat number
+
+Retrieve a company by its VAT number.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
+
+### Examples
+
+```ruby
+require 'time'
+require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = Invoicetronic_Sdk::CompanyApi.new
+vat = 'vat_example' # String | 
+
+begin
+  # Get a company by vat number
+  result = api_instance.company_vat_get(vat)
+  p result
+rescue Invoicetronic_Sdk::ApiError => e
+  puts "Error when calling CompanyApi->company_vat_get: #{e}"
+end
+```
+
+#### Using the company_vat_get_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Company>, Integer, Hash)> company_vat_get_with_http_info(vat)
+
+```ruby
+begin
+  # Get a company by vat number
+  data, status_code, headers = api_instance.company_vat_get_with_http_info(vat)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Company>
+rescue Invoicetronic_Sdk::ApiError => e
+  puts "Error when calling CompanyApi->company_vat_get_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **vat** | **String** |  |  |
+
+### Return type
+
+[**Company**](Company.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
