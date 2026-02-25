@@ -114,7 +114,7 @@ describe 'SendApi' do
   # unit tests for send_json_post
   # Add an invoice by json
   # Add a new invoice using a FatturaPA JSON representation. The invoice will be signed (if requested), validated (if requested), and queued for delivery to SDI. Status updates from SDI will be available in the &#x60;update&#x60; endpoint.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).  You can also upload invoices via the [Dashboard](https://dashboard.invoicetronic.com).
-  # @param fattura_ordinaria 
+  # @param body 
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :validate Validate the document first, and reject it on failure.
   # @option opts [String] :signature Whether to digitally sign the document.
@@ -154,7 +154,7 @@ describe 'SendApi' do
   # unit tests for send_validate_json_post
   # Validate an invoice by json
   # Validate a JSON invoice without sending it to SDI. Use this to check for errors before actual submission. Returns validation results with any errors found.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
-  # @param fattura_ordinaria 
+  # @param body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'send_validate_json_post test' do
@@ -178,7 +178,7 @@ describe 'SendApi' do
   # unit tests for send_validate_xml_post
   # Validate an invoice by xml
   # Validate an XML invoice document without sending it to SDI. Use this to check for errors before actual submission. Returns validation results with any errors found.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
-  # @param fattura_ordinaria 
+  # @param body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'send_validate_xml_post test' do
@@ -190,7 +190,7 @@ describe 'SendApi' do
   # unit tests for send_xml_post
   # Add an invoice by xml
   # Add a new invoice using a raw XML document in FatturaPA format. The invoice will be signed (if requested), validated (if requested), and queued for delivery to SDI. Status updates from SDI will be available in the &#x60;update&#x60; endpoint.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).  You can also upload invoices via the [Dashboard](https://dashboard.invoicetronic.com).
-  # @param fattura_ordinaria 
+  # @param body 
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :validate Validate the document first, and reject it on failure.
   # @option opts [String] :signature Whether to digitally sign the document.

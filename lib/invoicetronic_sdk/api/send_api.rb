@@ -400,30 +400,30 @@ module Invoicetronic_Sdk
 
     # Add an invoice by json
     # Add a new invoice using a FatturaPA JSON representation. The invoice will be signed (if requested), validated (if requested), and queued for delivery to SDI. Status updates from SDI will be available in the `update` endpoint.  **Send** invoices are outbound sales invoices transmitted to customers through Italy's SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).  You can also upload invoices via the [Dashboard](https://dashboard.invoicetronic.com).
-    # @param fattura_ordinaria [FatturaOrdinaria] 
+    # @param body [Object] 
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :validate Validate the document first, and reject it on failure. (default to false)
     # @option opts [String] :signature Whether to digitally sign the document. (default to 'Auto')
     # @return [ModelSend]
-    def send_json_post(fattura_ordinaria, opts = {})
-      data, _status_code, _headers = send_json_post_with_http_info(fattura_ordinaria, opts)
+    def send_json_post(body, opts = {})
+      data, _status_code, _headers = send_json_post_with_http_info(body, opts)
       data
     end
 
     # Add an invoice by json
     # Add a new invoice using a FatturaPA JSON representation. The invoice will be signed (if requested), validated (if requested), and queued for delivery to SDI. Status updates from SDI will be available in the &#x60;update&#x60; endpoint.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).  You can also upload invoices via the [Dashboard](https://dashboard.invoicetronic.com).
-    # @param fattura_ordinaria [FatturaOrdinaria] 
+    # @param body [Object] 
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :validate Validate the document first, and reject it on failure. (default to false)
     # @option opts [String] :signature Whether to digitally sign the document. (default to 'Auto')
     # @return [Array<(ModelSend, Integer, Hash)>] ModelSend data, response status code and response headers
-    def send_json_post_with_http_info(fattura_ordinaria, opts = {})
+    def send_json_post_with_http_info(body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SendApi.send_json_post ...'
       end
-      # verify the required parameter 'fattura_ordinaria' is set
-      if @api_client.config.client_side_validation && fattura_ordinaria.nil?
-        fail ArgumentError, "Missing the required parameter 'fattura_ordinaria' when calling SendApi.send_json_post"
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling SendApi.send_json_post"
       end
       allowable_values = ["None", "Apply", "Force", "Auto"]
       if @api_client.config.client_side_validation && opts[:'signature'] && !allowable_values.include?(opts[:'signature'])
@@ -451,7 +451,7 @@ module Invoicetronic_Sdk
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(fattura_ordinaria)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
 
       # return_type
       return_type = opts[:debug_return_type] || 'ModelSend'
@@ -625,26 +625,26 @@ module Invoicetronic_Sdk
 
     # Validate an invoice by json
     # Validate a JSON invoice without sending it to SDI. Use this to check for errors before actual submission. Returns validation results with any errors found.  **Send** invoices are outbound sales invoices transmitted to customers through Italy's SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
-    # @param fattura_ordinaria [FatturaOrdinaria] 
+    # @param body [Object] 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def send_validate_json_post(fattura_ordinaria, opts = {})
-      send_validate_json_post_with_http_info(fattura_ordinaria, opts)
+    def send_validate_json_post(body, opts = {})
+      send_validate_json_post_with_http_info(body, opts)
       nil
     end
 
     # Validate an invoice by json
     # Validate a JSON invoice without sending it to SDI. Use this to check for errors before actual submission. Returns validation results with any errors found.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
-    # @param fattura_ordinaria [FatturaOrdinaria] 
+    # @param body [Object] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def send_validate_json_post_with_http_info(fattura_ordinaria, opts = {})
+    def send_validate_json_post_with_http_info(body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SendApi.send_validate_json_post ...'
       end
-      # verify the required parameter 'fattura_ordinaria' is set
-      if @api_client.config.client_side_validation && fattura_ordinaria.nil?
-        fail ArgumentError, "Missing the required parameter 'fattura_ordinaria' when calling SendApi.send_validate_json_post"
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling SendApi.send_validate_json_post"
       end
       # resource path
       local_var_path = '/send/validate/json'
@@ -666,7 +666,7 @@ module Invoicetronic_Sdk
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(fattura_ordinaria)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
 
       # return_type
       return_type = opts[:debug_return_type]
@@ -761,26 +761,26 @@ module Invoicetronic_Sdk
 
     # Validate an invoice by xml
     # Validate an XML invoice document without sending it to SDI. Use this to check for errors before actual submission. Returns validation results with any errors found.  **Send** invoices are outbound sales invoices transmitted to customers through Italy's SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
-    # @param fattura_ordinaria [FatturaOrdinaria] 
+    # @param body [Object] 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def send_validate_xml_post(fattura_ordinaria, opts = {})
-      send_validate_xml_post_with_http_info(fattura_ordinaria, opts)
+    def send_validate_xml_post(body, opts = {})
+      send_validate_xml_post_with_http_info(body, opts)
       nil
     end
 
     # Validate an invoice by xml
     # Validate an XML invoice document without sending it to SDI. Use this to check for errors before actual submission. Returns validation results with any errors found.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
-    # @param fattura_ordinaria [FatturaOrdinaria] 
+    # @param body [Object] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def send_validate_xml_post_with_http_info(fattura_ordinaria, opts = {})
+    def send_validate_xml_post_with_http_info(body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SendApi.send_validate_xml_post ...'
       end
-      # verify the required parameter 'fattura_ordinaria' is set
-      if @api_client.config.client_side_validation && fattura_ordinaria.nil?
-        fail ArgumentError, "Missing the required parameter 'fattura_ordinaria' when calling SendApi.send_validate_xml_post"
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling SendApi.send_validate_xml_post"
       end
       # resource path
       local_var_path = '/send/validate/xml'
@@ -802,7 +802,7 @@ module Invoicetronic_Sdk
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(fattura_ordinaria)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
 
       # return_type
       return_type = opts[:debug_return_type]
@@ -829,30 +829,30 @@ module Invoicetronic_Sdk
 
     # Add an invoice by xml
     # Add a new invoice using a raw XML document in FatturaPA format. The invoice will be signed (if requested), validated (if requested), and queued for delivery to SDI. Status updates from SDI will be available in the `update` endpoint.  **Send** invoices are outbound sales invoices transmitted to customers through Italy's SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).  You can also upload invoices via the [Dashboard](https://dashboard.invoicetronic.com).
-    # @param fattura_ordinaria [FatturaOrdinaria] 
+    # @param body [Object] 
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :validate Validate the document first, and reject it on failure. (default to false)
     # @option opts [String] :signature Whether to digitally sign the document. (default to 'Auto')
     # @return [ModelSend]
-    def send_xml_post(fattura_ordinaria, opts = {})
-      data, _status_code, _headers = send_xml_post_with_http_info(fattura_ordinaria, opts)
+    def send_xml_post(body, opts = {})
+      data, _status_code, _headers = send_xml_post_with_http_info(body, opts)
       data
     end
 
     # Add an invoice by xml
     # Add a new invoice using a raw XML document in FatturaPA format. The invoice will be signed (if requested), validated (if requested), and queued for delivery to SDI. Status updates from SDI will be available in the &#x60;update&#x60; endpoint.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).  You can also upload invoices via the [Dashboard](https://dashboard.invoicetronic.com).
-    # @param fattura_ordinaria [FatturaOrdinaria] 
+    # @param body [Object] 
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :validate Validate the document first, and reject it on failure. (default to false)
     # @option opts [String] :signature Whether to digitally sign the document. (default to 'Auto')
     # @return [Array<(ModelSend, Integer, Hash)>] ModelSend data, response status code and response headers
-    def send_xml_post_with_http_info(fattura_ordinaria, opts = {})
+    def send_xml_post_with_http_info(body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SendApi.send_xml_post ...'
       end
-      # verify the required parameter 'fattura_ordinaria' is set
-      if @api_client.config.client_side_validation && fattura_ordinaria.nil?
-        fail ArgumentError, "Missing the required parameter 'fattura_ordinaria' when calling SendApi.send_xml_post"
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling SendApi.send_xml_post"
       end
       allowable_values = ["None", "Apply", "Force", "Auto"]
       if @api_client.config.client_side_validation && opts[:'signature'] && !allowable_values.include?(opts[:'signature'])
@@ -880,7 +880,7 @@ module Invoicetronic_Sdk
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(fattura_ordinaria)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
 
       # return_type
       return_type = opts[:debug_return_type] || 'ModelSend'

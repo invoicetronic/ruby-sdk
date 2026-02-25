@@ -131,9 +131,14 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Invoicetronic_Sdk::Company](docs/Company.md)
+ - [Invoicetronic_Sdk::DocumentData](docs/DocumentData.md)
+ - [Invoicetronic_Sdk::Error](docs/Error.md)
  - [Invoicetronic_Sdk::Event](docs/Event.md)
  - [Invoicetronic_Sdk::ModelSend](docs/ModelSend.md)
+ - [Invoicetronic_Sdk::ProblemDetails](docs/ProblemDetails.md)
+ - [Invoicetronic_Sdk::ProblemHttpResult](docs/ProblemHttpResult.md)
  - [Invoicetronic_Sdk::Receive](docs/Receive.md)
+ - [Invoicetronic_Sdk::SendReduced](docs/SendReduced.md)
  - [Invoicetronic_Sdk::Status](docs/Status.md)
  - [Invoicetronic_Sdk::Update](docs/Update.md)
  - [Invoicetronic_Sdk::WebHook](docs/WebHook.md)

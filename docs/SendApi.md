@@ -415,7 +415,7 @@ end
 
 ## send_json_post
 
-> <ModelSend> send_json_post(fattura_ordinaria, opts)
+> <ModelSend> send_json_post(body, opts)
 
 Add an invoice by json
 
@@ -434,7 +434,7 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
-fattura_ordinaria = TODO # FatturaOrdinaria | 
+body = { ... } # Object | 
 opts = {
   validate: true, # Boolean | Validate the document first, and reject it on failure.
   signature: 'None' # String | Whether to digitally sign the document.
@@ -442,7 +442,7 @@ opts = {
 
 begin
   # Add an invoice by json
-  result = api_instance.send_json_post(fattura_ordinaria, opts)
+  result = api_instance.send_json_post(body, opts)
   p result
 rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_json_post: #{e}"
@@ -453,12 +453,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ModelSend>, Integer, Hash)> send_json_post_with_http_info(fattura_ordinaria, opts)
+> <Array(<ModelSend>, Integer, Hash)> send_json_post_with_http_info(body, opts)
 
 ```ruby
 begin
   # Add an invoice by json
-  data, status_code, headers = api_instance.send_json_post_with_http_info(fattura_ordinaria, opts)
+  data, status_code, headers = api_instance.send_json_post_with_http_info(body, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ModelSend>
@@ -471,7 +471,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **fattura_ordinaria** | [**FatturaOrdinaria**](FatturaOrdinaria.md) |  |  |
+| **body** | **Object** |  |  |
 | **validate** | **Boolean** | Validate the document first, and reject it on failure. | [optional][default to false] |
 | **signature** | **String** | Whether to digitally sign the document. | [optional][default to &#39;Auto&#39;] |
 
@@ -636,7 +636,7 @@ nil (empty response body)
 
 ## send_validate_json_post
 
-> send_validate_json_post(fattura_ordinaria)
+> send_validate_json_post(body)
 
 Validate an invoice by json
 
@@ -655,11 +655,11 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
-fattura_ordinaria = TODO # FatturaOrdinaria | 
+body = { ... } # Object | 
 
 begin
   # Validate an invoice by json
-  api_instance.send_validate_json_post(fattura_ordinaria)
+  api_instance.send_validate_json_post(body)
 rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_validate_json_post: #{e}"
 end
@@ -669,12 +669,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> send_validate_json_post_with_http_info(fattura_ordinaria)
+> <Array(nil, Integer, Hash)> send_validate_json_post_with_http_info(body)
 
 ```ruby
 begin
   # Validate an invoice by json
-  data, status_code, headers = api_instance.send_validate_json_post_with_http_info(fattura_ordinaria)
+  data, status_code, headers = api_instance.send_validate_json_post_with_http_info(body)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -687,7 +687,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **fattura_ordinaria** | [**FatturaOrdinaria**](FatturaOrdinaria.md) |  |  |
+| **body** | **Object** |  |  |
 
 ### Return type
 
@@ -774,7 +774,7 @@ nil (empty response body)
 
 ## send_validate_xml_post
 
-> send_validate_xml_post(fattura_ordinaria)
+> send_validate_xml_post(body)
 
 Validate an invoice by xml
 
@@ -793,11 +793,11 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
-fattura_ordinaria = TODO # FatturaOrdinaria | 
+body = { ... } # Object | 
 
 begin
   # Validate an invoice by xml
-  api_instance.send_validate_xml_post(fattura_ordinaria)
+  api_instance.send_validate_xml_post(body)
 rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_validate_xml_post: #{e}"
 end
@@ -807,12 +807,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> send_validate_xml_post_with_http_info(fattura_ordinaria)
+> <Array(nil, Integer, Hash)> send_validate_xml_post_with_http_info(body)
 
 ```ruby
 begin
   # Validate an invoice by xml
-  data, status_code, headers = api_instance.send_validate_xml_post_with_http_info(fattura_ordinaria)
+  data, status_code, headers = api_instance.send_validate_xml_post_with_http_info(body)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -825,7 +825,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **fattura_ordinaria** | [**FatturaOrdinaria**](FatturaOrdinaria.md) |  |  |
+| **body** | **Object** |  |  |
 
 ### Return type
 
@@ -843,7 +843,7 @@ nil (empty response body)
 
 ## send_xml_post
 
-> <ModelSend> send_xml_post(fattura_ordinaria, opts)
+> <ModelSend> send_xml_post(body, opts)
 
 Add an invoice by xml
 
@@ -862,7 +862,7 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
-fattura_ordinaria = TODO # FatturaOrdinaria | 
+body = { ... } # Object | 
 opts = {
   validate: true, # Boolean | Validate the document first, and reject it on failure.
   signature: 'None' # String | Whether to digitally sign the document.
@@ -870,7 +870,7 @@ opts = {
 
 begin
   # Add an invoice by xml
-  result = api_instance.send_xml_post(fattura_ordinaria, opts)
+  result = api_instance.send_xml_post(body, opts)
   p result
 rescue Invoicetronic_Sdk::ApiError => e
   puts "Error when calling SendApi->send_xml_post: #{e}"
@@ -881,12 +881,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ModelSend>, Integer, Hash)> send_xml_post_with_http_info(fattura_ordinaria, opts)
+> <Array(<ModelSend>, Integer, Hash)> send_xml_post_with_http_info(body, opts)
 
 ```ruby
 begin
   # Add an invoice by xml
-  data, status_code, headers = api_instance.send_xml_post_with_http_info(fattura_ordinaria, opts)
+  data, status_code, headers = api_instance.send_xml_post_with_http_info(body, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ModelSend>
@@ -899,7 +899,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **fattura_ordinaria** | [**FatturaOrdinaria**](FatturaOrdinaria.md) |  |  |
+| **body** | **Object** |  |  |
 | **validate** | **Boolean** | Validate the document first, and reject it on failure. | [optional][default to false] |
 | **signature** | **String** | Whether to digitally sign the document. | [optional][default to &#39;Auto&#39;] |
 
