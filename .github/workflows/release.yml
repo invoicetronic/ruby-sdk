@@ -33,6 +33,9 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Create local branch from tag
+        run: git checkout -b release-tmp
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
