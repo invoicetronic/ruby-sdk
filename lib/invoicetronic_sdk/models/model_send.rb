@@ -61,6 +61,9 @@ module Invoicetronic_Sdk
     # Whether the payload is Base64 encoded or a plain XML (text).
     attr_accessor :encoding
 
+    # Business name of the committente (client/buyer) extracted from the invoice XML.
+    attr_accessor :nome_committente
+
     # Optional metadata, as json.
     attr_accessor :meta_data
 
@@ -106,6 +109,7 @@ module Invoicetronic_Sdk
         :'date_sent' => :'date_sent',
         :'documents' => :'documents',
         :'encoding' => :'encoding',
+        :'nome_committente' => :'nome_committente',
         :'meta_data' => :'meta_data',
         :'company' => :'company'
       }
@@ -139,6 +143,7 @@ module Invoicetronic_Sdk
         :'date_sent' => :'Time',
         :'documents' => :'Array<DocumentData>',
         :'encoding' => :'String',
+        :'nome_committente' => :'String',
         :'meta_data' => :'Hash<String, String>',
         :'company' => :'Company'
       }
@@ -155,6 +160,7 @@ module Invoicetronic_Sdk
         :'last_update',
         :'date_sent',
         :'documents',
+        :'nome_committente',
         :'meta_data',
       ])
     end
@@ -239,6 +245,10 @@ module Invoicetronic_Sdk
         self.encoding = attributes[:'encoding']
       end
 
+      if attributes.key?(:'nome_committente')
+        self.nome_committente = attributes[:'nome_committente']
+      end
+
       if attributes.key?(:'meta_data')
         if (value = attributes[:'meta_data']).is_a?(Hash)
           self.meta_data = value
@@ -321,6 +331,7 @@ module Invoicetronic_Sdk
           date_sent == o.date_sent &&
           documents == o.documents &&
           encoding == o.encoding &&
+          nome_committente == o.nome_committente &&
           meta_data == o.meta_data &&
           company == o.company
     end
@@ -334,7 +345,7 @@ module Invoicetronic_Sdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, created, version, user_id, company_id, committente, prestatore, identifier, file_name, format, payload, last_update, date_sent, documents, encoding, meta_data, company].hash
+      [id, created, version, user_id, company_id, committente, prestatore, identifier, file_name, format, payload, last_update, date_sent, documents, encoding, nome_committente, meta_data, company].hash
     end
 
     # Builds the object from hash

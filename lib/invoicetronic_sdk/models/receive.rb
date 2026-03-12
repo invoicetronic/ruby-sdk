@@ -61,6 +61,9 @@ module Invoicetronic_Sdk
     # Whether the payload is Base64 encoded or a plain XML (text).
     attr_accessor :encoding
 
+    # Business name of the prestatore (supplier/seller) extracted from the invoice XML.
+    attr_accessor :nome_prestatore
+
     # Whether the invoice has been read at least once. Set to true only when the invoice is requested with include_payload=true.
     attr_accessor :is_read
 
@@ -107,6 +110,7 @@ module Invoicetronic_Sdk
         :'date_sent' => :'date_sent',
         :'documents' => :'documents',
         :'encoding' => :'encoding',
+        :'nome_prestatore' => :'nome_prestatore',
         :'is_read' => :'is_read',
         :'message_id' => :'message_id'
       }
@@ -140,6 +144,7 @@ module Invoicetronic_Sdk
         :'date_sent' => :'Time',
         :'documents' => :'Array<DocumentData>',
         :'encoding' => :'String',
+        :'nome_prestatore' => :'String',
         :'is_read' => :'Boolean',
         :'message_id' => :'String'
       }
@@ -156,6 +161,7 @@ module Invoicetronic_Sdk
         :'last_update',
         :'date_sent',
         :'documents',
+        :'nome_prestatore',
         :'message_id'
       ])
     end
@@ -240,6 +246,10 @@ module Invoicetronic_Sdk
         self.encoding = attributes[:'encoding']
       end
 
+      if attributes.key?(:'nome_prestatore')
+        self.nome_prestatore = attributes[:'nome_prestatore']
+      end
+
       if attributes.key?(:'is_read')
         self.is_read = attributes[:'is_read']
       end
@@ -320,6 +330,7 @@ module Invoicetronic_Sdk
           date_sent == o.date_sent &&
           documents == o.documents &&
           encoding == o.encoding &&
+          nome_prestatore == o.nome_prestatore &&
           is_read == o.is_read &&
           message_id == o.message_id
     end
@@ -333,7 +344,7 @@ module Invoicetronic_Sdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, created, version, user_id, company_id, committente, prestatore, identifier, file_name, format, payload, last_update, date_sent, documents, encoding, is_read, message_id].hash
+      [id, created, version, user_id, company_id, committente, prestatore, identifier, file_name, format, payload, last_update, date_sent, documents, encoding, nome_prestatore, is_read, message_id].hash
     end
 
     # Builds the object from hash

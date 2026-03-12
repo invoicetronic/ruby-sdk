@@ -29,7 +29,7 @@ end
 
 api_instance = Invoicetronic_Sdk::ExportApi.new
 opts = {
-  type: 'Send', # String | 
+  type: 'type_example', # String | 
   company_id: 56, # Integer | Company id
   year: 56, # Integer | 
   month: 56, # Integer | 
@@ -68,7 +68,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** |  | [optional][default to &#39;Both&#39;] |
+| **type** | **String** |  | [optional] |
 | **company_id** | **Integer** | Company id | [optional] |
 | **year** | **Integer** |  | [optional] |
 | **month** | **Integer** |  | [optional] |

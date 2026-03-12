@@ -48,7 +48,7 @@ describe 'SendApi' do
 
   # unit tests for send_get
   # List invoices
-  # Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, and document number. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
+  # Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, document number, and free-text search (&#x60;q&#x60;). Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :company_id Company id
   # @option opts [String] :identifier SDI identifier.
@@ -66,6 +66,7 @@ describe 'SendApi' do
   # @option opts [Integer] :page Page number.
   # @option opts [Integer] :page_size Items per page. Cannot be greater than 200.
   # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
+  # @option opts [String] :q Full-text search across committente, prestatore, identifier, and file name.
   # @return [Array<ModelSend>]
   describe 'send_get test' do
     it 'should work' do

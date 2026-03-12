@@ -20,7 +20,7 @@ module Invoicetronic_Sdk
       @api_client = api_client
     end
     # List incoming invoices
-    # Retrieve a paginated list of receive invoices. Results can be filtered by various criteria such as company, date ranges, sender, and document number. Returns invoice metadata; set `include_payload` to true to include the full invoice content. Invoices are marked as read (`is_read` = true) only when `include_payload` is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy's SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
+    # Retrieve a paginated list of receive invoices. Results can be filtered by various criteria such as company, date ranges, sender, document number, and free-text search (`q`). Returns invoice metadata; set `include_payload` to true to include the full invoice content. Invoices are marked as read (`is_read` = true) only when `include_payload` is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy's SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :company_id Company id
     # @option opts [String] :identifier SDI identifier.
@@ -39,6 +39,7 @@ module Invoicetronic_Sdk
     # @option opts [Integer] :page Page number. (default to 1)
     # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
     # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
+    # @option opts [String] :q Full-text search across committente, prestatore, identifier, and file name.
     # @return [Array<Receive>]
     def receive_get(opts = {})
       data, _status_code, _headers = receive_get_with_http_info(opts)
@@ -46,7 +47,7 @@ module Invoicetronic_Sdk
     end
 
     # List incoming invoices
-    # Retrieve a paginated list of receive invoices. Results can be filtered by various criteria such as company, date ranges, sender, and document number. Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content. Invoices are marked as read (&#x60;is_read&#x60; &#x3D; true) only when &#x60;include_payload&#x60; is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
+    # Retrieve a paginated list of receive invoices. Results can be filtered by various criteria such as company, date ranges, sender, document number, and free-text search (&#x60;q&#x60;). Returns invoice metadata; set &#x60;include_payload&#x60; to true to include the full invoice content. Invoices are marked as read (&#x60;is_read&#x60; &#x3D; true) only when &#x60;include_payload&#x60; is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy&#39;s SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :company_id Company id
     # @option opts [String] :identifier SDI identifier.
@@ -65,6 +66,7 @@ module Invoicetronic_Sdk
     # @option opts [Integer] :page Page number. (default to 1)
     # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
     # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
+    # @option opts [String] :q Full-text search across committente, prestatore, identifier, and file name.
     # @return [Array<(Array<Receive>, Integer, Hash)>] Array<Receive> data, response status code and response headers
     def receive_get_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -92,6 +94,7 @@ module Invoicetronic_Sdk
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'page_size'] = opts[:'page_size'] if !opts[:'page_size'].nil?
       query_params[:'sort'] = opts[:'sort'] if !opts[:'sort'].nil?
+      query_params[:'q'] = opts[:'q'] if !opts[:'q'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

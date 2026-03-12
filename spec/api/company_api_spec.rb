@@ -34,11 +34,12 @@ describe 'CompanyApi' do
 
   # unit tests for company_get
   # List companies
-  # Retrieve a paginated list of companies.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
+  # Retrieve a paginated list of companies. Results can be filtered by free-text search (&#x60;q&#x60;) across name, VAT number, and fiscal code.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Page number.
   # @option opts [Integer] :page_size Items per page. Cannot be greater than 200.
   # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
+  # @option opts [String] :q Full-text search across committente, prestatore, identifier, and file name.
   # @return [Array<Company>]
   describe 'company_get test' do
     it 'should work' do

@@ -16,7 +16,7 @@ All URIs are relative to *http://localhost*
 
 List incoming invoices
 
-Retrieve a paginated list of receive invoices. Results can be filtered by various criteria such as company, date ranges, sender, and document number. Returns invoice metadata; set `include_payload` to true to include the full invoice content. Invoices are marked as read (`is_read` = true) only when `include_payload` is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy's SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
+Retrieve a paginated list of receive invoices. Results can be filtered by various criteria such as company, date ranges, sender, document number, and free-text search (`q`). Returns invoice metadata; set `include_payload` to true to include the full invoice content. Invoices are marked as read (`is_read` = true) only when `include_payload` is true.  **Receive** invoices are inbound purchase invoices received from suppliers through Italy's SDI (Sistema di Interscambio). Preserved for two years in the live environment and 24 hours in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
 
 ### Examples
 
@@ -48,7 +48,8 @@ opts = {
   include_payload: true, # Boolean | Include payload in the response. Defaults to false.
   page: 56, # Integer | Page number.
   page_size: 56, # Integer | Items per page. Cannot be greater than 200.
-  sort: 'sort_example' # String | Sort by field. Prefix with '-' for descending order.
+  sort: 'sort_example', # String | Sort by field. Prefix with '-' for descending order.
+  q: 'q_example' # String | Full-text search across committente, prestatore, identifier, and file name.
 }
 
 begin
@@ -99,6 +100,7 @@ end
 | **page** | **Integer** | Page number. | [optional][default to 1] |
 | **page_size** | **Integer** | Items per page. Cannot be greater than 200. | [optional][default to 100] |
 | **sort** | **String** | Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
+| **q** | **String** | Full-text search across committente, prestatore, identifier, and file name. | [optional] |
 
 ### Return type
 

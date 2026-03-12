@@ -20,11 +20,12 @@ module Invoicetronic_Sdk
       @api_client = api_client
     end
     # List companies
-    # Retrieve a paginated list of companies.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
+    # Retrieve a paginated list of companies. Results can be filtered by free-text search (`q`) across name, VAT number, and fiscal code.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Page number. (default to 1)
     # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
     # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
+    # @option opts [String] :q Full-text search across committente, prestatore, identifier, and file name.
     # @return [Array<Company>]
     def company_get(opts = {})
       data, _status_code, _headers = company_get_with_http_info(opts)
@@ -32,11 +33,12 @@ module Invoicetronic_Sdk
     end
 
     # List companies
-    # Retrieve a paginated list of companies.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
+    # Retrieve a paginated list of companies. Results can be filtered by free-text search (&#x60;q&#x60;) across name, VAT number, and fiscal code.  **Companies** are the entities that send and receive invoices. They are automatically created from invoice data when invoices are sent or received.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Page number. (default to 1)
     # @option opts [Integer] :page_size Items per page. Cannot be greater than 200. (default to 100)
     # @option opts [String] :sort Sort by field. Prefix with &#39;-&#39; for descending order.
+    # @option opts [String] :q Full-text search across committente, prestatore, identifier, and file name.
     # @return [Array<(Array<Company>, Integer, Hash)>] Array<Company> data, response status code and response headers
     def company_get_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -50,6 +52,7 @@ module Invoicetronic_Sdk
       query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
       query_params[:'page_size'] = opts[:'page_size'] if !opts[:'page_size'].nil?
       query_params[:'sort'] = opts[:'sort'] if !opts[:'sort'].nil?
+      query_params[:'q'] = opts[:'q'] if !opts[:'q'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

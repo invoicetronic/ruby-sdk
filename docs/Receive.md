@@ -19,6 +19,7 @@
 | **date_sent** | **Time** | When the invoice was sent to SDI. | [optional] |
 | **documents** | [**Array&lt;DocumentData&gt;**](DocumentData.md) | The invoices included in the payload. This is set by the system, based on the xml content. | [optional] |
 | **encoding** | **String** | Whether the payload is Base64 encoded or a plain XML (text). | [optional] |
+| **nome_prestatore** | **String** | Business name of the prestatore (supplier/seller) extracted from the invoice XML. | [optional] |
 | **is_read** | **Boolean** | Whether the invoice has been read at least once. Set to true only when the invoice is requested with include_payload&#x3D;true. | [optional] |
 | **message_id** | **String** | SDI message id. | [optional] |
 
@@ -43,6 +44,7 @@ instance = Invoicetronic_Sdk::Receive.new(
   date_sent: null,
   documents: null,
   encoding: null,
+  nome_prestatore: null,
   is_read: null,
   message_id: null
 )
