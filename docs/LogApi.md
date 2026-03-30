@@ -21,12 +21,6 @@ Retrieve a paginated list of log events. Results can be filtered by various crit
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::LogApi.new
 opts = {
@@ -43,7 +37,8 @@ opts = {
   query: 'query_example', # String | 
   success: true, # Boolean | 
   date_time_from: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Date and time of the event
-  date_time_to: Time.parse('2013-10-20T19:20:30+01:00') # Time | Date and time of the event
+  date_time_to: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Date and time of the event
+  user_agent: 'user_agent_example' # String | 
 }
 
 begin
@@ -91,6 +86,7 @@ end
 | **success** | **Boolean** |  | [optional] |
 | **date_time_from** | **Time** | Date and time of the event | [optional] |
 | **date_time_to** | **Time** | Date and time of the event | [optional] |
+| **user_agent** | **String** |  | [optional] |
 
 ### Return type
 
@@ -98,7 +94,7 @@ end
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -119,12 +115,6 @@ Retrieve a log event by its internal id.  **Logs** record every API request. The
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::LogApi.new
 id = 56 # Integer | Item id
@@ -168,7 +158,7 @@ end
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 

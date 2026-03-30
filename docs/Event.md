@@ -17,6 +17,7 @@
 | **date_time** | **Time** | Date and time of the request. | [optional] |
 | **error** | **String** | Response error. | [optional] |
 | **resource_id** | **Integer** | ID of the resource created or modified by this request. | [optional] |
+| **user_agent** | **String** | User-Agent header from the HTTP request. | [optional] |
 | **success** | **Boolean** | Whether the request was successful. | [optional][readonly] |
 | **query** | **String** | Request query. Only used for internal logging, not sent to webhooks. | [optional] |
 | **response_body** | **String** | Response payload. It is guaranteed to be encrypted at rest. | [optional] |
@@ -40,6 +41,7 @@ instance = Invoicetronic_Sdk::Event.new(
   date_time: null,
   error: null,
   resource_id: null,
+  user_agent: null,
   success: null,
   query: null,
   response_body: null

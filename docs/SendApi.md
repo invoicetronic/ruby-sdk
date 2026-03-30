@@ -31,12 +31,6 @@ Add a new invoice by uploading a file. Supported formats are XML (FatturaPA) and
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
 file = File.new('/path/to/some/file') # File | 
@@ -86,7 +80,7 @@ end
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -107,12 +101,6 @@ Retrieve a paginated list of send invoices. Results can be filtered by various c
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
 opts = {
@@ -190,7 +178,7 @@ end
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -211,12 +199,6 @@ Retrieve a send invoice by its internal id. The `id` is unique and assigned by t
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
 id = 56 # Integer | Item id
@@ -264,7 +246,7 @@ end
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -285,12 +267,6 @@ Retrieve only the payload of a send invoice, without the full invoice metadata. 
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
 id = 56 # Integer | Item id
@@ -333,7 +309,7 @@ nil (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -354,12 +330,6 @@ Retrieve a send invoice by its SDI identifier. The `identifier` is assigned by t
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
 identifier = 'identifier_example' # String | 
@@ -407,7 +377,7 @@ end
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -428,12 +398,6 @@ Add a new invoice using a FatturaPA JSON representation. The invoice will be sig
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
 body = { ... } # Object | 
@@ -483,7 +447,7 @@ end
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -504,12 +468,6 @@ Add a new invoice using a structured Send object. The invoice will be signed (if
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
 model_send = Invoicetronic_Sdk::ModelSend.new({payload: 'payload_example'}) # ModelSend | 
@@ -559,7 +517,7 @@ end
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -580,12 +538,6 @@ Validate an invoice file without sending it to SDI. Supported formats are XML (F
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
 file = File.new('/path/to/some/file') # File | 
@@ -628,7 +580,7 @@ nil (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -649,12 +601,6 @@ Validate a JSON invoice without sending it to SDI. Use this to check for errors 
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
 body = { ... } # Object | 
@@ -697,7 +643,7 @@ nil (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -718,12 +664,6 @@ Validate an invoice without sending it to SDI. Use this to check for errors befo
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
 model_send = Invoicetronic_Sdk::ModelSend.new({payload: 'payload_example'}) # ModelSend | 
@@ -766,7 +706,7 @@ nil (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -787,12 +727,6 @@ Validate an XML invoice document without sending it to SDI. Use this to check fo
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
 body = { ... } # Object | 
@@ -835,7 +769,7 @@ nil (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
@@ -856,12 +790,6 @@ Add a new invoice using a raw XML document in FatturaPA format. The invoice will
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
 body = { ... } # Object | 
@@ -911,7 +839,7 @@ end
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 

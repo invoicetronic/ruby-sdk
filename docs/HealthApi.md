@@ -20,12 +20,6 @@ Returns the health status of the API and its dependencies. No authentication req
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
-# setup authorization
-Invoicetronic_Sdk.configure do |config|
-  # Configure HTTP basic authorization: Basic
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = Invoicetronic_Sdk::HealthApi.new
 
@@ -65,7 +59,7 @@ nil (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
