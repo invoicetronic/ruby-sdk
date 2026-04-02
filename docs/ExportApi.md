@@ -20,6 +20,12 @@ Export invoices as a ZIP archive of FatturaPA XML files, suitable for import int
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::ExportApi.new
 opts = {
@@ -76,7 +82,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 

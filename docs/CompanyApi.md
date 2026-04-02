@@ -25,6 +25,12 @@ Retrieve a paginated list of companies. Results can be filtered by free-text sea
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::CompanyApi.new
 opts = {
@@ -76,7 +82,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -97,6 +103,12 @@ Delete a company by its internal id.  **Companies** are the entities that send a
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::CompanyApi.new
 id = 56 # Integer | Item id
@@ -144,7 +156,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -165,6 +177,12 @@ Retrieve a company by its internal id.  **Companies** are the entities that send
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::CompanyApi.new
 id = 56 # Integer | Item id
@@ -208,7 +226,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -229,6 +247,12 @@ Add a new company.  **Companies** are the entities that send and receive invoice
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::CompanyApi.new
 company = Invoicetronic_Sdk::Company.new({vat: 'IT01234567891', fiscal_code: 'RSSMRA70A01F205V', name: 'Mario Rossi Srl'}) # Company | 
@@ -272,7 +296,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -293,6 +317,12 @@ Update an existing company.  **Companies** are the entities that send and receiv
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::CompanyApi.new
 company = Invoicetronic_Sdk::Company.new({vat: 'IT01234567891', fiscal_code: 'RSSMRA70A01F205V', name: 'Mario Rossi Srl'}) # Company | 
@@ -336,7 +366,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -357,6 +387,12 @@ Retrieve a company by its VAT number.  **Companies** are the entities that send 
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::CompanyApi.new
 vat = 'vat_example' # String | 
@@ -400,7 +436,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 

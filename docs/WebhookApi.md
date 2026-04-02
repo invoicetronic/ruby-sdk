@@ -26,6 +26,12 @@ Retrieve a paginated list of webhooks. Results can be filtered by company, descr
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::WebhookApi.new
 opts = {
@@ -85,7 +91,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -106,6 +112,12 @@ Delete a webhook subscription by its internal id.  **Webhooks** allow you to rec
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::WebhookApi.new
 id = 56 # Integer | Item id
@@ -149,7 +161,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -170,6 +182,12 @@ Retrieve a webhook by its internal id.  **Webhooks** allow you to receive notifi
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::WebhookApi.new
 id = 56 # Integer | Item id
@@ -213,7 +231,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -234,6 +252,12 @@ Create a new webhook subscription.  **Webhooks** allow you to receive notificati
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::WebhookApi.new
 web_hook = Invoicetronic_Sdk::WebHook.new({url: 'url_example'}) # WebHook | 
@@ -277,7 +301,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -298,6 +322,12 @@ Update an existing webhook subscription.  **Webhooks** allow you to receive noti
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::WebhookApi.new
 web_hook = Invoicetronic_Sdk::WebHook.new({url: 'url_example'}) # WebHook | 
@@ -341,7 +371,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -362,6 +392,12 @@ Webhook history items are stored in the database and can be accessed via the API
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::WebhookApi.new
 opts = {
@@ -413,7 +449,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -434,6 +470,12 @@ Webhook history items are stored in the database and can be accessed via the API
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::WebhookApi.new
 id = 56 # Integer | Item id
@@ -477,7 +519,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 

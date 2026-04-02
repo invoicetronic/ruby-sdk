@@ -21,6 +21,12 @@ Retrieve a paginated list of log events. Results can be filtered by various crit
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::LogApi.new
 opts = {
@@ -94,7 +100,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -115,6 +121,12 @@ Retrieve a log event by its internal id.  **Logs** record every API request. The
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::LogApi.new
 id = 56 # Integer | Item id
@@ -158,7 +170,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 

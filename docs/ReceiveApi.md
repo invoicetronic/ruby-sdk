@@ -23,6 +23,12 @@ Retrieve a paginated list of receive invoices. Results can be filtered by variou
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::ReceiveApi.new
 opts = {
@@ -102,7 +108,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -123,6 +129,12 @@ Permanently delete a receive invoice by its internal id. This action cannot be u
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::ReceiveApi.new
 id = 56 # Integer | Item id
@@ -166,7 +178,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -187,6 +199,12 @@ Retrieve an incoming invoice by its internal id. The `id` is unique and assigned
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::ReceiveApi.new
 id = 56 # Integer | Item id
@@ -234,7 +252,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
@@ -255,6 +273,12 @@ Retrieve only the payload of a receive invoice, without the full invoice metadat
 ```ruby
 require 'time'
 require 'invoicetronic_sdk'
+# setup authorization
+Invoicetronic_Sdk.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = Invoicetronic_Sdk::ReceiveApi.new
 id = 56 # Integer | Item id
@@ -297,7 +321,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic)
 
 ### HTTP request headers
 
