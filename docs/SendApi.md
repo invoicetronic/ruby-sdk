@@ -100,7 +100,7 @@ end
 
 List invoices
 
-Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, document number, and free-text search (`q`). Returns invoice metadata; set `include_payload` to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy's SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
+Retrieve a paginated list of send invoices. Results can be filtered by various criteria such as company, date ranges, document number, and free-text search (`q`). Use `ids` to fetch specific Send records in a single call (comma-separated, up to 100). Returns invoice metadata; set `include_payload` to true to include the full invoice content.  **Send** invoices are outbound sales invoices transmitted to customers through Italy's SDI (Sistema di Interscambio). Preserved for two years in the live environment and 15 days in the [Sandbox](https://invoicetronic.com/en/docs/sandbox/).
 
 ### Examples
 
@@ -129,6 +129,7 @@ opts = {
   document_date_to: Time.parse('2013-10-20T19:20:30+01:00'), # Time | UTC ISO 8601 (2024-11-29T12:34:56Z)
   document_number: 'document_number_example', # String | Document number.
   include_payload: true, # Boolean | Include payload in the response. Defaults to false.
+  ids: 'ids_example', # String | Comma-separated list of Send ids (max 100). Filters the collection to the matching rows; unknown or unauthorized ids are silently skipped.
   page: 56, # Integer | Page number.
   page_size: 56, # Integer | Items per page. Cannot be greater than 200.
   sort: 'sort_example', # String | Sort by field. Prefix with '-' for descending order.
@@ -179,6 +180,7 @@ end
 | **document_date_to** | **Time** | UTC ISO 8601 (2024-11-29T12:34:56Z) | [optional] |
 | **document_number** | **String** | Document number. | [optional] |
 | **include_payload** | **Boolean** | Include payload in the response. Defaults to false. | [optional] |
+| **ids** | **String** | Comma-separated list of Send ids (max 100). Filters the collection to the matching rows; unknown or unauthorized ids are silently skipped. | [optional] |
 | **page** | **Integer** | Page number. | [optional][default to 1] |
 | **page_size** | **Integer** | Items per page. Cannot be greater than 200. | [optional][default to 100] |
 | **sort** | **String** | Sort by field. Prefix with &#39;-&#39; for descending order. | [optional] |
@@ -512,7 +514,7 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
-model_send = Invoicetronic_Sdk::ModelSend.new({payload: 'payload_example'}) # ModelSend | 
+model_send = Invoicetronic_Sdk::ModelSend.new({payload: 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48cDpGYXR0dXJhRWxldHRyb25pY2EgLi4uPjwvcDpGYXR0dXJhRWxldHRyb25pY2E+'}) # ModelSend | 
 opts = {
   validate: true, # Boolean | Validate the document first, and reject it on failure.
   signature: 'None' # String | Whether to digitally sign the document.
@@ -726,7 +728,7 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::SendApi.new
-model_send = Invoicetronic_Sdk::ModelSend.new({payload: 'payload_example'}) # ModelSend | 
+model_send = Invoicetronic_Sdk::ModelSend.new({payload: 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48cDpGYXR0dXJhRWxldHRyb25pY2EgLi4uPjwvcDpGYXR0dXJhRWxldHRyb25pY2E+'}) # ModelSend | 
 
 begin
   # Validate an invoice

@@ -260,7 +260,7 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::WebhookApi.new
-web_hook = Invoicetronic_Sdk::WebHook.new({url: 'url_example'}) # WebHook | 
+web_hook = Invoicetronic_Sdk::WebHook.new({url: 'https://example.com/webhooks/invoicetronic'}) # WebHook | 
 
 begin
   # Add a webhook
@@ -330,7 +330,7 @@ Invoicetronic_Sdk.configure do |config|
 end
 
 api_instance = Invoicetronic_Sdk::WebhookApi.new
-web_hook = Invoicetronic_Sdk::WebHook.new({url: 'url_example'}) # WebHook | 
+web_hook = Invoicetronic_Sdk::WebHook.new({url: 'https://example.com/webhooks/invoicetronic'}) # WebHook | 
 
 begin
   # Update a webhook

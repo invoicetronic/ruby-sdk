@@ -9,6 +9,7 @@
 | **meta_data** | **Hash&lt;String, String&gt;** | Optional metadata, as json. | [optional] |
 | **documents** | [**Array&lt;DocumentData&gt;**](DocumentData.md) | The invoices included in the payload. | [optional] |
 | **date_sent** | **Time** | When the invoice was sent to SDI. | [optional] |
+| **latest_state** | **String** | Current SDI state of the invoice. Reflects the most recent update received from SDI. | [optional] |
 
 ## Example
 
@@ -20,7 +21,8 @@ instance = Invoicetronic_Sdk::SendReduced.new(
   prestatore: null,
   meta_data: null,
   documents: null,
-  date_sent: null
+  date_sent: null,
+  latest_state: null
 )
 ```
 
